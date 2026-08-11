@@ -1,0 +1,147 @@
+.breadcrumbNav {
+  margin-bottom: var(--space-4);
+  font-size: var(--font-size-sm);
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.subtitle {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-1);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-3);
+}
+
+.infoLabel {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-1);
+}
+
+.infoValue {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-primary);
+}
+
+.mapperHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-4);
+}
+
+.mapperSubtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.unsavedBadge {
+  font-size: var(--font-size-xs);
+  background-color: var(--color-accent-light);
+  color: var(--color-accent-text);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.addControlBar {
+  display: flex;
+  align-items: flex-end;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background-color: var(--color-bg-alt);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-5);
+}
+
+.sequenceList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.sequenceRow {
+  display: flex;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  gap: var(--space-4);
+  transition: all var(--transition-fast);
+}
+
+.sequenceRow:hover {
+  border-color: var(--color-accent);
+}
+
+.stepBadge {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: var(--color-text-inverse);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.procInfo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex: 1;
+}
+
+.procCode {
+  font-family: monospace;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-alt);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.procName {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  font-weight: var(--font-weight-medium);
+}
+
+.deptBadge {
+  font-size: var(--font-size-xs);
+  background-color: var(--color-accent-light);
+  color: var(--color-accent-text);
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.reorderActions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}

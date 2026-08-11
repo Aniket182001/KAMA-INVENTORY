@@ -1,0 +1,113 @@
+// ==============================================
+// KAMA Production Monitor - Database Schema
+// ==============================================
+// Phase 1 MVP: Master data foundation
+// SQLite configured for zero-setup local development
+// Easily switchable to PostgreSQL via provider = "postgresql"
+// ==============================================
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+// ---- Customer Master ----
+// Minimal MVP fields: business ID and name only.
+model Customer {
+  id         String   @id @default(uuid())
+  customerId String   @unique // User-facing business ID (e.g. CUST-001)
+  name       String
+  notes      String?
+  isActive   Boolean  @default(true)
+  createdAt  DateTime @default(now())
+  updatedAt  DateTime @updatedAt
+
+  skus       Sku[]
+  rejections Rejection[]
+
+  @@map("customers")
+}
+
+// ---- SKU Master ----
+// Each SKU belongs to one Customer.
+// Process routing is via SkuProcess join table.
+model Sku {
+  id          String   @id @default(uuid())
+  skuCode     String   @unique
+  name        String
+  category    String?
+  description String?
+  customerId  String
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  customer   Customer     @relation(fields: [customerId], references: [id])
+  processes  SkuProcess[]
+  rejections Rejection[]
+
+  @@map("skus")
+}
+
+// ---- Process / Work Centre Master ----
+// Stores KAMA's verified work-centre terminology.
+// NO ageing or buffer fields here — handled in future AgeingRule/BufferConfig.
+model Process {
+  id              String   @id @default(uuid())
+  processCode     String   @unique // e.g. WAXINJET, CASTING
+  processName     String // Display-friendly name
+  department      String? // Optional grouping
+  defaultSequence Int      @default(0) // Default ordering hint
+  description     String?
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  skuProcesses SkuProcess[]
+
+  @@map("processes")
+}
+
+// ---- SKU → Process Routing ----
+// Maps which processes apply to a given SKU and in what order.
+model SkuProcess {
+  id        String   @id @default(uuid())
+  skuId     String
+  processId String
+  sequence  Int // Order in this SKU's routing
+  notes     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sku     Sku     @relation(fields: [skuId], references: [id])
+  process Process @relation(fields: [processId], references: [id])
+
+  @@unique([skuId, processId])
+  @@unique([skuId, sequence])
+  @@map("sku_processes")
+}
+
+// ---- Rejection Log ----
+// MVP module for tracking rejection/rework.
+// Treated as temporary/master-data support.
+model Rejection {
+  id                 String   @id @default(uuid())
+  customerId         String
+  skuId              String?
+  productionOrderRef String? // Free text PO/Batch reference
+  rejectionCount     Int
+  rejectionReason    String
+  rejectionDate      DateTime
+  notes              String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  customer Customer @relation(fields: [customerId], references: [id])
+  sku      Sku?     @relation(fields: [skuId], references: [id])
+
+  @@map("rejections")
+}

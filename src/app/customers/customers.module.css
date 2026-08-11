@@ -1,0 +1,76 @@
+.subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  margin-top: var(--space-1);
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-5);
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  user-select: none;
+}
+
+.codeLink {
+  font-family: monospace;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-accent-text);
+  text-decoration: none;
+  background-color: var(--color-accent-light);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.codeLink:hover {
+  text-decoration: underline;
+}
+
+.countBadge {
+  font-size: var(--font-size-xs);
+  background-color: var(--color-bg-alt);
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+  color: var(--color-text-secondary);
+}
+
+.mutedText {
+  color: var(--color-text-muted);
+}
+
+.actionButtons {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.formError {
+  background-color: #FEE2E2;
+  color: var(--color-severity-danger);
+  padding: var(--space-3);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+}
+
+.modalActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+}

@@ -117,6 +117,96 @@ exports.Prisma.TransactionIsolationLevel = makeStrictEnum({
   Serializable: 'Serializable'
 });
 
+exports.Prisma.CustomerMasterFileScalarFieldEnum = {
+  id: 'id',
+  custId: 'custId',
+  custName: 'custName',
+  skuId: 'skuId',
+  skuName: 'skuName',
+  deliveryTimeDays: 'deliveryTimeDays',
+  skuType1: 'skuType1',
+  deliveryTime1Days: 'deliveryTime1Days',
+  skuType2: 'skuType2',
+  deliveryTime2Days: 'deliveryTime2Days',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.ProcessMasterFileScalarFieldEnum = {
+  id: 'id',
+  custId: 'custId',
+  skuType: 'skuType',
+  processes: 'processes',
+  cycleTimes: 'cycleTimes',
+  totalCycleTime: 'totalCycleTime',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.TransactionUploadBatchScalarFieldEnum = {
+  id: 'id',
+  fileName: 'fileName',
+  totalRows: 'totalRows',
+  validRows: 'validRows',
+  invalidRows: 'invalidRows',
+  status: 'status',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.TransactionMasterFileScalarFieldEnum = {
+  id: 'id',
+  uploadBatchId: 'uploadBatchId',
+  rawCustId: 'rawCustId',
+  rawProdOrderBatch: 'rawProdOrderBatch',
+  rawWorkCenter: 'rawWorkCenter',
+  rawSku: 'rawSku',
+  rawSkuType: 'rawSkuType',
+  rawEntryDate: 'rawEntryDate',
+  rawEntryTime: 'rawEntryTime',
+  rawExitDate: 'rawExitDate',
+  rawExitTime: 'rawExitTime',
+  prodOrder: 'prodOrder',
+  batch: 'batch',
+  entryTimestamp: 'entryTimestamp',
+  exitTimestamp: 'exitTimestamp',
+  actualProcessTime: 'actualProcessTime',
+  expectedCycleTime: 'expectedCycleTime',
+  delayHours: 'delayHours',
+  processStatus: 'processStatus',
+  isValid: 'isValid',
+  validationError: 'validationError',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.ProductionOrderSummaryScalarFieldEnum = {
+  id: 'id',
+  uploadBatchId: 'uploadBatchId',
+  prodOrder: 'prodOrder',
+  custId: 'custId',
+  sku: 'sku',
+  skuType: 'skuType',
+  numberOfBatches: 'numberOfBatches',
+  batchesList: 'batchesList',
+  totalActualTime: 'totalActualTime',
+  configuredTotalCT: 'configuredTotalCT',
+  totalDelay: 'totalDelay',
+  poStatus: 'poStatus',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
+exports.Prisma.ReportScalarFieldEnum = {
+  id: 'id',
+  reportName: 'reportName',
+  reportType: 'reportType',
+  description: 'description',
+  data: 'data',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.CustomerScalarFieldEnum = {
   id: 'id',
   customerId: 'customerId',
@@ -186,6 +276,12 @@ exports.Prisma.NullsOrder = {
 
 
 exports.Prisma.ModelName = {
+  CustomerMasterFile: 'CustomerMasterFile',
+  ProcessMasterFile: 'ProcessMasterFile',
+  TransactionUploadBatch: 'TransactionUploadBatch',
+  TransactionMasterFile: 'TransactionMasterFile',
+  ProductionOrderSummary: 'ProductionOrderSummary',
+  Report: 'Report',
   Customer: 'Customer',
   Sku: 'Sku',
   Process: 'Process',

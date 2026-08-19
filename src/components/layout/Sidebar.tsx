@@ -4,7 +4,10 @@ import { usePathname } from 'next/navigation';
 import styles from './Sidebar.module.css';
 
 const navItems = [
-  { label: 'Dashboard', href: '/', icon: '◫' },
+  { label: 'KAMA Welcome', href: '/', icon: '✧' },
+  { label: 'Main Screen', href: '/main', icon: '◫' },
+  { label: 'Master File', href: '/master-file', icon: '📁' },
+  { label: 'Dashboard', href: '/dashboard', icon: '📈' },
   { label: 'Customers', href: '/customers', icon: '◆' },
   { label: 'SKUs', href: '/skus', icon: '▦' },
   { label: 'Processes', href: '/processes', icon: '⚙' },

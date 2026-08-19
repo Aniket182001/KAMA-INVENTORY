@@ -1,9 +1,5 @@
 // ==============================================
-// KAMA Production Monitor - Database Schema
-// ==============================================
-// Phase 1 MVP: Master data foundation
-// SQLite configured for zero-setup local development
-// Easily switchable to PostgreSQL via provider = "postgresql"
+// KAMA Master File System - Database Schema
 // ==============================================
 
 generator client {
@@ -15,11 +11,146 @@ datasource db {
   provider = "sqlite"
 }
 
-// ---- Customer Master ----
-// Minimal MVP fields: business ID and name only.
+// ==============================================
+// 4 MAIN MASTER FILE TABLES
+// ==============================================
+
+// ---- 1. Customer Master File ----
+// Master File record created manually by the user
+model CustomerMasterFile {
+  id                String   @id // Manual generation - entered manually by user
+  custId            String   @unique // Name(5 digit)-Country(3 digit)-City(4 digit)-Location(4 digit) - Unique ID
+  custName          String // Customer Name
+  skuId             String // SKU ID
+  skuName           String? // Primary / fallback SKU Name
+  deliveryTimeDays  Int? // Primary / fallback Delivery Time
+  skuType1          String? // SKU Type 1: Necklace/ Bracelate | Ring/ Pendent/ Earing
+  deliveryTime1Days Int? // Delivery Time 1 (Days)
+  skuType2          String? // SKU Type 2: Necklace/ Bracelate | Ring/ Pendent/ Earing
+  deliveryTime2Days Int? // Delivery Time 2 (Days)
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  @@map("customer_master_files")
+}
+
+// ---- 2. Process Master File ----
+// Process routing and cycle time configuration per CUST ID and SKU Type
+model ProcessMasterFile {
+  id             String   @id @default(uuid())
+  custId         String // Reference to CustomerMasterFile.custId
+  skuType        String // 'Necklace/ Bracelate' | 'Ring / Pendant / Earing' | 'Silver' | 'Findings'
+  processes      String // JSON array of selected process labels e.g. ["01 - WAXINJET", "07 - CASTING"]
+  cycleTimes     String // JSON map of process label to cycle time e.g. {"01 - WAXINJET": 2, "07 - CASTING": 3}
+  totalCycleTime Float?   @default(0) // Sum of cycle times
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  @@unique([custId, skuType])
+  @@map("process_master_files")
+}
+
+// ---- 3. Transaction Upload Batch ----
+// Represents an uploaded transaction dataset batch
+model TransactionUploadBatch {
+  id          String   @id @default(uuid())
+  fileName    String // Uploaded file name
+  totalRows   Int      @default(0)
+  validRows   Int      @default(0)
+  invalidRows Int      @default(0)
+  status      String   @default("SUBMITTED") // DRAFT | SUBMITTED
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  transactions TransactionMasterFile[]
+  poSummaries  ProductionOrderSummary[]
+
+  @@map("transaction_upload_batches")
+}
+
+// ---- 3b. Transaction Master File ----
+// Process-level transaction records with source data preservation & timing analysis
+model TransactionMasterFile {
+  id                String  @id @default(uuid())
+  uploadBatchId     String // Foreign reference to TransactionUploadBatch
+  rawCustId         String? // Original uploaded CUST ID
+  rawProdOrderBatch String? // Original uploaded Prod Order - Batch
+  rawWorkCenter     String? // Original uploaded Work Center
+  rawSku            String? // Original uploaded SKU
+  rawSkuType        String? // Original uploaded SKU Type
+  rawEntryDate      String? // Original uploaded Entry Date
+  rawEntryTime      String? // Original uploaded Entry Time
+  rawExitDate       String? // Original uploaded Exit Date
+  rawExitTime       String? // Original uploaded Exit Time
+
+  // Derived Fields
+  prodOrder         String? // First 7 digits of Prod Order - Batch
+  batch             String? // Last 3 digits of Prod Order - Batch (Production Batch 001/002)
+  entryTimestamp    DateTime? // Combined Entry Date + Time
+  exitTimestamp     DateTime? // Combined Exit Date + Time
+  actualProcessTime Float? // Calculated actual turnaround time (in hours)
+  expectedCycleTime Float? // Configured cycle time from Process Master File (in hours)
+  delayHours        Float?    @default(0) // max(0, actual - expected)
+  processStatus     String?   @default("NORMAL") // 'NORMAL' | 'FLAG'
+  isValid           Boolean   @default(true)
+  validationError   String?
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+
+  uploadBatch TransactionUploadBatch @relation(fields: [uploadBatchId], references: [id], onDelete: Cascade)
+
+  @@index([uploadBatchId])
+  @@index([prodOrder])
+  @@index([rawCustId])
+  @@map("transaction_master_files")
+}
+
+// ---- 3c. Production Order Summary ----
+// PO-level aggregated analysis across all batches & processes
+model ProductionOrderSummary {
+  id                String   @id @default(uuid())
+  uploadBatchId     String // Foreign reference to TransactionUploadBatch
+  prodOrder         String // 7-digit Production Order
+  custId            String // Reference CUST ID
+  sku               String? // SKU
+  skuType           String // SKU Type
+  numberOfBatches   Int      @default(1) // Count of distinct production batches e.g. 001, 002
+  batchesList       String? // JSON array string e.g. '["001", "002"]'
+  totalActualTime   Float    @default(0) // Total actual time across all batches (in hours)
+  configuredTotalCT Float? // Configured total cycle time from Process Master File (in hours)
+  totalDelay        Float    @default(0) // max(0, totalActualTime - configuredTotalCT)
+  poStatus          String   @default("NORMAL") // 'NORMAL' | 'FLAG'
+  createdAt         DateTime @default(now())
+  updatedAt         DateTime @updatedAt
+
+  uploadBatch TransactionUploadBatch @relation(fields: [uploadBatchId], references: [id], onDelete: Cascade)
+
+  @@index([uploadBatchId])
+  @@index([prodOrder])
+  @@map("production_order_summaries")
+}
+
+// ---- 4. Reports ----
+// Database structure prepared for future reports extension
+model Report {
+  id          String   @id @default(uuid())
+  reportName  String
+  reportType  String?
+  description String?
+  data        String? // JSON payload
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("reports")
+}
+
+// ==============================================
+// LEGACY COMPATIBILITY MODELS (PRESERVED)
+// ==============================================
+
 model Customer {
   id         String   @id @default(uuid())
-  customerId String   @unique // User-facing business ID (e.g. CUST-001)
+  customerId String   @unique
   name       String
   notes      String?
   isActive   Boolean  @default(true)
@@ -32,9 +163,6 @@ model Customer {
   @@map("customers")
 }
 
-// ---- SKU Master ----
-// Each SKU belongs to one Customer.
-// Process routing is via SkuProcess join table.
 model Sku {
   id          String   @id @default(uuid())
   skuCode     String   @unique
@@ -53,15 +181,12 @@ model Sku {
   @@map("skus")
 }
 
-// ---- Process / Work Centre Master ----
-// Stores KAMA's verified work-centre terminology.
-// NO ageing or buffer fields here — handled in future AgeingRule/BufferConfig.
 model Process {
   id              String   @id @default(uuid())
-  processCode     String   @unique // e.g. WAXINJET, CASTING
-  processName     String // Display-friendly name
-  department      String? // Optional grouping
-  defaultSequence Int      @default(0) // Default ordering hint
+  processCode     String   @unique
+  processName     String
+  department      String?
+  defaultSequence Int      @default(0)
   description     String?
   isActive        Boolean  @default(true)
   createdAt       DateTime @default(now())
@@ -72,13 +197,11 @@ model Process {
   @@map("processes")
 }
 
-// ---- SKU → Process Routing ----
-// Maps which processes apply to a given SKU and in what order.
 model SkuProcess {
   id        String   @id @default(uuid())
   skuId     String
   processId String
-  sequence  Int // Order in this SKU's routing
+  sequence  Int
   notes     String?
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
@@ -91,14 +214,11 @@ model SkuProcess {
   @@map("sku_processes")
 }
 
-// ---- Rejection Log ----
-// MVP module for tracking rejection/rework.
-// Treated as temporary/master-data support.
 model Rejection {
   id                 String   @id @default(uuid())
   customerId         String
   skuId              String?
-  productionOrderRef String? // Free text PO/Batch reference
+  productionOrderRef String?
   rejectionCount     Int
   rejectionReason    String
   rejectionDate      DateTime

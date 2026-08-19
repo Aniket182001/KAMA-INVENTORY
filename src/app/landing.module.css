@@ -1,0 +1,130 @@
+.landingWrapper {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-4);
+  background-color: var(--color-bg);
+}
+
+.heroContainer {
+  max-width: 760px;
+  width: 100%;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-12) var(--space-8);
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.03);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.emblemContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  width: 100%;
+  max-width: 260px;
+}
+
+.emblemLine {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-accent), transparent);
+}
+
+.emblemDiamond {
+  color: var(--color-accent);
+  font-size: var(--font-size-sm);
+  line-height: 1;
+}
+
+.brandTitle {
+  font-size: clamp(3.75rem, 9vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: 0.28em;
+  color: #1A1A1A;
+  margin: 0;
+  padding-left: 0.28em; /* optical alignment for tracked text */
+  line-height: 1.1;
+  text-transform: uppercase;
+}
+
+.brandSubtitle {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  color: var(--color-accent-text);
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-2);
+  text-transform: uppercase;
+}
+
+.brandDescription {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  max-width: 480px;
+  margin: 0 auto var(--space-8) auto;
+  line-height: var(--line-height-relaxed);
+}
+
+.ctaContainer {
+  margin-bottom: var(--space-8);
+}
+
+.enterButton {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  background-color: #1A1A1A;
+  color: #FFFFFF;
+  padding: 14px 32px;
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-decoration: none;
+  border: 1px solid #1A1A1A;
+  transition: all var(--transition-base);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+  cursor: pointer;
+}
+
+.enterButton:hover {
+  background-color: #2D3748;
+  border-color: #2D3748;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
+  text-decoration: none;
+}
+
+.enterButtonText {
+  color: #FFFFFF;
+  font-weight: 600;
+}
+
+.enterButtonArrow {
+  color: var(--color-accent);
+  font-size: 1.25rem;
+  transition: transform var(--transition-base);
+}
+
+.enterButton:hover .enterButtonArrow {
+  transform: translateX(4px);
+}
+
+.landingFooter {
+  border-top: 1px solid var(--color-border-light);
+  padding-top: var(--space-4);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  width: 100%;
+}

@@ -14,6 +14,36 @@ export type PrismaPromise<T> = $Public.PrismaPromise<T>
 
 
 /**
+ * Model CustomerMasterFile
+ * 
+ */
+export type CustomerMasterFile = $Result.DefaultSelection<Prisma.$CustomerMasterFilePayload>
+/**
+ * Model ProcessMasterFile
+ * 
+ */
+export type ProcessMasterFile = $Result.DefaultSelection<Prisma.$ProcessMasterFilePayload>
+/**
+ * Model TransactionUploadBatch
+ * 
+ */
+export type TransactionUploadBatch = $Result.DefaultSelection<Prisma.$TransactionUploadBatchPayload>
+/**
+ * Model TransactionMasterFile
+ * 
+ */
+export type TransactionMasterFile = $Result.DefaultSelection<Prisma.$TransactionMasterFilePayload>
+/**
+ * Model ProductionOrderSummary
+ * 
+ */
+export type ProductionOrderSummary = $Result.DefaultSelection<Prisma.$ProductionOrderSummaryPayload>
+/**
+ * Model Report
+ * 
+ */
+export type Report = $Result.DefaultSelection<Prisma.$ReportPayload>
+/**
  * Model Customer
  * 
  */
@@ -48,8 +78,8 @@ export type Rejection = $Result.DefaultSelection<Prisma.$RejectionPayload>
  * const prisma = new PrismaClient({
  *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
  * })
- * // Fetch zero or more Customers
- * const customers = await prisma.customer.findMany()
+ * // Fetch zero or more CustomerMasterFiles
+ * const customerMasterFiles = await prisma.customerMasterFile.findMany()
  * ```
  *
  *
@@ -71,8 +101,8 @@ export class PrismaClient<
    * const prisma = new PrismaClient({
    *   adapter: new PrismaPg({ connectionString: process.env.DATABASE_URL })
    * })
-   * // Fetch zero or more Customers
-   * const customers = await prisma.customer.findMany()
+   * // Fetch zero or more CustomerMasterFiles
+   * const customerMasterFiles = await prisma.customerMasterFile.findMany()
    * ```
    *
    *
@@ -161,6 +191,66 @@ export class PrismaClient<
   }>>
 
       /**
+   * `prisma.customerMasterFile`: Exposes CRUD operations for the **CustomerMasterFile** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more CustomerMasterFiles
+    * const customerMasterFiles = await prisma.customerMasterFile.findMany()
+    * ```
+    */
+  get customerMasterFile(): Prisma.CustomerMasterFileDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.processMasterFile`: Exposes CRUD operations for the **ProcessMasterFile** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more ProcessMasterFiles
+    * const processMasterFiles = await prisma.processMasterFile.findMany()
+    * ```
+    */
+  get processMasterFile(): Prisma.ProcessMasterFileDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.transactionUploadBatch`: Exposes CRUD operations for the **TransactionUploadBatch** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more TransactionUploadBatches
+    * const transactionUploadBatches = await prisma.transactionUploadBatch.findMany()
+    * ```
+    */
+  get transactionUploadBatch(): Prisma.TransactionUploadBatchDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.transactionMasterFile`: Exposes CRUD operations for the **TransactionMasterFile** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more TransactionMasterFiles
+    * const transactionMasterFiles = await prisma.transactionMasterFile.findMany()
+    * ```
+    */
+  get transactionMasterFile(): Prisma.TransactionMasterFileDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.productionOrderSummary`: Exposes CRUD operations for the **ProductionOrderSummary** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more ProductionOrderSummaries
+    * const productionOrderSummaries = await prisma.productionOrderSummary.findMany()
+    * ```
+    */
+  get productionOrderSummary(): Prisma.ProductionOrderSummaryDelegate<ExtArgs, ClientOptions>;
+
+  /**
+   * `prisma.report`: Exposes CRUD operations for the **Report** model.
+    * Example usage:
+    * ```ts
+    * // Fetch zero or more Reports
+    * const reports = await prisma.report.findMany()
+    * ```
+    */
+  get report(): Prisma.ReportDelegate<ExtArgs, ClientOptions>;
+
+  /**
    * `prisma.customer`: Exposes CRUD operations for the **Customer** model.
     * Example usage:
     * ```ts
@@ -656,6 +746,12 @@ export namespace Prisma {
 
 
   export const ModelName: {
+    CustomerMasterFile: 'CustomerMasterFile',
+    ProcessMasterFile: 'ProcessMasterFile',
+    TransactionUploadBatch: 'TransactionUploadBatch',
+    TransactionMasterFile: 'TransactionMasterFile',
+    ProductionOrderSummary: 'ProductionOrderSummary',
+    Report: 'Report',
     Customer: 'Customer',
     Sku: 'Sku',
     Process: 'Process',
@@ -676,10 +772,454 @@ export namespace Prisma {
       omit: GlobalOmitOptions
     }
     meta: {
-      modelProps: "customer" | "sku" | "process" | "skuProcess" | "rejection"
+      modelProps: "customerMasterFile" | "processMasterFile" | "transactionUploadBatch" | "transactionMasterFile" | "productionOrderSummary" | "report" | "customer" | "sku" | "process" | "skuProcess" | "rejection"
       txIsolationLevel: Prisma.TransactionIsolationLevel
     }
     model: {
+      CustomerMasterFile: {
+        payload: Prisma.$CustomerMasterFilePayload<ExtArgs>
+        fields: Prisma.CustomerMasterFileFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.CustomerMasterFileFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerMasterFilePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.CustomerMasterFileFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerMasterFilePayload>
+          }
+          findFirst: {
+            args: Prisma.CustomerMasterFileFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerMasterFilePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.CustomerMasterFileFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerMasterFilePayload>
+          }
+          findMany: {
+            args: Prisma.CustomerMasterFileFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerMasterFilePayload>[]
+          }
+          create: {
+            args: Prisma.CustomerMasterFileCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerMasterFilePayload>
+          }
+          createMany: {
+            args: Prisma.CustomerMasterFileCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.CustomerMasterFileCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerMasterFilePayload>[]
+          }
+          delete: {
+            args: Prisma.CustomerMasterFileDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerMasterFilePayload>
+          }
+          update: {
+            args: Prisma.CustomerMasterFileUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerMasterFilePayload>
+          }
+          deleteMany: {
+            args: Prisma.CustomerMasterFileDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.CustomerMasterFileUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.CustomerMasterFileUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerMasterFilePayload>[]
+          }
+          upsert: {
+            args: Prisma.CustomerMasterFileUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$CustomerMasterFilePayload>
+          }
+          aggregate: {
+            args: Prisma.CustomerMasterFileAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateCustomerMasterFile>
+          }
+          groupBy: {
+            args: Prisma.CustomerMasterFileGroupByArgs<ExtArgs>
+            result: $Utils.Optional<CustomerMasterFileGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.CustomerMasterFileCountArgs<ExtArgs>
+            result: $Utils.Optional<CustomerMasterFileCountAggregateOutputType> | number
+          }
+        }
+      }
+      ProcessMasterFile: {
+        payload: Prisma.$ProcessMasterFilePayload<ExtArgs>
+        fields: Prisma.ProcessMasterFileFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ProcessMasterFileFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcessMasterFilePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ProcessMasterFileFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcessMasterFilePayload>
+          }
+          findFirst: {
+            args: Prisma.ProcessMasterFileFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcessMasterFilePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ProcessMasterFileFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcessMasterFilePayload>
+          }
+          findMany: {
+            args: Prisma.ProcessMasterFileFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcessMasterFilePayload>[]
+          }
+          create: {
+            args: Prisma.ProcessMasterFileCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcessMasterFilePayload>
+          }
+          createMany: {
+            args: Prisma.ProcessMasterFileCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ProcessMasterFileCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcessMasterFilePayload>[]
+          }
+          delete: {
+            args: Prisma.ProcessMasterFileDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcessMasterFilePayload>
+          }
+          update: {
+            args: Prisma.ProcessMasterFileUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcessMasterFilePayload>
+          }
+          deleteMany: {
+            args: Prisma.ProcessMasterFileDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ProcessMasterFileUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ProcessMasterFileUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcessMasterFilePayload>[]
+          }
+          upsert: {
+            args: Prisma.ProcessMasterFileUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProcessMasterFilePayload>
+          }
+          aggregate: {
+            args: Prisma.ProcessMasterFileAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateProcessMasterFile>
+          }
+          groupBy: {
+            args: Prisma.ProcessMasterFileGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ProcessMasterFileGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ProcessMasterFileCountArgs<ExtArgs>
+            result: $Utils.Optional<ProcessMasterFileCountAggregateOutputType> | number
+          }
+        }
+      }
+      TransactionUploadBatch: {
+        payload: Prisma.$TransactionUploadBatchPayload<ExtArgs>
+        fields: Prisma.TransactionUploadBatchFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.TransactionUploadBatchFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionUploadBatchPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.TransactionUploadBatchFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionUploadBatchPayload>
+          }
+          findFirst: {
+            args: Prisma.TransactionUploadBatchFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionUploadBatchPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.TransactionUploadBatchFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionUploadBatchPayload>
+          }
+          findMany: {
+            args: Prisma.TransactionUploadBatchFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionUploadBatchPayload>[]
+          }
+          create: {
+            args: Prisma.TransactionUploadBatchCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionUploadBatchPayload>
+          }
+          createMany: {
+            args: Prisma.TransactionUploadBatchCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.TransactionUploadBatchCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionUploadBatchPayload>[]
+          }
+          delete: {
+            args: Prisma.TransactionUploadBatchDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionUploadBatchPayload>
+          }
+          update: {
+            args: Prisma.TransactionUploadBatchUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionUploadBatchPayload>
+          }
+          deleteMany: {
+            args: Prisma.TransactionUploadBatchDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.TransactionUploadBatchUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.TransactionUploadBatchUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionUploadBatchPayload>[]
+          }
+          upsert: {
+            args: Prisma.TransactionUploadBatchUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionUploadBatchPayload>
+          }
+          aggregate: {
+            args: Prisma.TransactionUploadBatchAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTransactionUploadBatch>
+          }
+          groupBy: {
+            args: Prisma.TransactionUploadBatchGroupByArgs<ExtArgs>
+            result: $Utils.Optional<TransactionUploadBatchGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.TransactionUploadBatchCountArgs<ExtArgs>
+            result: $Utils.Optional<TransactionUploadBatchCountAggregateOutputType> | number
+          }
+        }
+      }
+      TransactionMasterFile: {
+        payload: Prisma.$TransactionMasterFilePayload<ExtArgs>
+        fields: Prisma.TransactionMasterFileFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.TransactionMasterFileFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionMasterFilePayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.TransactionMasterFileFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionMasterFilePayload>
+          }
+          findFirst: {
+            args: Prisma.TransactionMasterFileFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionMasterFilePayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.TransactionMasterFileFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionMasterFilePayload>
+          }
+          findMany: {
+            args: Prisma.TransactionMasterFileFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionMasterFilePayload>[]
+          }
+          create: {
+            args: Prisma.TransactionMasterFileCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionMasterFilePayload>
+          }
+          createMany: {
+            args: Prisma.TransactionMasterFileCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.TransactionMasterFileCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionMasterFilePayload>[]
+          }
+          delete: {
+            args: Prisma.TransactionMasterFileDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionMasterFilePayload>
+          }
+          update: {
+            args: Prisma.TransactionMasterFileUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionMasterFilePayload>
+          }
+          deleteMany: {
+            args: Prisma.TransactionMasterFileDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.TransactionMasterFileUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.TransactionMasterFileUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionMasterFilePayload>[]
+          }
+          upsert: {
+            args: Prisma.TransactionMasterFileUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$TransactionMasterFilePayload>
+          }
+          aggregate: {
+            args: Prisma.TransactionMasterFileAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateTransactionMasterFile>
+          }
+          groupBy: {
+            args: Prisma.TransactionMasterFileGroupByArgs<ExtArgs>
+            result: $Utils.Optional<TransactionMasterFileGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.TransactionMasterFileCountArgs<ExtArgs>
+            result: $Utils.Optional<TransactionMasterFileCountAggregateOutputType> | number
+          }
+        }
+      }
+      ProductionOrderSummary: {
+        payload: Prisma.$ProductionOrderSummaryPayload<ExtArgs>
+        fields: Prisma.ProductionOrderSummaryFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ProductionOrderSummaryFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductionOrderSummaryPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ProductionOrderSummaryFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductionOrderSummaryPayload>
+          }
+          findFirst: {
+            args: Prisma.ProductionOrderSummaryFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductionOrderSummaryPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ProductionOrderSummaryFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductionOrderSummaryPayload>
+          }
+          findMany: {
+            args: Prisma.ProductionOrderSummaryFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductionOrderSummaryPayload>[]
+          }
+          create: {
+            args: Prisma.ProductionOrderSummaryCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductionOrderSummaryPayload>
+          }
+          createMany: {
+            args: Prisma.ProductionOrderSummaryCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ProductionOrderSummaryCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductionOrderSummaryPayload>[]
+          }
+          delete: {
+            args: Prisma.ProductionOrderSummaryDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductionOrderSummaryPayload>
+          }
+          update: {
+            args: Prisma.ProductionOrderSummaryUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductionOrderSummaryPayload>
+          }
+          deleteMany: {
+            args: Prisma.ProductionOrderSummaryDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ProductionOrderSummaryUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ProductionOrderSummaryUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductionOrderSummaryPayload>[]
+          }
+          upsert: {
+            args: Prisma.ProductionOrderSummaryUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ProductionOrderSummaryPayload>
+          }
+          aggregate: {
+            args: Prisma.ProductionOrderSummaryAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateProductionOrderSummary>
+          }
+          groupBy: {
+            args: Prisma.ProductionOrderSummaryGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ProductionOrderSummaryGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ProductionOrderSummaryCountArgs<ExtArgs>
+            result: $Utils.Optional<ProductionOrderSummaryCountAggregateOutputType> | number
+          }
+        }
+      }
+      Report: {
+        payload: Prisma.$ReportPayload<ExtArgs>
+        fields: Prisma.ReportFieldRefs
+        operations: {
+          findUnique: {
+            args: Prisma.ReportFindUniqueArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ReportPayload> | null
+          }
+          findUniqueOrThrow: {
+            args: Prisma.ReportFindUniqueOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ReportPayload>
+          }
+          findFirst: {
+            args: Prisma.ReportFindFirstArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ReportPayload> | null
+          }
+          findFirstOrThrow: {
+            args: Prisma.ReportFindFirstOrThrowArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ReportPayload>
+          }
+          findMany: {
+            args: Prisma.ReportFindManyArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ReportPayload>[]
+          }
+          create: {
+            args: Prisma.ReportCreateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ReportPayload>
+          }
+          createMany: {
+            args: Prisma.ReportCreateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          createManyAndReturn: {
+            args: Prisma.ReportCreateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ReportPayload>[]
+          }
+          delete: {
+            args: Prisma.ReportDeleteArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ReportPayload>
+          }
+          update: {
+            args: Prisma.ReportUpdateArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ReportPayload>
+          }
+          deleteMany: {
+            args: Prisma.ReportDeleteManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateMany: {
+            args: Prisma.ReportUpdateManyArgs<ExtArgs>
+            result: BatchPayload
+          }
+          updateManyAndReturn: {
+            args: Prisma.ReportUpdateManyAndReturnArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ReportPayload>[]
+          }
+          upsert: {
+            args: Prisma.ReportUpsertArgs<ExtArgs>
+            result: $Utils.PayloadToResult<Prisma.$ReportPayload>
+          }
+          aggregate: {
+            args: Prisma.ReportAggregateArgs<ExtArgs>
+            result: $Utils.Optional<AggregateReport>
+          }
+          groupBy: {
+            args: Prisma.ReportGroupByArgs<ExtArgs>
+            result: $Utils.Optional<ReportGroupByOutputType>[]
+          }
+          count: {
+            args: Prisma.ReportCountArgs<ExtArgs>
+            result: $Utils.Optional<ReportCountAggregateOutputType> | number
+          }
+        }
+      }
       Customer: {
         payload: Prisma.$CustomerPayload<ExtArgs>
         fields: Prisma.CustomerFieldRefs
@@ -1173,6 +1713,12 @@ export namespace Prisma {
     comments?: runtime.SqlCommenterPlugin[]
   }
   export type GlobalOmitConfig = {
+    customerMasterFile?: CustomerMasterFileOmit
+    processMasterFile?: ProcessMasterFileOmit
+    transactionUploadBatch?: TransactionUploadBatchOmit
+    transactionMasterFile?: TransactionMasterFileOmit
+    productionOrderSummary?: ProductionOrderSummaryOmit
+    report?: ReportOmit
     customer?: CustomerOmit
     sku?: SkuOmit
     process?: ProcessOmit
@@ -1251,6 +1797,46 @@ export namespace Prisma {
   /**
    * Count Types
    */
+
+
+  /**
+   * Count Type TransactionUploadBatchCountOutputType
+   */
+
+  export type TransactionUploadBatchCountOutputType = {
+    transactions: number
+    poSummaries: number
+  }
+
+  export type TransactionUploadBatchCountOutputTypeSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    transactions?: boolean | TransactionUploadBatchCountOutputTypeCountTransactionsArgs
+    poSummaries?: boolean | TransactionUploadBatchCountOutputTypeCountPoSummariesArgs
+  }
+
+  // Custom InputTypes
+  /**
+   * TransactionUploadBatchCountOutputType without action
+   */
+  export type TransactionUploadBatchCountOutputTypeDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionUploadBatchCountOutputType
+     */
+    select?: TransactionUploadBatchCountOutputTypeSelect<ExtArgs> | null
+  }
+
+  /**
+   * TransactionUploadBatchCountOutputType without action
+   */
+  export type TransactionUploadBatchCountOutputTypeCountTransactionsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TransactionMasterFileWhereInput
+  }
+
+  /**
+   * TransactionUploadBatchCountOutputType without action
+   */
+  export type TransactionUploadBatchCountOutputTypeCountPoSummariesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProductionOrderSummaryWhereInput
+  }
 
 
   /**
@@ -1367,6 +1953,6975 @@ export namespace Prisma {
   /**
    * Models
    */
+
+  /**
+   * Model CustomerMasterFile
+   */
+
+  export type AggregateCustomerMasterFile = {
+    _count: CustomerMasterFileCountAggregateOutputType | null
+    _avg: CustomerMasterFileAvgAggregateOutputType | null
+    _sum: CustomerMasterFileSumAggregateOutputType | null
+    _min: CustomerMasterFileMinAggregateOutputType | null
+    _max: CustomerMasterFileMaxAggregateOutputType | null
+  }
+
+  export type CustomerMasterFileAvgAggregateOutputType = {
+    deliveryTimeDays: number | null
+    deliveryTime1Days: number | null
+    deliveryTime2Days: number | null
+  }
+
+  export type CustomerMasterFileSumAggregateOutputType = {
+    deliveryTimeDays: number | null
+    deliveryTime1Days: number | null
+    deliveryTime2Days: number | null
+  }
+
+  export type CustomerMasterFileMinAggregateOutputType = {
+    id: string | null
+    custId: string | null
+    custName: string | null
+    skuId: string | null
+    skuName: string | null
+    deliveryTimeDays: number | null
+    skuType1: string | null
+    deliveryTime1Days: number | null
+    skuType2: string | null
+    deliveryTime2Days: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type CustomerMasterFileMaxAggregateOutputType = {
+    id: string | null
+    custId: string | null
+    custName: string | null
+    skuId: string | null
+    skuName: string | null
+    deliveryTimeDays: number | null
+    skuType1: string | null
+    deliveryTime1Days: number | null
+    skuType2: string | null
+    deliveryTime2Days: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type CustomerMasterFileCountAggregateOutputType = {
+    id: number
+    custId: number
+    custName: number
+    skuId: number
+    skuName: number
+    deliveryTimeDays: number
+    skuType1: number
+    deliveryTime1Days: number
+    skuType2: number
+    deliveryTime2Days: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type CustomerMasterFileAvgAggregateInputType = {
+    deliveryTimeDays?: true
+    deliveryTime1Days?: true
+    deliveryTime2Days?: true
+  }
+
+  export type CustomerMasterFileSumAggregateInputType = {
+    deliveryTimeDays?: true
+    deliveryTime1Days?: true
+    deliveryTime2Days?: true
+  }
+
+  export type CustomerMasterFileMinAggregateInputType = {
+    id?: true
+    custId?: true
+    custName?: true
+    skuId?: true
+    skuName?: true
+    deliveryTimeDays?: true
+    skuType1?: true
+    deliveryTime1Days?: true
+    skuType2?: true
+    deliveryTime2Days?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type CustomerMasterFileMaxAggregateInputType = {
+    id?: true
+    custId?: true
+    custName?: true
+    skuId?: true
+    skuName?: true
+    deliveryTimeDays?: true
+    skuType1?: true
+    deliveryTime1Days?: true
+    skuType2?: true
+    deliveryTime2Days?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type CustomerMasterFileCountAggregateInputType = {
+    id?: true
+    custId?: true
+    custName?: true
+    skuId?: true
+    skuName?: true
+    deliveryTimeDays?: true
+    skuType1?: true
+    deliveryTime1Days?: true
+    skuType2?: true
+    deliveryTime2Days?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type CustomerMasterFileAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which CustomerMasterFile to aggregate.
+     */
+    where?: CustomerMasterFileWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CustomerMasterFiles to fetch.
+     */
+    orderBy?: CustomerMasterFileOrderByWithRelationInput | CustomerMasterFileOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: CustomerMasterFileWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CustomerMasterFiles from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CustomerMasterFiles.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned CustomerMasterFiles
+    **/
+    _count?: true | CustomerMasterFileCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: CustomerMasterFileAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: CustomerMasterFileSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: CustomerMasterFileMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: CustomerMasterFileMaxAggregateInputType
+  }
+
+  export type GetCustomerMasterFileAggregateType<T extends CustomerMasterFileAggregateArgs> = {
+        [P in keyof T & keyof AggregateCustomerMasterFile]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateCustomerMasterFile[P]>
+      : GetScalarType<T[P], AggregateCustomerMasterFile[P]>
+  }
+
+
+
+
+  export type CustomerMasterFileGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: CustomerMasterFileWhereInput
+    orderBy?: CustomerMasterFileOrderByWithAggregationInput | CustomerMasterFileOrderByWithAggregationInput[]
+    by: CustomerMasterFileScalarFieldEnum[] | CustomerMasterFileScalarFieldEnum
+    having?: CustomerMasterFileScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: CustomerMasterFileCountAggregateInputType | true
+    _avg?: CustomerMasterFileAvgAggregateInputType
+    _sum?: CustomerMasterFileSumAggregateInputType
+    _min?: CustomerMasterFileMinAggregateInputType
+    _max?: CustomerMasterFileMaxAggregateInputType
+  }
+
+  export type CustomerMasterFileGroupByOutputType = {
+    id: string
+    custId: string
+    custName: string
+    skuId: string
+    skuName: string | null
+    deliveryTimeDays: number | null
+    skuType1: string | null
+    deliveryTime1Days: number | null
+    skuType2: string | null
+    deliveryTime2Days: number | null
+    createdAt: Date
+    updatedAt: Date
+    _count: CustomerMasterFileCountAggregateOutputType | null
+    _avg: CustomerMasterFileAvgAggregateOutputType | null
+    _sum: CustomerMasterFileSumAggregateOutputType | null
+    _min: CustomerMasterFileMinAggregateOutputType | null
+    _max: CustomerMasterFileMaxAggregateOutputType | null
+  }
+
+  type GetCustomerMasterFileGroupByPayload<T extends CustomerMasterFileGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<CustomerMasterFileGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof CustomerMasterFileGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], CustomerMasterFileGroupByOutputType[P]>
+            : GetScalarType<T[P], CustomerMasterFileGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type CustomerMasterFileSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    custId?: boolean
+    custName?: boolean
+    skuId?: boolean
+    skuName?: boolean
+    deliveryTimeDays?: boolean
+    skuType1?: boolean
+    deliveryTime1Days?: boolean
+    skuType2?: boolean
+    deliveryTime2Days?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["customerMasterFile"]>
+
+  export type CustomerMasterFileSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    custId?: boolean
+    custName?: boolean
+    skuId?: boolean
+    skuName?: boolean
+    deliveryTimeDays?: boolean
+    skuType1?: boolean
+    deliveryTime1Days?: boolean
+    skuType2?: boolean
+    deliveryTime2Days?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["customerMasterFile"]>
+
+  export type CustomerMasterFileSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    custId?: boolean
+    custName?: boolean
+    skuId?: boolean
+    skuName?: boolean
+    deliveryTimeDays?: boolean
+    skuType1?: boolean
+    deliveryTime1Days?: boolean
+    skuType2?: boolean
+    deliveryTime2Days?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["customerMasterFile"]>
+
+  export type CustomerMasterFileSelectScalar = {
+    id?: boolean
+    custId?: boolean
+    custName?: boolean
+    skuId?: boolean
+    skuName?: boolean
+    deliveryTimeDays?: boolean
+    skuType1?: boolean
+    deliveryTime1Days?: boolean
+    skuType2?: boolean
+    deliveryTime2Days?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type CustomerMasterFileOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "custId" | "custName" | "skuId" | "skuName" | "deliveryTimeDays" | "skuType1" | "deliveryTime1Days" | "skuType2" | "deliveryTime2Days" | "createdAt" | "updatedAt", ExtArgs["result"]["customerMasterFile"]>
+
+  export type $CustomerMasterFilePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "CustomerMasterFile"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      custId: string
+      custName: string
+      skuId: string
+      skuName: string | null
+      deliveryTimeDays: number | null
+      skuType1: string | null
+      deliveryTime1Days: number | null
+      skuType2: string | null
+      deliveryTime2Days: number | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["customerMasterFile"]>
+    composites: {}
+  }
+
+  type CustomerMasterFileGetPayload<S extends boolean | null | undefined | CustomerMasterFileDefaultArgs> = $Result.GetResult<Prisma.$CustomerMasterFilePayload, S>
+
+  type CustomerMasterFileCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<CustomerMasterFileFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: CustomerMasterFileCountAggregateInputType | true
+    }
+
+  export interface CustomerMasterFileDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['CustomerMasterFile'], meta: { name: 'CustomerMasterFile' } }
+    /**
+     * Find zero or one CustomerMasterFile that matches the filter.
+     * @param {CustomerMasterFileFindUniqueArgs} args - Arguments to find a CustomerMasterFile
+     * @example
+     * // Get one CustomerMasterFile
+     * const customerMasterFile = await prisma.customerMasterFile.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends CustomerMasterFileFindUniqueArgs>(args: SelectSubset<T, CustomerMasterFileFindUniqueArgs<ExtArgs>>): Prisma__CustomerMasterFileClient<$Result.GetResult<Prisma.$CustomerMasterFilePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one CustomerMasterFile that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {CustomerMasterFileFindUniqueOrThrowArgs} args - Arguments to find a CustomerMasterFile
+     * @example
+     * // Get one CustomerMasterFile
+     * const customerMasterFile = await prisma.customerMasterFile.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends CustomerMasterFileFindUniqueOrThrowArgs>(args: SelectSubset<T, CustomerMasterFileFindUniqueOrThrowArgs<ExtArgs>>): Prisma__CustomerMasterFileClient<$Result.GetResult<Prisma.$CustomerMasterFilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first CustomerMasterFile that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CustomerMasterFileFindFirstArgs} args - Arguments to find a CustomerMasterFile
+     * @example
+     * // Get one CustomerMasterFile
+     * const customerMasterFile = await prisma.customerMasterFile.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends CustomerMasterFileFindFirstArgs>(args?: SelectSubset<T, CustomerMasterFileFindFirstArgs<ExtArgs>>): Prisma__CustomerMasterFileClient<$Result.GetResult<Prisma.$CustomerMasterFilePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first CustomerMasterFile that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CustomerMasterFileFindFirstOrThrowArgs} args - Arguments to find a CustomerMasterFile
+     * @example
+     * // Get one CustomerMasterFile
+     * const customerMasterFile = await prisma.customerMasterFile.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends CustomerMasterFileFindFirstOrThrowArgs>(args?: SelectSubset<T, CustomerMasterFileFindFirstOrThrowArgs<ExtArgs>>): Prisma__CustomerMasterFileClient<$Result.GetResult<Prisma.$CustomerMasterFilePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more CustomerMasterFiles that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CustomerMasterFileFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all CustomerMasterFiles
+     * const customerMasterFiles = await prisma.customerMasterFile.findMany()
+     * 
+     * // Get first 10 CustomerMasterFiles
+     * const customerMasterFiles = await prisma.customerMasterFile.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const customerMasterFileWithIdOnly = await prisma.customerMasterFile.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends CustomerMasterFileFindManyArgs>(args?: SelectSubset<T, CustomerMasterFileFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CustomerMasterFilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a CustomerMasterFile.
+     * @param {CustomerMasterFileCreateArgs} args - Arguments to create a CustomerMasterFile.
+     * @example
+     * // Create one CustomerMasterFile
+     * const CustomerMasterFile = await prisma.customerMasterFile.create({
+     *   data: {
+     *     // ... data to create a CustomerMasterFile
+     *   }
+     * })
+     * 
+     */
+    create<T extends CustomerMasterFileCreateArgs>(args: SelectSubset<T, CustomerMasterFileCreateArgs<ExtArgs>>): Prisma__CustomerMasterFileClient<$Result.GetResult<Prisma.$CustomerMasterFilePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many CustomerMasterFiles.
+     * @param {CustomerMasterFileCreateManyArgs} args - Arguments to create many CustomerMasterFiles.
+     * @example
+     * // Create many CustomerMasterFiles
+     * const customerMasterFile = await prisma.customerMasterFile.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends CustomerMasterFileCreateManyArgs>(args?: SelectSubset<T, CustomerMasterFileCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many CustomerMasterFiles and returns the data saved in the database.
+     * @param {CustomerMasterFileCreateManyAndReturnArgs} args - Arguments to create many CustomerMasterFiles.
+     * @example
+     * // Create many CustomerMasterFiles
+     * const customerMasterFile = await prisma.customerMasterFile.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many CustomerMasterFiles and only return the `id`
+     * const customerMasterFileWithIdOnly = await prisma.customerMasterFile.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends CustomerMasterFileCreateManyAndReturnArgs>(args?: SelectSubset<T, CustomerMasterFileCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CustomerMasterFilePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a CustomerMasterFile.
+     * @param {CustomerMasterFileDeleteArgs} args - Arguments to delete one CustomerMasterFile.
+     * @example
+     * // Delete one CustomerMasterFile
+     * const CustomerMasterFile = await prisma.customerMasterFile.delete({
+     *   where: {
+     *     // ... filter to delete one CustomerMasterFile
+     *   }
+     * })
+     * 
+     */
+    delete<T extends CustomerMasterFileDeleteArgs>(args: SelectSubset<T, CustomerMasterFileDeleteArgs<ExtArgs>>): Prisma__CustomerMasterFileClient<$Result.GetResult<Prisma.$CustomerMasterFilePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one CustomerMasterFile.
+     * @param {CustomerMasterFileUpdateArgs} args - Arguments to update one CustomerMasterFile.
+     * @example
+     * // Update one CustomerMasterFile
+     * const customerMasterFile = await prisma.customerMasterFile.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends CustomerMasterFileUpdateArgs>(args: SelectSubset<T, CustomerMasterFileUpdateArgs<ExtArgs>>): Prisma__CustomerMasterFileClient<$Result.GetResult<Prisma.$CustomerMasterFilePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more CustomerMasterFiles.
+     * @param {CustomerMasterFileDeleteManyArgs} args - Arguments to filter CustomerMasterFiles to delete.
+     * @example
+     * // Delete a few CustomerMasterFiles
+     * const { count } = await prisma.customerMasterFile.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends CustomerMasterFileDeleteManyArgs>(args?: SelectSubset<T, CustomerMasterFileDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more CustomerMasterFiles.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CustomerMasterFileUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many CustomerMasterFiles
+     * const customerMasterFile = await prisma.customerMasterFile.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends CustomerMasterFileUpdateManyArgs>(args: SelectSubset<T, CustomerMasterFileUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more CustomerMasterFiles and returns the data updated in the database.
+     * @param {CustomerMasterFileUpdateManyAndReturnArgs} args - Arguments to update many CustomerMasterFiles.
+     * @example
+     * // Update many CustomerMasterFiles
+     * const customerMasterFile = await prisma.customerMasterFile.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more CustomerMasterFiles and only return the `id`
+     * const customerMasterFileWithIdOnly = await prisma.customerMasterFile.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends CustomerMasterFileUpdateManyAndReturnArgs>(args: SelectSubset<T, CustomerMasterFileUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$CustomerMasterFilePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one CustomerMasterFile.
+     * @param {CustomerMasterFileUpsertArgs} args - Arguments to update or create a CustomerMasterFile.
+     * @example
+     * // Update or create a CustomerMasterFile
+     * const customerMasterFile = await prisma.customerMasterFile.upsert({
+     *   create: {
+     *     // ... data to create a CustomerMasterFile
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the CustomerMasterFile we want to update
+     *   }
+     * })
+     */
+    upsert<T extends CustomerMasterFileUpsertArgs>(args: SelectSubset<T, CustomerMasterFileUpsertArgs<ExtArgs>>): Prisma__CustomerMasterFileClient<$Result.GetResult<Prisma.$CustomerMasterFilePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of CustomerMasterFiles.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CustomerMasterFileCountArgs} args - Arguments to filter CustomerMasterFiles to count.
+     * @example
+     * // Count the number of CustomerMasterFiles
+     * const count = await prisma.customerMasterFile.count({
+     *   where: {
+     *     // ... the filter for the CustomerMasterFiles we want to count
+     *   }
+     * })
+    **/
+    count<T extends CustomerMasterFileCountArgs>(
+      args?: Subset<T, CustomerMasterFileCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], CustomerMasterFileCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a CustomerMasterFile.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CustomerMasterFileAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends CustomerMasterFileAggregateArgs>(args: Subset<T, CustomerMasterFileAggregateArgs>): Prisma.PrismaPromise<GetCustomerMasterFileAggregateType<T>>
+
+    /**
+     * Group by CustomerMasterFile.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {CustomerMasterFileGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends CustomerMasterFileGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: CustomerMasterFileGroupByArgs['orderBy'] }
+        : { orderBy?: CustomerMasterFileGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, CustomerMasterFileGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetCustomerMasterFileGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the CustomerMasterFile model
+   */
+  readonly fields: CustomerMasterFileFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for CustomerMasterFile.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__CustomerMasterFileClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the CustomerMasterFile model
+   */
+  interface CustomerMasterFileFieldRefs {
+    readonly id: FieldRef<"CustomerMasterFile", 'String'>
+    readonly custId: FieldRef<"CustomerMasterFile", 'String'>
+    readonly custName: FieldRef<"CustomerMasterFile", 'String'>
+    readonly skuId: FieldRef<"CustomerMasterFile", 'String'>
+    readonly skuName: FieldRef<"CustomerMasterFile", 'String'>
+    readonly deliveryTimeDays: FieldRef<"CustomerMasterFile", 'Int'>
+    readonly skuType1: FieldRef<"CustomerMasterFile", 'String'>
+    readonly deliveryTime1Days: FieldRef<"CustomerMasterFile", 'Int'>
+    readonly skuType2: FieldRef<"CustomerMasterFile", 'String'>
+    readonly deliveryTime2Days: FieldRef<"CustomerMasterFile", 'Int'>
+    readonly createdAt: FieldRef<"CustomerMasterFile", 'DateTime'>
+    readonly updatedAt: FieldRef<"CustomerMasterFile", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * CustomerMasterFile findUnique
+   */
+  export type CustomerMasterFileFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CustomerMasterFile
+     */
+    select?: CustomerMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CustomerMasterFile
+     */
+    omit?: CustomerMasterFileOmit<ExtArgs> | null
+    /**
+     * Filter, which CustomerMasterFile to fetch.
+     */
+    where: CustomerMasterFileWhereUniqueInput
+  }
+
+  /**
+   * CustomerMasterFile findUniqueOrThrow
+   */
+  export type CustomerMasterFileFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CustomerMasterFile
+     */
+    select?: CustomerMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CustomerMasterFile
+     */
+    omit?: CustomerMasterFileOmit<ExtArgs> | null
+    /**
+     * Filter, which CustomerMasterFile to fetch.
+     */
+    where: CustomerMasterFileWhereUniqueInput
+  }
+
+  /**
+   * CustomerMasterFile findFirst
+   */
+  export type CustomerMasterFileFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CustomerMasterFile
+     */
+    select?: CustomerMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CustomerMasterFile
+     */
+    omit?: CustomerMasterFileOmit<ExtArgs> | null
+    /**
+     * Filter, which CustomerMasterFile to fetch.
+     */
+    where?: CustomerMasterFileWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CustomerMasterFiles to fetch.
+     */
+    orderBy?: CustomerMasterFileOrderByWithRelationInput | CustomerMasterFileOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for CustomerMasterFiles.
+     */
+    cursor?: CustomerMasterFileWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CustomerMasterFiles from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CustomerMasterFiles.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of CustomerMasterFiles.
+     */
+    distinct?: CustomerMasterFileScalarFieldEnum | CustomerMasterFileScalarFieldEnum[]
+  }
+
+  /**
+   * CustomerMasterFile findFirstOrThrow
+   */
+  export type CustomerMasterFileFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CustomerMasterFile
+     */
+    select?: CustomerMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CustomerMasterFile
+     */
+    omit?: CustomerMasterFileOmit<ExtArgs> | null
+    /**
+     * Filter, which CustomerMasterFile to fetch.
+     */
+    where?: CustomerMasterFileWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CustomerMasterFiles to fetch.
+     */
+    orderBy?: CustomerMasterFileOrderByWithRelationInput | CustomerMasterFileOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for CustomerMasterFiles.
+     */
+    cursor?: CustomerMasterFileWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CustomerMasterFiles from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CustomerMasterFiles.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of CustomerMasterFiles.
+     */
+    distinct?: CustomerMasterFileScalarFieldEnum | CustomerMasterFileScalarFieldEnum[]
+  }
+
+  /**
+   * CustomerMasterFile findMany
+   */
+  export type CustomerMasterFileFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CustomerMasterFile
+     */
+    select?: CustomerMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CustomerMasterFile
+     */
+    omit?: CustomerMasterFileOmit<ExtArgs> | null
+    /**
+     * Filter, which CustomerMasterFiles to fetch.
+     */
+    where?: CustomerMasterFileWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of CustomerMasterFiles to fetch.
+     */
+    orderBy?: CustomerMasterFileOrderByWithRelationInput | CustomerMasterFileOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing CustomerMasterFiles.
+     */
+    cursor?: CustomerMasterFileWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` CustomerMasterFiles from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` CustomerMasterFiles.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of CustomerMasterFiles.
+     */
+    distinct?: CustomerMasterFileScalarFieldEnum | CustomerMasterFileScalarFieldEnum[]
+  }
+
+  /**
+   * CustomerMasterFile create
+   */
+  export type CustomerMasterFileCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CustomerMasterFile
+     */
+    select?: CustomerMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CustomerMasterFile
+     */
+    omit?: CustomerMasterFileOmit<ExtArgs> | null
+    /**
+     * The data needed to create a CustomerMasterFile.
+     */
+    data: XOR<CustomerMasterFileCreateInput, CustomerMasterFileUncheckedCreateInput>
+  }
+
+  /**
+   * CustomerMasterFile createMany
+   */
+  export type CustomerMasterFileCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many CustomerMasterFiles.
+     */
+    data: CustomerMasterFileCreateManyInput | CustomerMasterFileCreateManyInput[]
+  }
+
+  /**
+   * CustomerMasterFile createManyAndReturn
+   */
+  export type CustomerMasterFileCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CustomerMasterFile
+     */
+    select?: CustomerMasterFileSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the CustomerMasterFile
+     */
+    omit?: CustomerMasterFileOmit<ExtArgs> | null
+    /**
+     * The data used to create many CustomerMasterFiles.
+     */
+    data: CustomerMasterFileCreateManyInput | CustomerMasterFileCreateManyInput[]
+  }
+
+  /**
+   * CustomerMasterFile update
+   */
+  export type CustomerMasterFileUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CustomerMasterFile
+     */
+    select?: CustomerMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CustomerMasterFile
+     */
+    omit?: CustomerMasterFileOmit<ExtArgs> | null
+    /**
+     * The data needed to update a CustomerMasterFile.
+     */
+    data: XOR<CustomerMasterFileUpdateInput, CustomerMasterFileUncheckedUpdateInput>
+    /**
+     * Choose, which CustomerMasterFile to update.
+     */
+    where: CustomerMasterFileWhereUniqueInput
+  }
+
+  /**
+   * CustomerMasterFile updateMany
+   */
+  export type CustomerMasterFileUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update CustomerMasterFiles.
+     */
+    data: XOR<CustomerMasterFileUpdateManyMutationInput, CustomerMasterFileUncheckedUpdateManyInput>
+    /**
+     * Filter which CustomerMasterFiles to update
+     */
+    where?: CustomerMasterFileWhereInput
+    /**
+     * Limit how many CustomerMasterFiles to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * CustomerMasterFile updateManyAndReturn
+   */
+  export type CustomerMasterFileUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CustomerMasterFile
+     */
+    select?: CustomerMasterFileSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the CustomerMasterFile
+     */
+    omit?: CustomerMasterFileOmit<ExtArgs> | null
+    /**
+     * The data used to update CustomerMasterFiles.
+     */
+    data: XOR<CustomerMasterFileUpdateManyMutationInput, CustomerMasterFileUncheckedUpdateManyInput>
+    /**
+     * Filter which CustomerMasterFiles to update
+     */
+    where?: CustomerMasterFileWhereInput
+    /**
+     * Limit how many CustomerMasterFiles to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * CustomerMasterFile upsert
+   */
+  export type CustomerMasterFileUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CustomerMasterFile
+     */
+    select?: CustomerMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CustomerMasterFile
+     */
+    omit?: CustomerMasterFileOmit<ExtArgs> | null
+    /**
+     * The filter to search for the CustomerMasterFile to update in case it exists.
+     */
+    where: CustomerMasterFileWhereUniqueInput
+    /**
+     * In case the CustomerMasterFile found by the `where` argument doesn't exist, create a new CustomerMasterFile with this data.
+     */
+    create: XOR<CustomerMasterFileCreateInput, CustomerMasterFileUncheckedCreateInput>
+    /**
+     * In case the CustomerMasterFile was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<CustomerMasterFileUpdateInput, CustomerMasterFileUncheckedUpdateInput>
+  }
+
+  /**
+   * CustomerMasterFile delete
+   */
+  export type CustomerMasterFileDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CustomerMasterFile
+     */
+    select?: CustomerMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CustomerMasterFile
+     */
+    omit?: CustomerMasterFileOmit<ExtArgs> | null
+    /**
+     * Filter which CustomerMasterFile to delete.
+     */
+    where: CustomerMasterFileWhereUniqueInput
+  }
+
+  /**
+   * CustomerMasterFile deleteMany
+   */
+  export type CustomerMasterFileDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which CustomerMasterFiles to delete
+     */
+    where?: CustomerMasterFileWhereInput
+    /**
+     * Limit how many CustomerMasterFiles to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * CustomerMasterFile without action
+   */
+  export type CustomerMasterFileDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the CustomerMasterFile
+     */
+    select?: CustomerMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the CustomerMasterFile
+     */
+    omit?: CustomerMasterFileOmit<ExtArgs> | null
+  }
+
+
+  /**
+   * Model ProcessMasterFile
+   */
+
+  export type AggregateProcessMasterFile = {
+    _count: ProcessMasterFileCountAggregateOutputType | null
+    _avg: ProcessMasterFileAvgAggregateOutputType | null
+    _sum: ProcessMasterFileSumAggregateOutputType | null
+    _min: ProcessMasterFileMinAggregateOutputType | null
+    _max: ProcessMasterFileMaxAggregateOutputType | null
+  }
+
+  export type ProcessMasterFileAvgAggregateOutputType = {
+    totalCycleTime: number | null
+  }
+
+  export type ProcessMasterFileSumAggregateOutputType = {
+    totalCycleTime: number | null
+  }
+
+  export type ProcessMasterFileMinAggregateOutputType = {
+    id: string | null
+    custId: string | null
+    skuType: string | null
+    processes: string | null
+    cycleTimes: string | null
+    totalCycleTime: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type ProcessMasterFileMaxAggregateOutputType = {
+    id: string | null
+    custId: string | null
+    skuType: string | null
+    processes: string | null
+    cycleTimes: string | null
+    totalCycleTime: number | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type ProcessMasterFileCountAggregateOutputType = {
+    id: number
+    custId: number
+    skuType: number
+    processes: number
+    cycleTimes: number
+    totalCycleTime: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type ProcessMasterFileAvgAggregateInputType = {
+    totalCycleTime?: true
+  }
+
+  export type ProcessMasterFileSumAggregateInputType = {
+    totalCycleTime?: true
+  }
+
+  export type ProcessMasterFileMinAggregateInputType = {
+    id?: true
+    custId?: true
+    skuType?: true
+    processes?: true
+    cycleTimes?: true
+    totalCycleTime?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type ProcessMasterFileMaxAggregateInputType = {
+    id?: true
+    custId?: true
+    skuType?: true
+    processes?: true
+    cycleTimes?: true
+    totalCycleTime?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type ProcessMasterFileCountAggregateInputType = {
+    id?: true
+    custId?: true
+    skuType?: true
+    processes?: true
+    cycleTimes?: true
+    totalCycleTime?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type ProcessMasterFileAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ProcessMasterFile to aggregate.
+     */
+    where?: ProcessMasterFileWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProcessMasterFiles to fetch.
+     */
+    orderBy?: ProcessMasterFileOrderByWithRelationInput | ProcessMasterFileOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ProcessMasterFileWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProcessMasterFiles from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProcessMasterFiles.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned ProcessMasterFiles
+    **/
+    _count?: true | ProcessMasterFileCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: ProcessMasterFileAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ProcessMasterFileSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ProcessMasterFileMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ProcessMasterFileMaxAggregateInputType
+  }
+
+  export type GetProcessMasterFileAggregateType<T extends ProcessMasterFileAggregateArgs> = {
+        [P in keyof T & keyof AggregateProcessMasterFile]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateProcessMasterFile[P]>
+      : GetScalarType<T[P], AggregateProcessMasterFile[P]>
+  }
+
+
+
+
+  export type ProcessMasterFileGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProcessMasterFileWhereInput
+    orderBy?: ProcessMasterFileOrderByWithAggregationInput | ProcessMasterFileOrderByWithAggregationInput[]
+    by: ProcessMasterFileScalarFieldEnum[] | ProcessMasterFileScalarFieldEnum
+    having?: ProcessMasterFileScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ProcessMasterFileCountAggregateInputType | true
+    _avg?: ProcessMasterFileAvgAggregateInputType
+    _sum?: ProcessMasterFileSumAggregateInputType
+    _min?: ProcessMasterFileMinAggregateInputType
+    _max?: ProcessMasterFileMaxAggregateInputType
+  }
+
+  export type ProcessMasterFileGroupByOutputType = {
+    id: string
+    custId: string
+    skuType: string
+    processes: string
+    cycleTimes: string
+    totalCycleTime: number | null
+    createdAt: Date
+    updatedAt: Date
+    _count: ProcessMasterFileCountAggregateOutputType | null
+    _avg: ProcessMasterFileAvgAggregateOutputType | null
+    _sum: ProcessMasterFileSumAggregateOutputType | null
+    _min: ProcessMasterFileMinAggregateOutputType | null
+    _max: ProcessMasterFileMaxAggregateOutputType | null
+  }
+
+  type GetProcessMasterFileGroupByPayload<T extends ProcessMasterFileGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ProcessMasterFileGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ProcessMasterFileGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ProcessMasterFileGroupByOutputType[P]>
+            : GetScalarType<T[P], ProcessMasterFileGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ProcessMasterFileSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    custId?: boolean
+    skuType?: boolean
+    processes?: boolean
+    cycleTimes?: boolean
+    totalCycleTime?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["processMasterFile"]>
+
+  export type ProcessMasterFileSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    custId?: boolean
+    skuType?: boolean
+    processes?: boolean
+    cycleTimes?: boolean
+    totalCycleTime?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["processMasterFile"]>
+
+  export type ProcessMasterFileSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    custId?: boolean
+    skuType?: boolean
+    processes?: boolean
+    cycleTimes?: boolean
+    totalCycleTime?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["processMasterFile"]>
+
+  export type ProcessMasterFileSelectScalar = {
+    id?: boolean
+    custId?: boolean
+    skuType?: boolean
+    processes?: boolean
+    cycleTimes?: boolean
+    totalCycleTime?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type ProcessMasterFileOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "custId" | "skuType" | "processes" | "cycleTimes" | "totalCycleTime" | "createdAt" | "updatedAt", ExtArgs["result"]["processMasterFile"]>
+
+  export type $ProcessMasterFilePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "ProcessMasterFile"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      custId: string
+      skuType: string
+      processes: string
+      cycleTimes: string
+      totalCycleTime: number | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["processMasterFile"]>
+    composites: {}
+  }
+
+  type ProcessMasterFileGetPayload<S extends boolean | null | undefined | ProcessMasterFileDefaultArgs> = $Result.GetResult<Prisma.$ProcessMasterFilePayload, S>
+
+  type ProcessMasterFileCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ProcessMasterFileFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ProcessMasterFileCountAggregateInputType | true
+    }
+
+  export interface ProcessMasterFileDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ProcessMasterFile'], meta: { name: 'ProcessMasterFile' } }
+    /**
+     * Find zero or one ProcessMasterFile that matches the filter.
+     * @param {ProcessMasterFileFindUniqueArgs} args - Arguments to find a ProcessMasterFile
+     * @example
+     * // Get one ProcessMasterFile
+     * const processMasterFile = await prisma.processMasterFile.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ProcessMasterFileFindUniqueArgs>(args: SelectSubset<T, ProcessMasterFileFindUniqueArgs<ExtArgs>>): Prisma__ProcessMasterFileClient<$Result.GetResult<Prisma.$ProcessMasterFilePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one ProcessMasterFile that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ProcessMasterFileFindUniqueOrThrowArgs} args - Arguments to find a ProcessMasterFile
+     * @example
+     * // Get one ProcessMasterFile
+     * const processMasterFile = await prisma.processMasterFile.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ProcessMasterFileFindUniqueOrThrowArgs>(args: SelectSubset<T, ProcessMasterFileFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ProcessMasterFileClient<$Result.GetResult<Prisma.$ProcessMasterFilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ProcessMasterFile that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProcessMasterFileFindFirstArgs} args - Arguments to find a ProcessMasterFile
+     * @example
+     * // Get one ProcessMasterFile
+     * const processMasterFile = await prisma.processMasterFile.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ProcessMasterFileFindFirstArgs>(args?: SelectSubset<T, ProcessMasterFileFindFirstArgs<ExtArgs>>): Prisma__ProcessMasterFileClient<$Result.GetResult<Prisma.$ProcessMasterFilePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ProcessMasterFile that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProcessMasterFileFindFirstOrThrowArgs} args - Arguments to find a ProcessMasterFile
+     * @example
+     * // Get one ProcessMasterFile
+     * const processMasterFile = await prisma.processMasterFile.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ProcessMasterFileFindFirstOrThrowArgs>(args?: SelectSubset<T, ProcessMasterFileFindFirstOrThrowArgs<ExtArgs>>): Prisma__ProcessMasterFileClient<$Result.GetResult<Prisma.$ProcessMasterFilePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more ProcessMasterFiles that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProcessMasterFileFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all ProcessMasterFiles
+     * const processMasterFiles = await prisma.processMasterFile.findMany()
+     * 
+     * // Get first 10 ProcessMasterFiles
+     * const processMasterFiles = await prisma.processMasterFile.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const processMasterFileWithIdOnly = await prisma.processMasterFile.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ProcessMasterFileFindManyArgs>(args?: SelectSubset<T, ProcessMasterFileFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProcessMasterFilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a ProcessMasterFile.
+     * @param {ProcessMasterFileCreateArgs} args - Arguments to create a ProcessMasterFile.
+     * @example
+     * // Create one ProcessMasterFile
+     * const ProcessMasterFile = await prisma.processMasterFile.create({
+     *   data: {
+     *     // ... data to create a ProcessMasterFile
+     *   }
+     * })
+     * 
+     */
+    create<T extends ProcessMasterFileCreateArgs>(args: SelectSubset<T, ProcessMasterFileCreateArgs<ExtArgs>>): Prisma__ProcessMasterFileClient<$Result.GetResult<Prisma.$ProcessMasterFilePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many ProcessMasterFiles.
+     * @param {ProcessMasterFileCreateManyArgs} args - Arguments to create many ProcessMasterFiles.
+     * @example
+     * // Create many ProcessMasterFiles
+     * const processMasterFile = await prisma.processMasterFile.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ProcessMasterFileCreateManyArgs>(args?: SelectSubset<T, ProcessMasterFileCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many ProcessMasterFiles and returns the data saved in the database.
+     * @param {ProcessMasterFileCreateManyAndReturnArgs} args - Arguments to create many ProcessMasterFiles.
+     * @example
+     * // Create many ProcessMasterFiles
+     * const processMasterFile = await prisma.processMasterFile.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many ProcessMasterFiles and only return the `id`
+     * const processMasterFileWithIdOnly = await prisma.processMasterFile.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ProcessMasterFileCreateManyAndReturnArgs>(args?: SelectSubset<T, ProcessMasterFileCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProcessMasterFilePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a ProcessMasterFile.
+     * @param {ProcessMasterFileDeleteArgs} args - Arguments to delete one ProcessMasterFile.
+     * @example
+     * // Delete one ProcessMasterFile
+     * const ProcessMasterFile = await prisma.processMasterFile.delete({
+     *   where: {
+     *     // ... filter to delete one ProcessMasterFile
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ProcessMasterFileDeleteArgs>(args: SelectSubset<T, ProcessMasterFileDeleteArgs<ExtArgs>>): Prisma__ProcessMasterFileClient<$Result.GetResult<Prisma.$ProcessMasterFilePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one ProcessMasterFile.
+     * @param {ProcessMasterFileUpdateArgs} args - Arguments to update one ProcessMasterFile.
+     * @example
+     * // Update one ProcessMasterFile
+     * const processMasterFile = await prisma.processMasterFile.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ProcessMasterFileUpdateArgs>(args: SelectSubset<T, ProcessMasterFileUpdateArgs<ExtArgs>>): Prisma__ProcessMasterFileClient<$Result.GetResult<Prisma.$ProcessMasterFilePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more ProcessMasterFiles.
+     * @param {ProcessMasterFileDeleteManyArgs} args - Arguments to filter ProcessMasterFiles to delete.
+     * @example
+     * // Delete a few ProcessMasterFiles
+     * const { count } = await prisma.processMasterFile.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ProcessMasterFileDeleteManyArgs>(args?: SelectSubset<T, ProcessMasterFileDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ProcessMasterFiles.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProcessMasterFileUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many ProcessMasterFiles
+     * const processMasterFile = await prisma.processMasterFile.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ProcessMasterFileUpdateManyArgs>(args: SelectSubset<T, ProcessMasterFileUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ProcessMasterFiles and returns the data updated in the database.
+     * @param {ProcessMasterFileUpdateManyAndReturnArgs} args - Arguments to update many ProcessMasterFiles.
+     * @example
+     * // Update many ProcessMasterFiles
+     * const processMasterFile = await prisma.processMasterFile.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more ProcessMasterFiles and only return the `id`
+     * const processMasterFileWithIdOnly = await prisma.processMasterFile.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ProcessMasterFileUpdateManyAndReturnArgs>(args: SelectSubset<T, ProcessMasterFileUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProcessMasterFilePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one ProcessMasterFile.
+     * @param {ProcessMasterFileUpsertArgs} args - Arguments to update or create a ProcessMasterFile.
+     * @example
+     * // Update or create a ProcessMasterFile
+     * const processMasterFile = await prisma.processMasterFile.upsert({
+     *   create: {
+     *     // ... data to create a ProcessMasterFile
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the ProcessMasterFile we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ProcessMasterFileUpsertArgs>(args: SelectSubset<T, ProcessMasterFileUpsertArgs<ExtArgs>>): Prisma__ProcessMasterFileClient<$Result.GetResult<Prisma.$ProcessMasterFilePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of ProcessMasterFiles.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProcessMasterFileCountArgs} args - Arguments to filter ProcessMasterFiles to count.
+     * @example
+     * // Count the number of ProcessMasterFiles
+     * const count = await prisma.processMasterFile.count({
+     *   where: {
+     *     // ... the filter for the ProcessMasterFiles we want to count
+     *   }
+     * })
+    **/
+    count<T extends ProcessMasterFileCountArgs>(
+      args?: Subset<T, ProcessMasterFileCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ProcessMasterFileCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a ProcessMasterFile.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProcessMasterFileAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ProcessMasterFileAggregateArgs>(args: Subset<T, ProcessMasterFileAggregateArgs>): Prisma.PrismaPromise<GetProcessMasterFileAggregateType<T>>
+
+    /**
+     * Group by ProcessMasterFile.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProcessMasterFileGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ProcessMasterFileGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ProcessMasterFileGroupByArgs['orderBy'] }
+        : { orderBy?: ProcessMasterFileGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ProcessMasterFileGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetProcessMasterFileGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the ProcessMasterFile model
+   */
+  readonly fields: ProcessMasterFileFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for ProcessMasterFile.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ProcessMasterFileClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the ProcessMasterFile model
+   */
+  interface ProcessMasterFileFieldRefs {
+    readonly id: FieldRef<"ProcessMasterFile", 'String'>
+    readonly custId: FieldRef<"ProcessMasterFile", 'String'>
+    readonly skuType: FieldRef<"ProcessMasterFile", 'String'>
+    readonly processes: FieldRef<"ProcessMasterFile", 'String'>
+    readonly cycleTimes: FieldRef<"ProcessMasterFile", 'String'>
+    readonly totalCycleTime: FieldRef<"ProcessMasterFile", 'Float'>
+    readonly createdAt: FieldRef<"ProcessMasterFile", 'DateTime'>
+    readonly updatedAt: FieldRef<"ProcessMasterFile", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * ProcessMasterFile findUnique
+   */
+  export type ProcessMasterFileFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcessMasterFile
+     */
+    select?: ProcessMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcessMasterFile
+     */
+    omit?: ProcessMasterFileOmit<ExtArgs> | null
+    /**
+     * Filter, which ProcessMasterFile to fetch.
+     */
+    where: ProcessMasterFileWhereUniqueInput
+  }
+
+  /**
+   * ProcessMasterFile findUniqueOrThrow
+   */
+  export type ProcessMasterFileFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcessMasterFile
+     */
+    select?: ProcessMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcessMasterFile
+     */
+    omit?: ProcessMasterFileOmit<ExtArgs> | null
+    /**
+     * Filter, which ProcessMasterFile to fetch.
+     */
+    where: ProcessMasterFileWhereUniqueInput
+  }
+
+  /**
+   * ProcessMasterFile findFirst
+   */
+  export type ProcessMasterFileFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcessMasterFile
+     */
+    select?: ProcessMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcessMasterFile
+     */
+    omit?: ProcessMasterFileOmit<ExtArgs> | null
+    /**
+     * Filter, which ProcessMasterFile to fetch.
+     */
+    where?: ProcessMasterFileWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProcessMasterFiles to fetch.
+     */
+    orderBy?: ProcessMasterFileOrderByWithRelationInput | ProcessMasterFileOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ProcessMasterFiles.
+     */
+    cursor?: ProcessMasterFileWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProcessMasterFiles from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProcessMasterFiles.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ProcessMasterFiles.
+     */
+    distinct?: ProcessMasterFileScalarFieldEnum | ProcessMasterFileScalarFieldEnum[]
+  }
+
+  /**
+   * ProcessMasterFile findFirstOrThrow
+   */
+  export type ProcessMasterFileFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcessMasterFile
+     */
+    select?: ProcessMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcessMasterFile
+     */
+    omit?: ProcessMasterFileOmit<ExtArgs> | null
+    /**
+     * Filter, which ProcessMasterFile to fetch.
+     */
+    where?: ProcessMasterFileWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProcessMasterFiles to fetch.
+     */
+    orderBy?: ProcessMasterFileOrderByWithRelationInput | ProcessMasterFileOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ProcessMasterFiles.
+     */
+    cursor?: ProcessMasterFileWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProcessMasterFiles from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProcessMasterFiles.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ProcessMasterFiles.
+     */
+    distinct?: ProcessMasterFileScalarFieldEnum | ProcessMasterFileScalarFieldEnum[]
+  }
+
+  /**
+   * ProcessMasterFile findMany
+   */
+  export type ProcessMasterFileFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcessMasterFile
+     */
+    select?: ProcessMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcessMasterFile
+     */
+    omit?: ProcessMasterFileOmit<ExtArgs> | null
+    /**
+     * Filter, which ProcessMasterFiles to fetch.
+     */
+    where?: ProcessMasterFileWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProcessMasterFiles to fetch.
+     */
+    orderBy?: ProcessMasterFileOrderByWithRelationInput | ProcessMasterFileOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing ProcessMasterFiles.
+     */
+    cursor?: ProcessMasterFileWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProcessMasterFiles from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProcessMasterFiles.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ProcessMasterFiles.
+     */
+    distinct?: ProcessMasterFileScalarFieldEnum | ProcessMasterFileScalarFieldEnum[]
+  }
+
+  /**
+   * ProcessMasterFile create
+   */
+  export type ProcessMasterFileCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcessMasterFile
+     */
+    select?: ProcessMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcessMasterFile
+     */
+    omit?: ProcessMasterFileOmit<ExtArgs> | null
+    /**
+     * The data needed to create a ProcessMasterFile.
+     */
+    data: XOR<ProcessMasterFileCreateInput, ProcessMasterFileUncheckedCreateInput>
+  }
+
+  /**
+   * ProcessMasterFile createMany
+   */
+  export type ProcessMasterFileCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many ProcessMasterFiles.
+     */
+    data: ProcessMasterFileCreateManyInput | ProcessMasterFileCreateManyInput[]
+  }
+
+  /**
+   * ProcessMasterFile createManyAndReturn
+   */
+  export type ProcessMasterFileCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcessMasterFile
+     */
+    select?: ProcessMasterFileSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcessMasterFile
+     */
+    omit?: ProcessMasterFileOmit<ExtArgs> | null
+    /**
+     * The data used to create many ProcessMasterFiles.
+     */
+    data: ProcessMasterFileCreateManyInput | ProcessMasterFileCreateManyInput[]
+  }
+
+  /**
+   * ProcessMasterFile update
+   */
+  export type ProcessMasterFileUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcessMasterFile
+     */
+    select?: ProcessMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcessMasterFile
+     */
+    omit?: ProcessMasterFileOmit<ExtArgs> | null
+    /**
+     * The data needed to update a ProcessMasterFile.
+     */
+    data: XOR<ProcessMasterFileUpdateInput, ProcessMasterFileUncheckedUpdateInput>
+    /**
+     * Choose, which ProcessMasterFile to update.
+     */
+    where: ProcessMasterFileWhereUniqueInput
+  }
+
+  /**
+   * ProcessMasterFile updateMany
+   */
+  export type ProcessMasterFileUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update ProcessMasterFiles.
+     */
+    data: XOR<ProcessMasterFileUpdateManyMutationInput, ProcessMasterFileUncheckedUpdateManyInput>
+    /**
+     * Filter which ProcessMasterFiles to update
+     */
+    where?: ProcessMasterFileWhereInput
+    /**
+     * Limit how many ProcessMasterFiles to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * ProcessMasterFile updateManyAndReturn
+   */
+  export type ProcessMasterFileUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcessMasterFile
+     */
+    select?: ProcessMasterFileSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcessMasterFile
+     */
+    omit?: ProcessMasterFileOmit<ExtArgs> | null
+    /**
+     * The data used to update ProcessMasterFiles.
+     */
+    data: XOR<ProcessMasterFileUpdateManyMutationInput, ProcessMasterFileUncheckedUpdateManyInput>
+    /**
+     * Filter which ProcessMasterFiles to update
+     */
+    where?: ProcessMasterFileWhereInput
+    /**
+     * Limit how many ProcessMasterFiles to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * ProcessMasterFile upsert
+   */
+  export type ProcessMasterFileUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcessMasterFile
+     */
+    select?: ProcessMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcessMasterFile
+     */
+    omit?: ProcessMasterFileOmit<ExtArgs> | null
+    /**
+     * The filter to search for the ProcessMasterFile to update in case it exists.
+     */
+    where: ProcessMasterFileWhereUniqueInput
+    /**
+     * In case the ProcessMasterFile found by the `where` argument doesn't exist, create a new ProcessMasterFile with this data.
+     */
+    create: XOR<ProcessMasterFileCreateInput, ProcessMasterFileUncheckedCreateInput>
+    /**
+     * In case the ProcessMasterFile was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ProcessMasterFileUpdateInput, ProcessMasterFileUncheckedUpdateInput>
+  }
+
+  /**
+   * ProcessMasterFile delete
+   */
+  export type ProcessMasterFileDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcessMasterFile
+     */
+    select?: ProcessMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcessMasterFile
+     */
+    omit?: ProcessMasterFileOmit<ExtArgs> | null
+    /**
+     * Filter which ProcessMasterFile to delete.
+     */
+    where: ProcessMasterFileWhereUniqueInput
+  }
+
+  /**
+   * ProcessMasterFile deleteMany
+   */
+  export type ProcessMasterFileDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ProcessMasterFiles to delete
+     */
+    where?: ProcessMasterFileWhereInput
+    /**
+     * Limit how many ProcessMasterFiles to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * ProcessMasterFile without action
+   */
+  export type ProcessMasterFileDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProcessMasterFile
+     */
+    select?: ProcessMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProcessMasterFile
+     */
+    omit?: ProcessMasterFileOmit<ExtArgs> | null
+  }
+
+
+  /**
+   * Model TransactionUploadBatch
+   */
+
+  export type AggregateTransactionUploadBatch = {
+    _count: TransactionUploadBatchCountAggregateOutputType | null
+    _avg: TransactionUploadBatchAvgAggregateOutputType | null
+    _sum: TransactionUploadBatchSumAggregateOutputType | null
+    _min: TransactionUploadBatchMinAggregateOutputType | null
+    _max: TransactionUploadBatchMaxAggregateOutputType | null
+  }
+
+  export type TransactionUploadBatchAvgAggregateOutputType = {
+    totalRows: number | null
+    validRows: number | null
+    invalidRows: number | null
+  }
+
+  export type TransactionUploadBatchSumAggregateOutputType = {
+    totalRows: number | null
+    validRows: number | null
+    invalidRows: number | null
+  }
+
+  export type TransactionUploadBatchMinAggregateOutputType = {
+    id: string | null
+    fileName: string | null
+    totalRows: number | null
+    validRows: number | null
+    invalidRows: number | null
+    status: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type TransactionUploadBatchMaxAggregateOutputType = {
+    id: string | null
+    fileName: string | null
+    totalRows: number | null
+    validRows: number | null
+    invalidRows: number | null
+    status: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type TransactionUploadBatchCountAggregateOutputType = {
+    id: number
+    fileName: number
+    totalRows: number
+    validRows: number
+    invalidRows: number
+    status: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type TransactionUploadBatchAvgAggregateInputType = {
+    totalRows?: true
+    validRows?: true
+    invalidRows?: true
+  }
+
+  export type TransactionUploadBatchSumAggregateInputType = {
+    totalRows?: true
+    validRows?: true
+    invalidRows?: true
+  }
+
+  export type TransactionUploadBatchMinAggregateInputType = {
+    id?: true
+    fileName?: true
+    totalRows?: true
+    validRows?: true
+    invalidRows?: true
+    status?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type TransactionUploadBatchMaxAggregateInputType = {
+    id?: true
+    fileName?: true
+    totalRows?: true
+    validRows?: true
+    invalidRows?: true
+    status?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type TransactionUploadBatchCountAggregateInputType = {
+    id?: true
+    fileName?: true
+    totalRows?: true
+    validRows?: true
+    invalidRows?: true
+    status?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type TransactionUploadBatchAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TransactionUploadBatch to aggregate.
+     */
+    where?: TransactionUploadBatchWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TransactionUploadBatches to fetch.
+     */
+    orderBy?: TransactionUploadBatchOrderByWithRelationInput | TransactionUploadBatchOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: TransactionUploadBatchWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TransactionUploadBatches from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TransactionUploadBatches.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned TransactionUploadBatches
+    **/
+    _count?: true | TransactionUploadBatchCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: TransactionUploadBatchAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: TransactionUploadBatchSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: TransactionUploadBatchMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: TransactionUploadBatchMaxAggregateInputType
+  }
+
+  export type GetTransactionUploadBatchAggregateType<T extends TransactionUploadBatchAggregateArgs> = {
+        [P in keyof T & keyof AggregateTransactionUploadBatch]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTransactionUploadBatch[P]>
+      : GetScalarType<T[P], AggregateTransactionUploadBatch[P]>
+  }
+
+
+
+
+  export type TransactionUploadBatchGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TransactionUploadBatchWhereInput
+    orderBy?: TransactionUploadBatchOrderByWithAggregationInput | TransactionUploadBatchOrderByWithAggregationInput[]
+    by: TransactionUploadBatchScalarFieldEnum[] | TransactionUploadBatchScalarFieldEnum
+    having?: TransactionUploadBatchScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: TransactionUploadBatchCountAggregateInputType | true
+    _avg?: TransactionUploadBatchAvgAggregateInputType
+    _sum?: TransactionUploadBatchSumAggregateInputType
+    _min?: TransactionUploadBatchMinAggregateInputType
+    _max?: TransactionUploadBatchMaxAggregateInputType
+  }
+
+  export type TransactionUploadBatchGroupByOutputType = {
+    id: string
+    fileName: string
+    totalRows: number
+    validRows: number
+    invalidRows: number
+    status: string
+    createdAt: Date
+    updatedAt: Date
+    _count: TransactionUploadBatchCountAggregateOutputType | null
+    _avg: TransactionUploadBatchAvgAggregateOutputType | null
+    _sum: TransactionUploadBatchSumAggregateOutputType | null
+    _min: TransactionUploadBatchMinAggregateOutputType | null
+    _max: TransactionUploadBatchMaxAggregateOutputType | null
+  }
+
+  type GetTransactionUploadBatchGroupByPayload<T extends TransactionUploadBatchGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<TransactionUploadBatchGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof TransactionUploadBatchGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], TransactionUploadBatchGroupByOutputType[P]>
+            : GetScalarType<T[P], TransactionUploadBatchGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type TransactionUploadBatchSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fileName?: boolean
+    totalRows?: boolean
+    validRows?: boolean
+    invalidRows?: boolean
+    status?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    transactions?: boolean | TransactionUploadBatch$transactionsArgs<ExtArgs>
+    poSummaries?: boolean | TransactionUploadBatch$poSummariesArgs<ExtArgs>
+    _count?: boolean | TransactionUploadBatchCountOutputTypeDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["transactionUploadBatch"]>
+
+  export type TransactionUploadBatchSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fileName?: boolean
+    totalRows?: boolean
+    validRows?: boolean
+    invalidRows?: boolean
+    status?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["transactionUploadBatch"]>
+
+  export type TransactionUploadBatchSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    fileName?: boolean
+    totalRows?: boolean
+    validRows?: boolean
+    invalidRows?: boolean
+    status?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["transactionUploadBatch"]>
+
+  export type TransactionUploadBatchSelectScalar = {
+    id?: boolean
+    fileName?: boolean
+    totalRows?: boolean
+    validRows?: boolean
+    invalidRows?: boolean
+    status?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type TransactionUploadBatchOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "fileName" | "totalRows" | "validRows" | "invalidRows" | "status" | "createdAt" | "updatedAt", ExtArgs["result"]["transactionUploadBatch"]>
+  export type TransactionUploadBatchInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    transactions?: boolean | TransactionUploadBatch$transactionsArgs<ExtArgs>
+    poSummaries?: boolean | TransactionUploadBatch$poSummariesArgs<ExtArgs>
+    _count?: boolean | TransactionUploadBatchCountOutputTypeDefaultArgs<ExtArgs>
+  }
+  export type TransactionUploadBatchIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+  export type TransactionUploadBatchIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {}
+
+  export type $TransactionUploadBatchPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "TransactionUploadBatch"
+    objects: {
+      transactions: Prisma.$TransactionMasterFilePayload<ExtArgs>[]
+      poSummaries: Prisma.$ProductionOrderSummaryPayload<ExtArgs>[]
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      fileName: string
+      totalRows: number
+      validRows: number
+      invalidRows: number
+      status: string
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["transactionUploadBatch"]>
+    composites: {}
+  }
+
+  type TransactionUploadBatchGetPayload<S extends boolean | null | undefined | TransactionUploadBatchDefaultArgs> = $Result.GetResult<Prisma.$TransactionUploadBatchPayload, S>
+
+  type TransactionUploadBatchCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<TransactionUploadBatchFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: TransactionUploadBatchCountAggregateInputType | true
+    }
+
+  export interface TransactionUploadBatchDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['TransactionUploadBatch'], meta: { name: 'TransactionUploadBatch' } }
+    /**
+     * Find zero or one TransactionUploadBatch that matches the filter.
+     * @param {TransactionUploadBatchFindUniqueArgs} args - Arguments to find a TransactionUploadBatch
+     * @example
+     * // Get one TransactionUploadBatch
+     * const transactionUploadBatch = await prisma.transactionUploadBatch.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends TransactionUploadBatchFindUniqueArgs>(args: SelectSubset<T, TransactionUploadBatchFindUniqueArgs<ExtArgs>>): Prisma__TransactionUploadBatchClient<$Result.GetResult<Prisma.$TransactionUploadBatchPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one TransactionUploadBatch that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {TransactionUploadBatchFindUniqueOrThrowArgs} args - Arguments to find a TransactionUploadBatch
+     * @example
+     * // Get one TransactionUploadBatch
+     * const transactionUploadBatch = await prisma.transactionUploadBatch.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends TransactionUploadBatchFindUniqueOrThrowArgs>(args: SelectSubset<T, TransactionUploadBatchFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TransactionUploadBatchClient<$Result.GetResult<Prisma.$TransactionUploadBatchPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first TransactionUploadBatch that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TransactionUploadBatchFindFirstArgs} args - Arguments to find a TransactionUploadBatch
+     * @example
+     * // Get one TransactionUploadBatch
+     * const transactionUploadBatch = await prisma.transactionUploadBatch.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends TransactionUploadBatchFindFirstArgs>(args?: SelectSubset<T, TransactionUploadBatchFindFirstArgs<ExtArgs>>): Prisma__TransactionUploadBatchClient<$Result.GetResult<Prisma.$TransactionUploadBatchPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first TransactionUploadBatch that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TransactionUploadBatchFindFirstOrThrowArgs} args - Arguments to find a TransactionUploadBatch
+     * @example
+     * // Get one TransactionUploadBatch
+     * const transactionUploadBatch = await prisma.transactionUploadBatch.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends TransactionUploadBatchFindFirstOrThrowArgs>(args?: SelectSubset<T, TransactionUploadBatchFindFirstOrThrowArgs<ExtArgs>>): Prisma__TransactionUploadBatchClient<$Result.GetResult<Prisma.$TransactionUploadBatchPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more TransactionUploadBatches that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TransactionUploadBatchFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all TransactionUploadBatches
+     * const transactionUploadBatches = await prisma.transactionUploadBatch.findMany()
+     * 
+     * // Get first 10 TransactionUploadBatches
+     * const transactionUploadBatches = await prisma.transactionUploadBatch.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const transactionUploadBatchWithIdOnly = await prisma.transactionUploadBatch.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends TransactionUploadBatchFindManyArgs>(args?: SelectSubset<T, TransactionUploadBatchFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TransactionUploadBatchPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a TransactionUploadBatch.
+     * @param {TransactionUploadBatchCreateArgs} args - Arguments to create a TransactionUploadBatch.
+     * @example
+     * // Create one TransactionUploadBatch
+     * const TransactionUploadBatch = await prisma.transactionUploadBatch.create({
+     *   data: {
+     *     // ... data to create a TransactionUploadBatch
+     *   }
+     * })
+     * 
+     */
+    create<T extends TransactionUploadBatchCreateArgs>(args: SelectSubset<T, TransactionUploadBatchCreateArgs<ExtArgs>>): Prisma__TransactionUploadBatchClient<$Result.GetResult<Prisma.$TransactionUploadBatchPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many TransactionUploadBatches.
+     * @param {TransactionUploadBatchCreateManyArgs} args - Arguments to create many TransactionUploadBatches.
+     * @example
+     * // Create many TransactionUploadBatches
+     * const transactionUploadBatch = await prisma.transactionUploadBatch.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends TransactionUploadBatchCreateManyArgs>(args?: SelectSubset<T, TransactionUploadBatchCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many TransactionUploadBatches and returns the data saved in the database.
+     * @param {TransactionUploadBatchCreateManyAndReturnArgs} args - Arguments to create many TransactionUploadBatches.
+     * @example
+     * // Create many TransactionUploadBatches
+     * const transactionUploadBatch = await prisma.transactionUploadBatch.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many TransactionUploadBatches and only return the `id`
+     * const transactionUploadBatchWithIdOnly = await prisma.transactionUploadBatch.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends TransactionUploadBatchCreateManyAndReturnArgs>(args?: SelectSubset<T, TransactionUploadBatchCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TransactionUploadBatchPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a TransactionUploadBatch.
+     * @param {TransactionUploadBatchDeleteArgs} args - Arguments to delete one TransactionUploadBatch.
+     * @example
+     * // Delete one TransactionUploadBatch
+     * const TransactionUploadBatch = await prisma.transactionUploadBatch.delete({
+     *   where: {
+     *     // ... filter to delete one TransactionUploadBatch
+     *   }
+     * })
+     * 
+     */
+    delete<T extends TransactionUploadBatchDeleteArgs>(args: SelectSubset<T, TransactionUploadBatchDeleteArgs<ExtArgs>>): Prisma__TransactionUploadBatchClient<$Result.GetResult<Prisma.$TransactionUploadBatchPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one TransactionUploadBatch.
+     * @param {TransactionUploadBatchUpdateArgs} args - Arguments to update one TransactionUploadBatch.
+     * @example
+     * // Update one TransactionUploadBatch
+     * const transactionUploadBatch = await prisma.transactionUploadBatch.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends TransactionUploadBatchUpdateArgs>(args: SelectSubset<T, TransactionUploadBatchUpdateArgs<ExtArgs>>): Prisma__TransactionUploadBatchClient<$Result.GetResult<Prisma.$TransactionUploadBatchPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more TransactionUploadBatches.
+     * @param {TransactionUploadBatchDeleteManyArgs} args - Arguments to filter TransactionUploadBatches to delete.
+     * @example
+     * // Delete a few TransactionUploadBatches
+     * const { count } = await prisma.transactionUploadBatch.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends TransactionUploadBatchDeleteManyArgs>(args?: SelectSubset<T, TransactionUploadBatchDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more TransactionUploadBatches.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TransactionUploadBatchUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many TransactionUploadBatches
+     * const transactionUploadBatch = await prisma.transactionUploadBatch.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends TransactionUploadBatchUpdateManyArgs>(args: SelectSubset<T, TransactionUploadBatchUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more TransactionUploadBatches and returns the data updated in the database.
+     * @param {TransactionUploadBatchUpdateManyAndReturnArgs} args - Arguments to update many TransactionUploadBatches.
+     * @example
+     * // Update many TransactionUploadBatches
+     * const transactionUploadBatch = await prisma.transactionUploadBatch.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more TransactionUploadBatches and only return the `id`
+     * const transactionUploadBatchWithIdOnly = await prisma.transactionUploadBatch.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends TransactionUploadBatchUpdateManyAndReturnArgs>(args: SelectSubset<T, TransactionUploadBatchUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TransactionUploadBatchPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one TransactionUploadBatch.
+     * @param {TransactionUploadBatchUpsertArgs} args - Arguments to update or create a TransactionUploadBatch.
+     * @example
+     * // Update or create a TransactionUploadBatch
+     * const transactionUploadBatch = await prisma.transactionUploadBatch.upsert({
+     *   create: {
+     *     // ... data to create a TransactionUploadBatch
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the TransactionUploadBatch we want to update
+     *   }
+     * })
+     */
+    upsert<T extends TransactionUploadBatchUpsertArgs>(args: SelectSubset<T, TransactionUploadBatchUpsertArgs<ExtArgs>>): Prisma__TransactionUploadBatchClient<$Result.GetResult<Prisma.$TransactionUploadBatchPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of TransactionUploadBatches.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TransactionUploadBatchCountArgs} args - Arguments to filter TransactionUploadBatches to count.
+     * @example
+     * // Count the number of TransactionUploadBatches
+     * const count = await prisma.transactionUploadBatch.count({
+     *   where: {
+     *     // ... the filter for the TransactionUploadBatches we want to count
+     *   }
+     * })
+    **/
+    count<T extends TransactionUploadBatchCountArgs>(
+      args?: Subset<T, TransactionUploadBatchCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], TransactionUploadBatchCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a TransactionUploadBatch.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TransactionUploadBatchAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends TransactionUploadBatchAggregateArgs>(args: Subset<T, TransactionUploadBatchAggregateArgs>): Prisma.PrismaPromise<GetTransactionUploadBatchAggregateType<T>>
+
+    /**
+     * Group by TransactionUploadBatch.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TransactionUploadBatchGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends TransactionUploadBatchGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: TransactionUploadBatchGroupByArgs['orderBy'] }
+        : { orderBy?: TransactionUploadBatchGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, TransactionUploadBatchGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTransactionUploadBatchGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the TransactionUploadBatch model
+   */
+  readonly fields: TransactionUploadBatchFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for TransactionUploadBatch.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__TransactionUploadBatchClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    transactions<T extends TransactionUploadBatch$transactionsArgs<ExtArgs> = {}>(args?: Subset<T, TransactionUploadBatch$transactionsArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TransactionMasterFilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    poSummaries<T extends TransactionUploadBatch$poSummariesArgs<ExtArgs> = {}>(args?: Subset<T, TransactionUploadBatch$poSummariesArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProductionOrderSummaryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the TransactionUploadBatch model
+   */
+  interface TransactionUploadBatchFieldRefs {
+    readonly id: FieldRef<"TransactionUploadBatch", 'String'>
+    readonly fileName: FieldRef<"TransactionUploadBatch", 'String'>
+    readonly totalRows: FieldRef<"TransactionUploadBatch", 'Int'>
+    readonly validRows: FieldRef<"TransactionUploadBatch", 'Int'>
+    readonly invalidRows: FieldRef<"TransactionUploadBatch", 'Int'>
+    readonly status: FieldRef<"TransactionUploadBatch", 'String'>
+    readonly createdAt: FieldRef<"TransactionUploadBatch", 'DateTime'>
+    readonly updatedAt: FieldRef<"TransactionUploadBatch", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * TransactionUploadBatch findUnique
+   */
+  export type TransactionUploadBatchFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionUploadBatch
+     */
+    select?: TransactionUploadBatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionUploadBatch
+     */
+    omit?: TransactionUploadBatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionUploadBatchInclude<ExtArgs> | null
+    /**
+     * Filter, which TransactionUploadBatch to fetch.
+     */
+    where: TransactionUploadBatchWhereUniqueInput
+  }
+
+  /**
+   * TransactionUploadBatch findUniqueOrThrow
+   */
+  export type TransactionUploadBatchFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionUploadBatch
+     */
+    select?: TransactionUploadBatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionUploadBatch
+     */
+    omit?: TransactionUploadBatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionUploadBatchInclude<ExtArgs> | null
+    /**
+     * Filter, which TransactionUploadBatch to fetch.
+     */
+    where: TransactionUploadBatchWhereUniqueInput
+  }
+
+  /**
+   * TransactionUploadBatch findFirst
+   */
+  export type TransactionUploadBatchFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionUploadBatch
+     */
+    select?: TransactionUploadBatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionUploadBatch
+     */
+    omit?: TransactionUploadBatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionUploadBatchInclude<ExtArgs> | null
+    /**
+     * Filter, which TransactionUploadBatch to fetch.
+     */
+    where?: TransactionUploadBatchWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TransactionUploadBatches to fetch.
+     */
+    orderBy?: TransactionUploadBatchOrderByWithRelationInput | TransactionUploadBatchOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TransactionUploadBatches.
+     */
+    cursor?: TransactionUploadBatchWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TransactionUploadBatches from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TransactionUploadBatches.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TransactionUploadBatches.
+     */
+    distinct?: TransactionUploadBatchScalarFieldEnum | TransactionUploadBatchScalarFieldEnum[]
+  }
+
+  /**
+   * TransactionUploadBatch findFirstOrThrow
+   */
+  export type TransactionUploadBatchFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionUploadBatch
+     */
+    select?: TransactionUploadBatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionUploadBatch
+     */
+    omit?: TransactionUploadBatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionUploadBatchInclude<ExtArgs> | null
+    /**
+     * Filter, which TransactionUploadBatch to fetch.
+     */
+    where?: TransactionUploadBatchWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TransactionUploadBatches to fetch.
+     */
+    orderBy?: TransactionUploadBatchOrderByWithRelationInput | TransactionUploadBatchOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TransactionUploadBatches.
+     */
+    cursor?: TransactionUploadBatchWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TransactionUploadBatches from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TransactionUploadBatches.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TransactionUploadBatches.
+     */
+    distinct?: TransactionUploadBatchScalarFieldEnum | TransactionUploadBatchScalarFieldEnum[]
+  }
+
+  /**
+   * TransactionUploadBatch findMany
+   */
+  export type TransactionUploadBatchFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionUploadBatch
+     */
+    select?: TransactionUploadBatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionUploadBatch
+     */
+    omit?: TransactionUploadBatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionUploadBatchInclude<ExtArgs> | null
+    /**
+     * Filter, which TransactionUploadBatches to fetch.
+     */
+    where?: TransactionUploadBatchWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TransactionUploadBatches to fetch.
+     */
+    orderBy?: TransactionUploadBatchOrderByWithRelationInput | TransactionUploadBatchOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing TransactionUploadBatches.
+     */
+    cursor?: TransactionUploadBatchWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TransactionUploadBatches from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TransactionUploadBatches.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TransactionUploadBatches.
+     */
+    distinct?: TransactionUploadBatchScalarFieldEnum | TransactionUploadBatchScalarFieldEnum[]
+  }
+
+  /**
+   * TransactionUploadBatch create
+   */
+  export type TransactionUploadBatchCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionUploadBatch
+     */
+    select?: TransactionUploadBatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionUploadBatch
+     */
+    omit?: TransactionUploadBatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionUploadBatchInclude<ExtArgs> | null
+    /**
+     * The data needed to create a TransactionUploadBatch.
+     */
+    data: XOR<TransactionUploadBatchCreateInput, TransactionUploadBatchUncheckedCreateInput>
+  }
+
+  /**
+   * TransactionUploadBatch createMany
+   */
+  export type TransactionUploadBatchCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many TransactionUploadBatches.
+     */
+    data: TransactionUploadBatchCreateManyInput | TransactionUploadBatchCreateManyInput[]
+  }
+
+  /**
+   * TransactionUploadBatch createManyAndReturn
+   */
+  export type TransactionUploadBatchCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionUploadBatch
+     */
+    select?: TransactionUploadBatchSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionUploadBatch
+     */
+    omit?: TransactionUploadBatchOmit<ExtArgs> | null
+    /**
+     * The data used to create many TransactionUploadBatches.
+     */
+    data: TransactionUploadBatchCreateManyInput | TransactionUploadBatchCreateManyInput[]
+  }
+
+  /**
+   * TransactionUploadBatch update
+   */
+  export type TransactionUploadBatchUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionUploadBatch
+     */
+    select?: TransactionUploadBatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionUploadBatch
+     */
+    omit?: TransactionUploadBatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionUploadBatchInclude<ExtArgs> | null
+    /**
+     * The data needed to update a TransactionUploadBatch.
+     */
+    data: XOR<TransactionUploadBatchUpdateInput, TransactionUploadBatchUncheckedUpdateInput>
+    /**
+     * Choose, which TransactionUploadBatch to update.
+     */
+    where: TransactionUploadBatchWhereUniqueInput
+  }
+
+  /**
+   * TransactionUploadBatch updateMany
+   */
+  export type TransactionUploadBatchUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update TransactionUploadBatches.
+     */
+    data: XOR<TransactionUploadBatchUpdateManyMutationInput, TransactionUploadBatchUncheckedUpdateManyInput>
+    /**
+     * Filter which TransactionUploadBatches to update
+     */
+    where?: TransactionUploadBatchWhereInput
+    /**
+     * Limit how many TransactionUploadBatches to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * TransactionUploadBatch updateManyAndReturn
+   */
+  export type TransactionUploadBatchUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionUploadBatch
+     */
+    select?: TransactionUploadBatchSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionUploadBatch
+     */
+    omit?: TransactionUploadBatchOmit<ExtArgs> | null
+    /**
+     * The data used to update TransactionUploadBatches.
+     */
+    data: XOR<TransactionUploadBatchUpdateManyMutationInput, TransactionUploadBatchUncheckedUpdateManyInput>
+    /**
+     * Filter which TransactionUploadBatches to update
+     */
+    where?: TransactionUploadBatchWhereInput
+    /**
+     * Limit how many TransactionUploadBatches to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * TransactionUploadBatch upsert
+   */
+  export type TransactionUploadBatchUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionUploadBatch
+     */
+    select?: TransactionUploadBatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionUploadBatch
+     */
+    omit?: TransactionUploadBatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionUploadBatchInclude<ExtArgs> | null
+    /**
+     * The filter to search for the TransactionUploadBatch to update in case it exists.
+     */
+    where: TransactionUploadBatchWhereUniqueInput
+    /**
+     * In case the TransactionUploadBatch found by the `where` argument doesn't exist, create a new TransactionUploadBatch with this data.
+     */
+    create: XOR<TransactionUploadBatchCreateInput, TransactionUploadBatchUncheckedCreateInput>
+    /**
+     * In case the TransactionUploadBatch was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<TransactionUploadBatchUpdateInput, TransactionUploadBatchUncheckedUpdateInput>
+  }
+
+  /**
+   * TransactionUploadBatch delete
+   */
+  export type TransactionUploadBatchDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionUploadBatch
+     */
+    select?: TransactionUploadBatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionUploadBatch
+     */
+    omit?: TransactionUploadBatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionUploadBatchInclude<ExtArgs> | null
+    /**
+     * Filter which TransactionUploadBatch to delete.
+     */
+    where: TransactionUploadBatchWhereUniqueInput
+  }
+
+  /**
+   * TransactionUploadBatch deleteMany
+   */
+  export type TransactionUploadBatchDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TransactionUploadBatches to delete
+     */
+    where?: TransactionUploadBatchWhereInput
+    /**
+     * Limit how many TransactionUploadBatches to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * TransactionUploadBatch.transactions
+   */
+  export type TransactionUploadBatch$transactionsArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionMasterFile
+     */
+    select?: TransactionMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionMasterFile
+     */
+    omit?: TransactionMasterFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionMasterFileInclude<ExtArgs> | null
+    where?: TransactionMasterFileWhereInput
+    orderBy?: TransactionMasterFileOrderByWithRelationInput | TransactionMasterFileOrderByWithRelationInput[]
+    cursor?: TransactionMasterFileWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: TransactionMasterFileScalarFieldEnum | TransactionMasterFileScalarFieldEnum[]
+  }
+
+  /**
+   * TransactionUploadBatch.poSummaries
+   */
+  export type TransactionUploadBatch$poSummariesArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductionOrderSummary
+     */
+    select?: ProductionOrderSummarySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProductionOrderSummary
+     */
+    omit?: ProductionOrderSummaryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductionOrderSummaryInclude<ExtArgs> | null
+    where?: ProductionOrderSummaryWhereInput
+    orderBy?: ProductionOrderSummaryOrderByWithRelationInput | ProductionOrderSummaryOrderByWithRelationInput[]
+    cursor?: ProductionOrderSummaryWhereUniqueInput
+    take?: number
+    skip?: number
+    distinct?: ProductionOrderSummaryScalarFieldEnum | ProductionOrderSummaryScalarFieldEnum[]
+  }
+
+  /**
+   * TransactionUploadBatch without action
+   */
+  export type TransactionUploadBatchDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionUploadBatch
+     */
+    select?: TransactionUploadBatchSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionUploadBatch
+     */
+    omit?: TransactionUploadBatchOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionUploadBatchInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model TransactionMasterFile
+   */
+
+  export type AggregateTransactionMasterFile = {
+    _count: TransactionMasterFileCountAggregateOutputType | null
+    _avg: TransactionMasterFileAvgAggregateOutputType | null
+    _sum: TransactionMasterFileSumAggregateOutputType | null
+    _min: TransactionMasterFileMinAggregateOutputType | null
+    _max: TransactionMasterFileMaxAggregateOutputType | null
+  }
+
+  export type TransactionMasterFileAvgAggregateOutputType = {
+    actualProcessTime: number | null
+    expectedCycleTime: number | null
+    delayHours: number | null
+  }
+
+  export type TransactionMasterFileSumAggregateOutputType = {
+    actualProcessTime: number | null
+    expectedCycleTime: number | null
+    delayHours: number | null
+  }
+
+  export type TransactionMasterFileMinAggregateOutputType = {
+    id: string | null
+    uploadBatchId: string | null
+    rawCustId: string | null
+    rawProdOrderBatch: string | null
+    rawWorkCenter: string | null
+    rawSku: string | null
+    rawSkuType: string | null
+    rawEntryDate: string | null
+    rawEntryTime: string | null
+    rawExitDate: string | null
+    rawExitTime: string | null
+    prodOrder: string | null
+    batch: string | null
+    entryTimestamp: Date | null
+    exitTimestamp: Date | null
+    actualProcessTime: number | null
+    expectedCycleTime: number | null
+    delayHours: number | null
+    processStatus: string | null
+    isValid: boolean | null
+    validationError: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type TransactionMasterFileMaxAggregateOutputType = {
+    id: string | null
+    uploadBatchId: string | null
+    rawCustId: string | null
+    rawProdOrderBatch: string | null
+    rawWorkCenter: string | null
+    rawSku: string | null
+    rawSkuType: string | null
+    rawEntryDate: string | null
+    rawEntryTime: string | null
+    rawExitDate: string | null
+    rawExitTime: string | null
+    prodOrder: string | null
+    batch: string | null
+    entryTimestamp: Date | null
+    exitTimestamp: Date | null
+    actualProcessTime: number | null
+    expectedCycleTime: number | null
+    delayHours: number | null
+    processStatus: string | null
+    isValid: boolean | null
+    validationError: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type TransactionMasterFileCountAggregateOutputType = {
+    id: number
+    uploadBatchId: number
+    rawCustId: number
+    rawProdOrderBatch: number
+    rawWorkCenter: number
+    rawSku: number
+    rawSkuType: number
+    rawEntryDate: number
+    rawEntryTime: number
+    rawExitDate: number
+    rawExitTime: number
+    prodOrder: number
+    batch: number
+    entryTimestamp: number
+    exitTimestamp: number
+    actualProcessTime: number
+    expectedCycleTime: number
+    delayHours: number
+    processStatus: number
+    isValid: number
+    validationError: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type TransactionMasterFileAvgAggregateInputType = {
+    actualProcessTime?: true
+    expectedCycleTime?: true
+    delayHours?: true
+  }
+
+  export type TransactionMasterFileSumAggregateInputType = {
+    actualProcessTime?: true
+    expectedCycleTime?: true
+    delayHours?: true
+  }
+
+  export type TransactionMasterFileMinAggregateInputType = {
+    id?: true
+    uploadBatchId?: true
+    rawCustId?: true
+    rawProdOrderBatch?: true
+    rawWorkCenter?: true
+    rawSku?: true
+    rawSkuType?: true
+    rawEntryDate?: true
+    rawEntryTime?: true
+    rawExitDate?: true
+    rawExitTime?: true
+    prodOrder?: true
+    batch?: true
+    entryTimestamp?: true
+    exitTimestamp?: true
+    actualProcessTime?: true
+    expectedCycleTime?: true
+    delayHours?: true
+    processStatus?: true
+    isValid?: true
+    validationError?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type TransactionMasterFileMaxAggregateInputType = {
+    id?: true
+    uploadBatchId?: true
+    rawCustId?: true
+    rawProdOrderBatch?: true
+    rawWorkCenter?: true
+    rawSku?: true
+    rawSkuType?: true
+    rawEntryDate?: true
+    rawEntryTime?: true
+    rawExitDate?: true
+    rawExitTime?: true
+    prodOrder?: true
+    batch?: true
+    entryTimestamp?: true
+    exitTimestamp?: true
+    actualProcessTime?: true
+    expectedCycleTime?: true
+    delayHours?: true
+    processStatus?: true
+    isValid?: true
+    validationError?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type TransactionMasterFileCountAggregateInputType = {
+    id?: true
+    uploadBatchId?: true
+    rawCustId?: true
+    rawProdOrderBatch?: true
+    rawWorkCenter?: true
+    rawSku?: true
+    rawSkuType?: true
+    rawEntryDate?: true
+    rawEntryTime?: true
+    rawExitDate?: true
+    rawExitTime?: true
+    prodOrder?: true
+    batch?: true
+    entryTimestamp?: true
+    exitTimestamp?: true
+    actualProcessTime?: true
+    expectedCycleTime?: true
+    delayHours?: true
+    processStatus?: true
+    isValid?: true
+    validationError?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type TransactionMasterFileAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TransactionMasterFile to aggregate.
+     */
+    where?: TransactionMasterFileWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TransactionMasterFiles to fetch.
+     */
+    orderBy?: TransactionMasterFileOrderByWithRelationInput | TransactionMasterFileOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: TransactionMasterFileWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TransactionMasterFiles from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TransactionMasterFiles.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned TransactionMasterFiles
+    **/
+    _count?: true | TransactionMasterFileCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: TransactionMasterFileAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: TransactionMasterFileSumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: TransactionMasterFileMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: TransactionMasterFileMaxAggregateInputType
+  }
+
+  export type GetTransactionMasterFileAggregateType<T extends TransactionMasterFileAggregateArgs> = {
+        [P in keyof T & keyof AggregateTransactionMasterFile]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateTransactionMasterFile[P]>
+      : GetScalarType<T[P], AggregateTransactionMasterFile[P]>
+  }
+
+
+
+
+  export type TransactionMasterFileGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: TransactionMasterFileWhereInput
+    orderBy?: TransactionMasterFileOrderByWithAggregationInput | TransactionMasterFileOrderByWithAggregationInput[]
+    by: TransactionMasterFileScalarFieldEnum[] | TransactionMasterFileScalarFieldEnum
+    having?: TransactionMasterFileScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: TransactionMasterFileCountAggregateInputType | true
+    _avg?: TransactionMasterFileAvgAggregateInputType
+    _sum?: TransactionMasterFileSumAggregateInputType
+    _min?: TransactionMasterFileMinAggregateInputType
+    _max?: TransactionMasterFileMaxAggregateInputType
+  }
+
+  export type TransactionMasterFileGroupByOutputType = {
+    id: string
+    uploadBatchId: string
+    rawCustId: string | null
+    rawProdOrderBatch: string | null
+    rawWorkCenter: string | null
+    rawSku: string | null
+    rawSkuType: string | null
+    rawEntryDate: string | null
+    rawEntryTime: string | null
+    rawExitDate: string | null
+    rawExitTime: string | null
+    prodOrder: string | null
+    batch: string | null
+    entryTimestamp: Date | null
+    exitTimestamp: Date | null
+    actualProcessTime: number | null
+    expectedCycleTime: number | null
+    delayHours: number | null
+    processStatus: string | null
+    isValid: boolean
+    validationError: string | null
+    createdAt: Date
+    updatedAt: Date
+    _count: TransactionMasterFileCountAggregateOutputType | null
+    _avg: TransactionMasterFileAvgAggregateOutputType | null
+    _sum: TransactionMasterFileSumAggregateOutputType | null
+    _min: TransactionMasterFileMinAggregateOutputType | null
+    _max: TransactionMasterFileMaxAggregateOutputType | null
+  }
+
+  type GetTransactionMasterFileGroupByPayload<T extends TransactionMasterFileGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<TransactionMasterFileGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof TransactionMasterFileGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], TransactionMasterFileGroupByOutputType[P]>
+            : GetScalarType<T[P], TransactionMasterFileGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type TransactionMasterFileSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    uploadBatchId?: boolean
+    rawCustId?: boolean
+    rawProdOrderBatch?: boolean
+    rawWorkCenter?: boolean
+    rawSku?: boolean
+    rawSkuType?: boolean
+    rawEntryDate?: boolean
+    rawEntryTime?: boolean
+    rawExitDate?: boolean
+    rawExitTime?: boolean
+    prodOrder?: boolean
+    batch?: boolean
+    entryTimestamp?: boolean
+    exitTimestamp?: boolean
+    actualProcessTime?: boolean
+    expectedCycleTime?: boolean
+    delayHours?: boolean
+    processStatus?: boolean
+    isValid?: boolean
+    validationError?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    uploadBatch?: boolean | TransactionUploadBatchDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["transactionMasterFile"]>
+
+  export type TransactionMasterFileSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    uploadBatchId?: boolean
+    rawCustId?: boolean
+    rawProdOrderBatch?: boolean
+    rawWorkCenter?: boolean
+    rawSku?: boolean
+    rawSkuType?: boolean
+    rawEntryDate?: boolean
+    rawEntryTime?: boolean
+    rawExitDate?: boolean
+    rawExitTime?: boolean
+    prodOrder?: boolean
+    batch?: boolean
+    entryTimestamp?: boolean
+    exitTimestamp?: boolean
+    actualProcessTime?: boolean
+    expectedCycleTime?: boolean
+    delayHours?: boolean
+    processStatus?: boolean
+    isValid?: boolean
+    validationError?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    uploadBatch?: boolean | TransactionUploadBatchDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["transactionMasterFile"]>
+
+  export type TransactionMasterFileSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    uploadBatchId?: boolean
+    rawCustId?: boolean
+    rawProdOrderBatch?: boolean
+    rawWorkCenter?: boolean
+    rawSku?: boolean
+    rawSkuType?: boolean
+    rawEntryDate?: boolean
+    rawEntryTime?: boolean
+    rawExitDate?: boolean
+    rawExitTime?: boolean
+    prodOrder?: boolean
+    batch?: boolean
+    entryTimestamp?: boolean
+    exitTimestamp?: boolean
+    actualProcessTime?: boolean
+    expectedCycleTime?: boolean
+    delayHours?: boolean
+    processStatus?: boolean
+    isValid?: boolean
+    validationError?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    uploadBatch?: boolean | TransactionUploadBatchDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["transactionMasterFile"]>
+
+  export type TransactionMasterFileSelectScalar = {
+    id?: boolean
+    uploadBatchId?: boolean
+    rawCustId?: boolean
+    rawProdOrderBatch?: boolean
+    rawWorkCenter?: boolean
+    rawSku?: boolean
+    rawSkuType?: boolean
+    rawEntryDate?: boolean
+    rawEntryTime?: boolean
+    rawExitDate?: boolean
+    rawExitTime?: boolean
+    prodOrder?: boolean
+    batch?: boolean
+    entryTimestamp?: boolean
+    exitTimestamp?: boolean
+    actualProcessTime?: boolean
+    expectedCycleTime?: boolean
+    delayHours?: boolean
+    processStatus?: boolean
+    isValid?: boolean
+    validationError?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type TransactionMasterFileOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "uploadBatchId" | "rawCustId" | "rawProdOrderBatch" | "rawWorkCenter" | "rawSku" | "rawSkuType" | "rawEntryDate" | "rawEntryTime" | "rawExitDate" | "rawExitTime" | "prodOrder" | "batch" | "entryTimestamp" | "exitTimestamp" | "actualProcessTime" | "expectedCycleTime" | "delayHours" | "processStatus" | "isValid" | "validationError" | "createdAt" | "updatedAt", ExtArgs["result"]["transactionMasterFile"]>
+  export type TransactionMasterFileInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    uploadBatch?: boolean | TransactionUploadBatchDefaultArgs<ExtArgs>
+  }
+  export type TransactionMasterFileIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    uploadBatch?: boolean | TransactionUploadBatchDefaultArgs<ExtArgs>
+  }
+  export type TransactionMasterFileIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    uploadBatch?: boolean | TransactionUploadBatchDefaultArgs<ExtArgs>
+  }
+
+  export type $TransactionMasterFilePayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "TransactionMasterFile"
+    objects: {
+      uploadBatch: Prisma.$TransactionUploadBatchPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      uploadBatchId: string
+      rawCustId: string | null
+      rawProdOrderBatch: string | null
+      rawWorkCenter: string | null
+      rawSku: string | null
+      rawSkuType: string | null
+      rawEntryDate: string | null
+      rawEntryTime: string | null
+      rawExitDate: string | null
+      rawExitTime: string | null
+      prodOrder: string | null
+      batch: string | null
+      entryTimestamp: Date | null
+      exitTimestamp: Date | null
+      actualProcessTime: number | null
+      expectedCycleTime: number | null
+      delayHours: number | null
+      processStatus: string | null
+      isValid: boolean
+      validationError: string | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["transactionMasterFile"]>
+    composites: {}
+  }
+
+  type TransactionMasterFileGetPayload<S extends boolean | null | undefined | TransactionMasterFileDefaultArgs> = $Result.GetResult<Prisma.$TransactionMasterFilePayload, S>
+
+  type TransactionMasterFileCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<TransactionMasterFileFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: TransactionMasterFileCountAggregateInputType | true
+    }
+
+  export interface TransactionMasterFileDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['TransactionMasterFile'], meta: { name: 'TransactionMasterFile' } }
+    /**
+     * Find zero or one TransactionMasterFile that matches the filter.
+     * @param {TransactionMasterFileFindUniqueArgs} args - Arguments to find a TransactionMasterFile
+     * @example
+     * // Get one TransactionMasterFile
+     * const transactionMasterFile = await prisma.transactionMasterFile.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends TransactionMasterFileFindUniqueArgs>(args: SelectSubset<T, TransactionMasterFileFindUniqueArgs<ExtArgs>>): Prisma__TransactionMasterFileClient<$Result.GetResult<Prisma.$TransactionMasterFilePayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one TransactionMasterFile that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {TransactionMasterFileFindUniqueOrThrowArgs} args - Arguments to find a TransactionMasterFile
+     * @example
+     * // Get one TransactionMasterFile
+     * const transactionMasterFile = await prisma.transactionMasterFile.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends TransactionMasterFileFindUniqueOrThrowArgs>(args: SelectSubset<T, TransactionMasterFileFindUniqueOrThrowArgs<ExtArgs>>): Prisma__TransactionMasterFileClient<$Result.GetResult<Prisma.$TransactionMasterFilePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first TransactionMasterFile that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TransactionMasterFileFindFirstArgs} args - Arguments to find a TransactionMasterFile
+     * @example
+     * // Get one TransactionMasterFile
+     * const transactionMasterFile = await prisma.transactionMasterFile.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends TransactionMasterFileFindFirstArgs>(args?: SelectSubset<T, TransactionMasterFileFindFirstArgs<ExtArgs>>): Prisma__TransactionMasterFileClient<$Result.GetResult<Prisma.$TransactionMasterFilePayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first TransactionMasterFile that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TransactionMasterFileFindFirstOrThrowArgs} args - Arguments to find a TransactionMasterFile
+     * @example
+     * // Get one TransactionMasterFile
+     * const transactionMasterFile = await prisma.transactionMasterFile.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends TransactionMasterFileFindFirstOrThrowArgs>(args?: SelectSubset<T, TransactionMasterFileFindFirstOrThrowArgs<ExtArgs>>): Prisma__TransactionMasterFileClient<$Result.GetResult<Prisma.$TransactionMasterFilePayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more TransactionMasterFiles that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TransactionMasterFileFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all TransactionMasterFiles
+     * const transactionMasterFiles = await prisma.transactionMasterFile.findMany()
+     * 
+     * // Get first 10 TransactionMasterFiles
+     * const transactionMasterFiles = await prisma.transactionMasterFile.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const transactionMasterFileWithIdOnly = await prisma.transactionMasterFile.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends TransactionMasterFileFindManyArgs>(args?: SelectSubset<T, TransactionMasterFileFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TransactionMasterFilePayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a TransactionMasterFile.
+     * @param {TransactionMasterFileCreateArgs} args - Arguments to create a TransactionMasterFile.
+     * @example
+     * // Create one TransactionMasterFile
+     * const TransactionMasterFile = await prisma.transactionMasterFile.create({
+     *   data: {
+     *     // ... data to create a TransactionMasterFile
+     *   }
+     * })
+     * 
+     */
+    create<T extends TransactionMasterFileCreateArgs>(args: SelectSubset<T, TransactionMasterFileCreateArgs<ExtArgs>>): Prisma__TransactionMasterFileClient<$Result.GetResult<Prisma.$TransactionMasterFilePayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many TransactionMasterFiles.
+     * @param {TransactionMasterFileCreateManyArgs} args - Arguments to create many TransactionMasterFiles.
+     * @example
+     * // Create many TransactionMasterFiles
+     * const transactionMasterFile = await prisma.transactionMasterFile.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends TransactionMasterFileCreateManyArgs>(args?: SelectSubset<T, TransactionMasterFileCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many TransactionMasterFiles and returns the data saved in the database.
+     * @param {TransactionMasterFileCreateManyAndReturnArgs} args - Arguments to create many TransactionMasterFiles.
+     * @example
+     * // Create many TransactionMasterFiles
+     * const transactionMasterFile = await prisma.transactionMasterFile.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many TransactionMasterFiles and only return the `id`
+     * const transactionMasterFileWithIdOnly = await prisma.transactionMasterFile.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends TransactionMasterFileCreateManyAndReturnArgs>(args?: SelectSubset<T, TransactionMasterFileCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TransactionMasterFilePayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a TransactionMasterFile.
+     * @param {TransactionMasterFileDeleteArgs} args - Arguments to delete one TransactionMasterFile.
+     * @example
+     * // Delete one TransactionMasterFile
+     * const TransactionMasterFile = await prisma.transactionMasterFile.delete({
+     *   where: {
+     *     // ... filter to delete one TransactionMasterFile
+     *   }
+     * })
+     * 
+     */
+    delete<T extends TransactionMasterFileDeleteArgs>(args: SelectSubset<T, TransactionMasterFileDeleteArgs<ExtArgs>>): Prisma__TransactionMasterFileClient<$Result.GetResult<Prisma.$TransactionMasterFilePayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one TransactionMasterFile.
+     * @param {TransactionMasterFileUpdateArgs} args - Arguments to update one TransactionMasterFile.
+     * @example
+     * // Update one TransactionMasterFile
+     * const transactionMasterFile = await prisma.transactionMasterFile.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends TransactionMasterFileUpdateArgs>(args: SelectSubset<T, TransactionMasterFileUpdateArgs<ExtArgs>>): Prisma__TransactionMasterFileClient<$Result.GetResult<Prisma.$TransactionMasterFilePayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more TransactionMasterFiles.
+     * @param {TransactionMasterFileDeleteManyArgs} args - Arguments to filter TransactionMasterFiles to delete.
+     * @example
+     * // Delete a few TransactionMasterFiles
+     * const { count } = await prisma.transactionMasterFile.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends TransactionMasterFileDeleteManyArgs>(args?: SelectSubset<T, TransactionMasterFileDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more TransactionMasterFiles.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TransactionMasterFileUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many TransactionMasterFiles
+     * const transactionMasterFile = await prisma.transactionMasterFile.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends TransactionMasterFileUpdateManyArgs>(args: SelectSubset<T, TransactionMasterFileUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more TransactionMasterFiles and returns the data updated in the database.
+     * @param {TransactionMasterFileUpdateManyAndReturnArgs} args - Arguments to update many TransactionMasterFiles.
+     * @example
+     * // Update many TransactionMasterFiles
+     * const transactionMasterFile = await prisma.transactionMasterFile.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more TransactionMasterFiles and only return the `id`
+     * const transactionMasterFileWithIdOnly = await prisma.transactionMasterFile.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends TransactionMasterFileUpdateManyAndReturnArgs>(args: SelectSubset<T, TransactionMasterFileUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$TransactionMasterFilePayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one TransactionMasterFile.
+     * @param {TransactionMasterFileUpsertArgs} args - Arguments to update or create a TransactionMasterFile.
+     * @example
+     * // Update or create a TransactionMasterFile
+     * const transactionMasterFile = await prisma.transactionMasterFile.upsert({
+     *   create: {
+     *     // ... data to create a TransactionMasterFile
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the TransactionMasterFile we want to update
+     *   }
+     * })
+     */
+    upsert<T extends TransactionMasterFileUpsertArgs>(args: SelectSubset<T, TransactionMasterFileUpsertArgs<ExtArgs>>): Prisma__TransactionMasterFileClient<$Result.GetResult<Prisma.$TransactionMasterFilePayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of TransactionMasterFiles.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TransactionMasterFileCountArgs} args - Arguments to filter TransactionMasterFiles to count.
+     * @example
+     * // Count the number of TransactionMasterFiles
+     * const count = await prisma.transactionMasterFile.count({
+     *   where: {
+     *     // ... the filter for the TransactionMasterFiles we want to count
+     *   }
+     * })
+    **/
+    count<T extends TransactionMasterFileCountArgs>(
+      args?: Subset<T, TransactionMasterFileCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], TransactionMasterFileCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a TransactionMasterFile.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TransactionMasterFileAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends TransactionMasterFileAggregateArgs>(args: Subset<T, TransactionMasterFileAggregateArgs>): Prisma.PrismaPromise<GetTransactionMasterFileAggregateType<T>>
+
+    /**
+     * Group by TransactionMasterFile.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {TransactionMasterFileGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends TransactionMasterFileGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: TransactionMasterFileGroupByArgs['orderBy'] }
+        : { orderBy?: TransactionMasterFileGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, TransactionMasterFileGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetTransactionMasterFileGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the TransactionMasterFile model
+   */
+  readonly fields: TransactionMasterFileFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for TransactionMasterFile.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__TransactionMasterFileClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    uploadBatch<T extends TransactionUploadBatchDefaultArgs<ExtArgs> = {}>(args?: Subset<T, TransactionUploadBatchDefaultArgs<ExtArgs>>): Prisma__TransactionUploadBatchClient<$Result.GetResult<Prisma.$TransactionUploadBatchPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the TransactionMasterFile model
+   */
+  interface TransactionMasterFileFieldRefs {
+    readonly id: FieldRef<"TransactionMasterFile", 'String'>
+    readonly uploadBatchId: FieldRef<"TransactionMasterFile", 'String'>
+    readonly rawCustId: FieldRef<"TransactionMasterFile", 'String'>
+    readonly rawProdOrderBatch: FieldRef<"TransactionMasterFile", 'String'>
+    readonly rawWorkCenter: FieldRef<"TransactionMasterFile", 'String'>
+    readonly rawSku: FieldRef<"TransactionMasterFile", 'String'>
+    readonly rawSkuType: FieldRef<"TransactionMasterFile", 'String'>
+    readonly rawEntryDate: FieldRef<"TransactionMasterFile", 'String'>
+    readonly rawEntryTime: FieldRef<"TransactionMasterFile", 'String'>
+    readonly rawExitDate: FieldRef<"TransactionMasterFile", 'String'>
+    readonly rawExitTime: FieldRef<"TransactionMasterFile", 'String'>
+    readonly prodOrder: FieldRef<"TransactionMasterFile", 'String'>
+    readonly batch: FieldRef<"TransactionMasterFile", 'String'>
+    readonly entryTimestamp: FieldRef<"TransactionMasterFile", 'DateTime'>
+    readonly exitTimestamp: FieldRef<"TransactionMasterFile", 'DateTime'>
+    readonly actualProcessTime: FieldRef<"TransactionMasterFile", 'Float'>
+    readonly expectedCycleTime: FieldRef<"TransactionMasterFile", 'Float'>
+    readonly delayHours: FieldRef<"TransactionMasterFile", 'Float'>
+    readonly processStatus: FieldRef<"TransactionMasterFile", 'String'>
+    readonly isValid: FieldRef<"TransactionMasterFile", 'Boolean'>
+    readonly validationError: FieldRef<"TransactionMasterFile", 'String'>
+    readonly createdAt: FieldRef<"TransactionMasterFile", 'DateTime'>
+    readonly updatedAt: FieldRef<"TransactionMasterFile", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * TransactionMasterFile findUnique
+   */
+  export type TransactionMasterFileFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionMasterFile
+     */
+    select?: TransactionMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionMasterFile
+     */
+    omit?: TransactionMasterFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionMasterFileInclude<ExtArgs> | null
+    /**
+     * Filter, which TransactionMasterFile to fetch.
+     */
+    where: TransactionMasterFileWhereUniqueInput
+  }
+
+  /**
+   * TransactionMasterFile findUniqueOrThrow
+   */
+  export type TransactionMasterFileFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionMasterFile
+     */
+    select?: TransactionMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionMasterFile
+     */
+    omit?: TransactionMasterFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionMasterFileInclude<ExtArgs> | null
+    /**
+     * Filter, which TransactionMasterFile to fetch.
+     */
+    where: TransactionMasterFileWhereUniqueInput
+  }
+
+  /**
+   * TransactionMasterFile findFirst
+   */
+  export type TransactionMasterFileFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionMasterFile
+     */
+    select?: TransactionMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionMasterFile
+     */
+    omit?: TransactionMasterFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionMasterFileInclude<ExtArgs> | null
+    /**
+     * Filter, which TransactionMasterFile to fetch.
+     */
+    where?: TransactionMasterFileWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TransactionMasterFiles to fetch.
+     */
+    orderBy?: TransactionMasterFileOrderByWithRelationInput | TransactionMasterFileOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TransactionMasterFiles.
+     */
+    cursor?: TransactionMasterFileWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TransactionMasterFiles from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TransactionMasterFiles.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TransactionMasterFiles.
+     */
+    distinct?: TransactionMasterFileScalarFieldEnum | TransactionMasterFileScalarFieldEnum[]
+  }
+
+  /**
+   * TransactionMasterFile findFirstOrThrow
+   */
+  export type TransactionMasterFileFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionMasterFile
+     */
+    select?: TransactionMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionMasterFile
+     */
+    omit?: TransactionMasterFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionMasterFileInclude<ExtArgs> | null
+    /**
+     * Filter, which TransactionMasterFile to fetch.
+     */
+    where?: TransactionMasterFileWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TransactionMasterFiles to fetch.
+     */
+    orderBy?: TransactionMasterFileOrderByWithRelationInput | TransactionMasterFileOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for TransactionMasterFiles.
+     */
+    cursor?: TransactionMasterFileWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TransactionMasterFiles from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TransactionMasterFiles.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TransactionMasterFiles.
+     */
+    distinct?: TransactionMasterFileScalarFieldEnum | TransactionMasterFileScalarFieldEnum[]
+  }
+
+  /**
+   * TransactionMasterFile findMany
+   */
+  export type TransactionMasterFileFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionMasterFile
+     */
+    select?: TransactionMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionMasterFile
+     */
+    omit?: TransactionMasterFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionMasterFileInclude<ExtArgs> | null
+    /**
+     * Filter, which TransactionMasterFiles to fetch.
+     */
+    where?: TransactionMasterFileWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of TransactionMasterFiles to fetch.
+     */
+    orderBy?: TransactionMasterFileOrderByWithRelationInput | TransactionMasterFileOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing TransactionMasterFiles.
+     */
+    cursor?: TransactionMasterFileWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` TransactionMasterFiles from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` TransactionMasterFiles.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of TransactionMasterFiles.
+     */
+    distinct?: TransactionMasterFileScalarFieldEnum | TransactionMasterFileScalarFieldEnum[]
+  }
+
+  /**
+   * TransactionMasterFile create
+   */
+  export type TransactionMasterFileCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionMasterFile
+     */
+    select?: TransactionMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionMasterFile
+     */
+    omit?: TransactionMasterFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionMasterFileInclude<ExtArgs> | null
+    /**
+     * The data needed to create a TransactionMasterFile.
+     */
+    data: XOR<TransactionMasterFileCreateInput, TransactionMasterFileUncheckedCreateInput>
+  }
+
+  /**
+   * TransactionMasterFile createMany
+   */
+  export type TransactionMasterFileCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many TransactionMasterFiles.
+     */
+    data: TransactionMasterFileCreateManyInput | TransactionMasterFileCreateManyInput[]
+  }
+
+  /**
+   * TransactionMasterFile createManyAndReturn
+   */
+  export type TransactionMasterFileCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionMasterFile
+     */
+    select?: TransactionMasterFileSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionMasterFile
+     */
+    omit?: TransactionMasterFileOmit<ExtArgs> | null
+    /**
+     * The data used to create many TransactionMasterFiles.
+     */
+    data: TransactionMasterFileCreateManyInput | TransactionMasterFileCreateManyInput[]
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionMasterFileIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * TransactionMasterFile update
+   */
+  export type TransactionMasterFileUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionMasterFile
+     */
+    select?: TransactionMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionMasterFile
+     */
+    omit?: TransactionMasterFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionMasterFileInclude<ExtArgs> | null
+    /**
+     * The data needed to update a TransactionMasterFile.
+     */
+    data: XOR<TransactionMasterFileUpdateInput, TransactionMasterFileUncheckedUpdateInput>
+    /**
+     * Choose, which TransactionMasterFile to update.
+     */
+    where: TransactionMasterFileWhereUniqueInput
+  }
+
+  /**
+   * TransactionMasterFile updateMany
+   */
+  export type TransactionMasterFileUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update TransactionMasterFiles.
+     */
+    data: XOR<TransactionMasterFileUpdateManyMutationInput, TransactionMasterFileUncheckedUpdateManyInput>
+    /**
+     * Filter which TransactionMasterFiles to update
+     */
+    where?: TransactionMasterFileWhereInput
+    /**
+     * Limit how many TransactionMasterFiles to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * TransactionMasterFile updateManyAndReturn
+   */
+  export type TransactionMasterFileUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionMasterFile
+     */
+    select?: TransactionMasterFileSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionMasterFile
+     */
+    omit?: TransactionMasterFileOmit<ExtArgs> | null
+    /**
+     * The data used to update TransactionMasterFiles.
+     */
+    data: XOR<TransactionMasterFileUpdateManyMutationInput, TransactionMasterFileUncheckedUpdateManyInput>
+    /**
+     * Filter which TransactionMasterFiles to update
+     */
+    where?: TransactionMasterFileWhereInput
+    /**
+     * Limit how many TransactionMasterFiles to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionMasterFileIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * TransactionMasterFile upsert
+   */
+  export type TransactionMasterFileUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionMasterFile
+     */
+    select?: TransactionMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionMasterFile
+     */
+    omit?: TransactionMasterFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionMasterFileInclude<ExtArgs> | null
+    /**
+     * The filter to search for the TransactionMasterFile to update in case it exists.
+     */
+    where: TransactionMasterFileWhereUniqueInput
+    /**
+     * In case the TransactionMasterFile found by the `where` argument doesn't exist, create a new TransactionMasterFile with this data.
+     */
+    create: XOR<TransactionMasterFileCreateInput, TransactionMasterFileUncheckedCreateInput>
+    /**
+     * In case the TransactionMasterFile was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<TransactionMasterFileUpdateInput, TransactionMasterFileUncheckedUpdateInput>
+  }
+
+  /**
+   * TransactionMasterFile delete
+   */
+  export type TransactionMasterFileDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionMasterFile
+     */
+    select?: TransactionMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionMasterFile
+     */
+    omit?: TransactionMasterFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionMasterFileInclude<ExtArgs> | null
+    /**
+     * Filter which TransactionMasterFile to delete.
+     */
+    where: TransactionMasterFileWhereUniqueInput
+  }
+
+  /**
+   * TransactionMasterFile deleteMany
+   */
+  export type TransactionMasterFileDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which TransactionMasterFiles to delete
+     */
+    where?: TransactionMasterFileWhereInput
+    /**
+     * Limit how many TransactionMasterFiles to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * TransactionMasterFile without action
+   */
+  export type TransactionMasterFileDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the TransactionMasterFile
+     */
+    select?: TransactionMasterFileSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the TransactionMasterFile
+     */
+    omit?: TransactionMasterFileOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: TransactionMasterFileInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model ProductionOrderSummary
+   */
+
+  export type AggregateProductionOrderSummary = {
+    _count: ProductionOrderSummaryCountAggregateOutputType | null
+    _avg: ProductionOrderSummaryAvgAggregateOutputType | null
+    _sum: ProductionOrderSummarySumAggregateOutputType | null
+    _min: ProductionOrderSummaryMinAggregateOutputType | null
+    _max: ProductionOrderSummaryMaxAggregateOutputType | null
+  }
+
+  export type ProductionOrderSummaryAvgAggregateOutputType = {
+    numberOfBatches: number | null
+    totalActualTime: number | null
+    configuredTotalCT: number | null
+    totalDelay: number | null
+  }
+
+  export type ProductionOrderSummarySumAggregateOutputType = {
+    numberOfBatches: number | null
+    totalActualTime: number | null
+    configuredTotalCT: number | null
+    totalDelay: number | null
+  }
+
+  export type ProductionOrderSummaryMinAggregateOutputType = {
+    id: string | null
+    uploadBatchId: string | null
+    prodOrder: string | null
+    custId: string | null
+    sku: string | null
+    skuType: string | null
+    numberOfBatches: number | null
+    batchesList: string | null
+    totalActualTime: number | null
+    configuredTotalCT: number | null
+    totalDelay: number | null
+    poStatus: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type ProductionOrderSummaryMaxAggregateOutputType = {
+    id: string | null
+    uploadBatchId: string | null
+    prodOrder: string | null
+    custId: string | null
+    sku: string | null
+    skuType: string | null
+    numberOfBatches: number | null
+    batchesList: string | null
+    totalActualTime: number | null
+    configuredTotalCT: number | null
+    totalDelay: number | null
+    poStatus: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type ProductionOrderSummaryCountAggregateOutputType = {
+    id: number
+    uploadBatchId: number
+    prodOrder: number
+    custId: number
+    sku: number
+    skuType: number
+    numberOfBatches: number
+    batchesList: number
+    totalActualTime: number
+    configuredTotalCT: number
+    totalDelay: number
+    poStatus: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type ProductionOrderSummaryAvgAggregateInputType = {
+    numberOfBatches?: true
+    totalActualTime?: true
+    configuredTotalCT?: true
+    totalDelay?: true
+  }
+
+  export type ProductionOrderSummarySumAggregateInputType = {
+    numberOfBatches?: true
+    totalActualTime?: true
+    configuredTotalCT?: true
+    totalDelay?: true
+  }
+
+  export type ProductionOrderSummaryMinAggregateInputType = {
+    id?: true
+    uploadBatchId?: true
+    prodOrder?: true
+    custId?: true
+    sku?: true
+    skuType?: true
+    numberOfBatches?: true
+    batchesList?: true
+    totalActualTime?: true
+    configuredTotalCT?: true
+    totalDelay?: true
+    poStatus?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type ProductionOrderSummaryMaxAggregateInputType = {
+    id?: true
+    uploadBatchId?: true
+    prodOrder?: true
+    custId?: true
+    sku?: true
+    skuType?: true
+    numberOfBatches?: true
+    batchesList?: true
+    totalActualTime?: true
+    configuredTotalCT?: true
+    totalDelay?: true
+    poStatus?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type ProductionOrderSummaryCountAggregateInputType = {
+    id?: true
+    uploadBatchId?: true
+    prodOrder?: true
+    custId?: true
+    sku?: true
+    skuType?: true
+    numberOfBatches?: true
+    batchesList?: true
+    totalActualTime?: true
+    configuredTotalCT?: true
+    totalDelay?: true
+    poStatus?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type ProductionOrderSummaryAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ProductionOrderSummary to aggregate.
+     */
+    where?: ProductionOrderSummaryWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProductionOrderSummaries to fetch.
+     */
+    orderBy?: ProductionOrderSummaryOrderByWithRelationInput | ProductionOrderSummaryOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ProductionOrderSummaryWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProductionOrderSummaries from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProductionOrderSummaries.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned ProductionOrderSummaries
+    **/
+    _count?: true | ProductionOrderSummaryCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to average
+    **/
+    _avg?: ProductionOrderSummaryAvgAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to sum
+    **/
+    _sum?: ProductionOrderSummarySumAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ProductionOrderSummaryMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ProductionOrderSummaryMaxAggregateInputType
+  }
+
+  export type GetProductionOrderSummaryAggregateType<T extends ProductionOrderSummaryAggregateArgs> = {
+        [P in keyof T & keyof AggregateProductionOrderSummary]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateProductionOrderSummary[P]>
+      : GetScalarType<T[P], AggregateProductionOrderSummary[P]>
+  }
+
+
+
+
+  export type ProductionOrderSummaryGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ProductionOrderSummaryWhereInput
+    orderBy?: ProductionOrderSummaryOrderByWithAggregationInput | ProductionOrderSummaryOrderByWithAggregationInput[]
+    by: ProductionOrderSummaryScalarFieldEnum[] | ProductionOrderSummaryScalarFieldEnum
+    having?: ProductionOrderSummaryScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ProductionOrderSummaryCountAggregateInputType | true
+    _avg?: ProductionOrderSummaryAvgAggregateInputType
+    _sum?: ProductionOrderSummarySumAggregateInputType
+    _min?: ProductionOrderSummaryMinAggregateInputType
+    _max?: ProductionOrderSummaryMaxAggregateInputType
+  }
+
+  export type ProductionOrderSummaryGroupByOutputType = {
+    id: string
+    uploadBatchId: string
+    prodOrder: string
+    custId: string
+    sku: string | null
+    skuType: string
+    numberOfBatches: number
+    batchesList: string | null
+    totalActualTime: number
+    configuredTotalCT: number | null
+    totalDelay: number
+    poStatus: string
+    createdAt: Date
+    updatedAt: Date
+    _count: ProductionOrderSummaryCountAggregateOutputType | null
+    _avg: ProductionOrderSummaryAvgAggregateOutputType | null
+    _sum: ProductionOrderSummarySumAggregateOutputType | null
+    _min: ProductionOrderSummaryMinAggregateOutputType | null
+    _max: ProductionOrderSummaryMaxAggregateOutputType | null
+  }
+
+  type GetProductionOrderSummaryGroupByPayload<T extends ProductionOrderSummaryGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ProductionOrderSummaryGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ProductionOrderSummaryGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ProductionOrderSummaryGroupByOutputType[P]>
+            : GetScalarType<T[P], ProductionOrderSummaryGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ProductionOrderSummarySelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    uploadBatchId?: boolean
+    prodOrder?: boolean
+    custId?: boolean
+    sku?: boolean
+    skuType?: boolean
+    numberOfBatches?: boolean
+    batchesList?: boolean
+    totalActualTime?: boolean
+    configuredTotalCT?: boolean
+    totalDelay?: boolean
+    poStatus?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    uploadBatch?: boolean | TransactionUploadBatchDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["productionOrderSummary"]>
+
+  export type ProductionOrderSummarySelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    uploadBatchId?: boolean
+    prodOrder?: boolean
+    custId?: boolean
+    sku?: boolean
+    skuType?: boolean
+    numberOfBatches?: boolean
+    batchesList?: boolean
+    totalActualTime?: boolean
+    configuredTotalCT?: boolean
+    totalDelay?: boolean
+    poStatus?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    uploadBatch?: boolean | TransactionUploadBatchDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["productionOrderSummary"]>
+
+  export type ProductionOrderSummarySelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    uploadBatchId?: boolean
+    prodOrder?: boolean
+    custId?: boolean
+    sku?: boolean
+    skuType?: boolean
+    numberOfBatches?: boolean
+    batchesList?: boolean
+    totalActualTime?: boolean
+    configuredTotalCT?: boolean
+    totalDelay?: boolean
+    poStatus?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+    uploadBatch?: boolean | TransactionUploadBatchDefaultArgs<ExtArgs>
+  }, ExtArgs["result"]["productionOrderSummary"]>
+
+  export type ProductionOrderSummarySelectScalar = {
+    id?: boolean
+    uploadBatchId?: boolean
+    prodOrder?: boolean
+    custId?: boolean
+    sku?: boolean
+    skuType?: boolean
+    numberOfBatches?: boolean
+    batchesList?: boolean
+    totalActualTime?: boolean
+    configuredTotalCT?: boolean
+    totalDelay?: boolean
+    poStatus?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type ProductionOrderSummaryOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "uploadBatchId" | "prodOrder" | "custId" | "sku" | "skuType" | "numberOfBatches" | "batchesList" | "totalActualTime" | "configuredTotalCT" | "totalDelay" | "poStatus" | "createdAt" | "updatedAt", ExtArgs["result"]["productionOrderSummary"]>
+  export type ProductionOrderSummaryInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    uploadBatch?: boolean | TransactionUploadBatchDefaultArgs<ExtArgs>
+  }
+  export type ProductionOrderSummaryIncludeCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    uploadBatch?: boolean | TransactionUploadBatchDefaultArgs<ExtArgs>
+  }
+  export type ProductionOrderSummaryIncludeUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    uploadBatch?: boolean | TransactionUploadBatchDefaultArgs<ExtArgs>
+  }
+
+  export type $ProductionOrderSummaryPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "ProductionOrderSummary"
+    objects: {
+      uploadBatch: Prisma.$TransactionUploadBatchPayload<ExtArgs>
+    }
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      uploadBatchId: string
+      prodOrder: string
+      custId: string
+      sku: string | null
+      skuType: string
+      numberOfBatches: number
+      batchesList: string | null
+      totalActualTime: number
+      configuredTotalCT: number | null
+      totalDelay: number
+      poStatus: string
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["productionOrderSummary"]>
+    composites: {}
+  }
+
+  type ProductionOrderSummaryGetPayload<S extends boolean | null | undefined | ProductionOrderSummaryDefaultArgs> = $Result.GetResult<Prisma.$ProductionOrderSummaryPayload, S>
+
+  type ProductionOrderSummaryCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ProductionOrderSummaryFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ProductionOrderSummaryCountAggregateInputType | true
+    }
+
+  export interface ProductionOrderSummaryDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['ProductionOrderSummary'], meta: { name: 'ProductionOrderSummary' } }
+    /**
+     * Find zero or one ProductionOrderSummary that matches the filter.
+     * @param {ProductionOrderSummaryFindUniqueArgs} args - Arguments to find a ProductionOrderSummary
+     * @example
+     * // Get one ProductionOrderSummary
+     * const productionOrderSummary = await prisma.productionOrderSummary.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ProductionOrderSummaryFindUniqueArgs>(args: SelectSubset<T, ProductionOrderSummaryFindUniqueArgs<ExtArgs>>): Prisma__ProductionOrderSummaryClient<$Result.GetResult<Prisma.$ProductionOrderSummaryPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one ProductionOrderSummary that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ProductionOrderSummaryFindUniqueOrThrowArgs} args - Arguments to find a ProductionOrderSummary
+     * @example
+     * // Get one ProductionOrderSummary
+     * const productionOrderSummary = await prisma.productionOrderSummary.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ProductionOrderSummaryFindUniqueOrThrowArgs>(args: SelectSubset<T, ProductionOrderSummaryFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ProductionOrderSummaryClient<$Result.GetResult<Prisma.$ProductionOrderSummaryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ProductionOrderSummary that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductionOrderSummaryFindFirstArgs} args - Arguments to find a ProductionOrderSummary
+     * @example
+     * // Get one ProductionOrderSummary
+     * const productionOrderSummary = await prisma.productionOrderSummary.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ProductionOrderSummaryFindFirstArgs>(args?: SelectSubset<T, ProductionOrderSummaryFindFirstArgs<ExtArgs>>): Prisma__ProductionOrderSummaryClient<$Result.GetResult<Prisma.$ProductionOrderSummaryPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first ProductionOrderSummary that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductionOrderSummaryFindFirstOrThrowArgs} args - Arguments to find a ProductionOrderSummary
+     * @example
+     * // Get one ProductionOrderSummary
+     * const productionOrderSummary = await prisma.productionOrderSummary.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ProductionOrderSummaryFindFirstOrThrowArgs>(args?: SelectSubset<T, ProductionOrderSummaryFindFirstOrThrowArgs<ExtArgs>>): Prisma__ProductionOrderSummaryClient<$Result.GetResult<Prisma.$ProductionOrderSummaryPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more ProductionOrderSummaries that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductionOrderSummaryFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all ProductionOrderSummaries
+     * const productionOrderSummaries = await prisma.productionOrderSummary.findMany()
+     * 
+     * // Get first 10 ProductionOrderSummaries
+     * const productionOrderSummaries = await prisma.productionOrderSummary.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const productionOrderSummaryWithIdOnly = await prisma.productionOrderSummary.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ProductionOrderSummaryFindManyArgs>(args?: SelectSubset<T, ProductionOrderSummaryFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProductionOrderSummaryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a ProductionOrderSummary.
+     * @param {ProductionOrderSummaryCreateArgs} args - Arguments to create a ProductionOrderSummary.
+     * @example
+     * // Create one ProductionOrderSummary
+     * const ProductionOrderSummary = await prisma.productionOrderSummary.create({
+     *   data: {
+     *     // ... data to create a ProductionOrderSummary
+     *   }
+     * })
+     * 
+     */
+    create<T extends ProductionOrderSummaryCreateArgs>(args: SelectSubset<T, ProductionOrderSummaryCreateArgs<ExtArgs>>): Prisma__ProductionOrderSummaryClient<$Result.GetResult<Prisma.$ProductionOrderSummaryPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many ProductionOrderSummaries.
+     * @param {ProductionOrderSummaryCreateManyArgs} args - Arguments to create many ProductionOrderSummaries.
+     * @example
+     * // Create many ProductionOrderSummaries
+     * const productionOrderSummary = await prisma.productionOrderSummary.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ProductionOrderSummaryCreateManyArgs>(args?: SelectSubset<T, ProductionOrderSummaryCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many ProductionOrderSummaries and returns the data saved in the database.
+     * @param {ProductionOrderSummaryCreateManyAndReturnArgs} args - Arguments to create many ProductionOrderSummaries.
+     * @example
+     * // Create many ProductionOrderSummaries
+     * const productionOrderSummary = await prisma.productionOrderSummary.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many ProductionOrderSummaries and only return the `id`
+     * const productionOrderSummaryWithIdOnly = await prisma.productionOrderSummary.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ProductionOrderSummaryCreateManyAndReturnArgs>(args?: SelectSubset<T, ProductionOrderSummaryCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProductionOrderSummaryPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a ProductionOrderSummary.
+     * @param {ProductionOrderSummaryDeleteArgs} args - Arguments to delete one ProductionOrderSummary.
+     * @example
+     * // Delete one ProductionOrderSummary
+     * const ProductionOrderSummary = await prisma.productionOrderSummary.delete({
+     *   where: {
+     *     // ... filter to delete one ProductionOrderSummary
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ProductionOrderSummaryDeleteArgs>(args: SelectSubset<T, ProductionOrderSummaryDeleteArgs<ExtArgs>>): Prisma__ProductionOrderSummaryClient<$Result.GetResult<Prisma.$ProductionOrderSummaryPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one ProductionOrderSummary.
+     * @param {ProductionOrderSummaryUpdateArgs} args - Arguments to update one ProductionOrderSummary.
+     * @example
+     * // Update one ProductionOrderSummary
+     * const productionOrderSummary = await prisma.productionOrderSummary.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ProductionOrderSummaryUpdateArgs>(args: SelectSubset<T, ProductionOrderSummaryUpdateArgs<ExtArgs>>): Prisma__ProductionOrderSummaryClient<$Result.GetResult<Prisma.$ProductionOrderSummaryPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more ProductionOrderSummaries.
+     * @param {ProductionOrderSummaryDeleteManyArgs} args - Arguments to filter ProductionOrderSummaries to delete.
+     * @example
+     * // Delete a few ProductionOrderSummaries
+     * const { count } = await prisma.productionOrderSummary.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ProductionOrderSummaryDeleteManyArgs>(args?: SelectSubset<T, ProductionOrderSummaryDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ProductionOrderSummaries.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductionOrderSummaryUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many ProductionOrderSummaries
+     * const productionOrderSummary = await prisma.productionOrderSummary.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ProductionOrderSummaryUpdateManyArgs>(args: SelectSubset<T, ProductionOrderSummaryUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more ProductionOrderSummaries and returns the data updated in the database.
+     * @param {ProductionOrderSummaryUpdateManyAndReturnArgs} args - Arguments to update many ProductionOrderSummaries.
+     * @example
+     * // Update many ProductionOrderSummaries
+     * const productionOrderSummary = await prisma.productionOrderSummary.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more ProductionOrderSummaries and only return the `id`
+     * const productionOrderSummaryWithIdOnly = await prisma.productionOrderSummary.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ProductionOrderSummaryUpdateManyAndReturnArgs>(args: SelectSubset<T, ProductionOrderSummaryUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ProductionOrderSummaryPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one ProductionOrderSummary.
+     * @param {ProductionOrderSummaryUpsertArgs} args - Arguments to update or create a ProductionOrderSummary.
+     * @example
+     * // Update or create a ProductionOrderSummary
+     * const productionOrderSummary = await prisma.productionOrderSummary.upsert({
+     *   create: {
+     *     // ... data to create a ProductionOrderSummary
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the ProductionOrderSummary we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ProductionOrderSummaryUpsertArgs>(args: SelectSubset<T, ProductionOrderSummaryUpsertArgs<ExtArgs>>): Prisma__ProductionOrderSummaryClient<$Result.GetResult<Prisma.$ProductionOrderSummaryPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of ProductionOrderSummaries.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductionOrderSummaryCountArgs} args - Arguments to filter ProductionOrderSummaries to count.
+     * @example
+     * // Count the number of ProductionOrderSummaries
+     * const count = await prisma.productionOrderSummary.count({
+     *   where: {
+     *     // ... the filter for the ProductionOrderSummaries we want to count
+     *   }
+     * })
+    **/
+    count<T extends ProductionOrderSummaryCountArgs>(
+      args?: Subset<T, ProductionOrderSummaryCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ProductionOrderSummaryCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a ProductionOrderSummary.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductionOrderSummaryAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ProductionOrderSummaryAggregateArgs>(args: Subset<T, ProductionOrderSummaryAggregateArgs>): Prisma.PrismaPromise<GetProductionOrderSummaryAggregateType<T>>
+
+    /**
+     * Group by ProductionOrderSummary.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ProductionOrderSummaryGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ProductionOrderSummaryGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ProductionOrderSummaryGroupByArgs['orderBy'] }
+        : { orderBy?: ProductionOrderSummaryGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ProductionOrderSummaryGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetProductionOrderSummaryGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the ProductionOrderSummary model
+   */
+  readonly fields: ProductionOrderSummaryFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for ProductionOrderSummary.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ProductionOrderSummaryClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    uploadBatch<T extends TransactionUploadBatchDefaultArgs<ExtArgs> = {}>(args?: Subset<T, TransactionUploadBatchDefaultArgs<ExtArgs>>): Prisma__TransactionUploadBatchClient<$Result.GetResult<Prisma.$TransactionUploadBatchPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the ProductionOrderSummary model
+   */
+  interface ProductionOrderSummaryFieldRefs {
+    readonly id: FieldRef<"ProductionOrderSummary", 'String'>
+    readonly uploadBatchId: FieldRef<"ProductionOrderSummary", 'String'>
+    readonly prodOrder: FieldRef<"ProductionOrderSummary", 'String'>
+    readonly custId: FieldRef<"ProductionOrderSummary", 'String'>
+    readonly sku: FieldRef<"ProductionOrderSummary", 'String'>
+    readonly skuType: FieldRef<"ProductionOrderSummary", 'String'>
+    readonly numberOfBatches: FieldRef<"ProductionOrderSummary", 'Int'>
+    readonly batchesList: FieldRef<"ProductionOrderSummary", 'String'>
+    readonly totalActualTime: FieldRef<"ProductionOrderSummary", 'Float'>
+    readonly configuredTotalCT: FieldRef<"ProductionOrderSummary", 'Float'>
+    readonly totalDelay: FieldRef<"ProductionOrderSummary", 'Float'>
+    readonly poStatus: FieldRef<"ProductionOrderSummary", 'String'>
+    readonly createdAt: FieldRef<"ProductionOrderSummary", 'DateTime'>
+    readonly updatedAt: FieldRef<"ProductionOrderSummary", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * ProductionOrderSummary findUnique
+   */
+  export type ProductionOrderSummaryFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductionOrderSummary
+     */
+    select?: ProductionOrderSummarySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProductionOrderSummary
+     */
+    omit?: ProductionOrderSummaryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductionOrderSummaryInclude<ExtArgs> | null
+    /**
+     * Filter, which ProductionOrderSummary to fetch.
+     */
+    where: ProductionOrderSummaryWhereUniqueInput
+  }
+
+  /**
+   * ProductionOrderSummary findUniqueOrThrow
+   */
+  export type ProductionOrderSummaryFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductionOrderSummary
+     */
+    select?: ProductionOrderSummarySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProductionOrderSummary
+     */
+    omit?: ProductionOrderSummaryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductionOrderSummaryInclude<ExtArgs> | null
+    /**
+     * Filter, which ProductionOrderSummary to fetch.
+     */
+    where: ProductionOrderSummaryWhereUniqueInput
+  }
+
+  /**
+   * ProductionOrderSummary findFirst
+   */
+  export type ProductionOrderSummaryFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductionOrderSummary
+     */
+    select?: ProductionOrderSummarySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProductionOrderSummary
+     */
+    omit?: ProductionOrderSummaryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductionOrderSummaryInclude<ExtArgs> | null
+    /**
+     * Filter, which ProductionOrderSummary to fetch.
+     */
+    where?: ProductionOrderSummaryWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProductionOrderSummaries to fetch.
+     */
+    orderBy?: ProductionOrderSummaryOrderByWithRelationInput | ProductionOrderSummaryOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ProductionOrderSummaries.
+     */
+    cursor?: ProductionOrderSummaryWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProductionOrderSummaries from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProductionOrderSummaries.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ProductionOrderSummaries.
+     */
+    distinct?: ProductionOrderSummaryScalarFieldEnum | ProductionOrderSummaryScalarFieldEnum[]
+  }
+
+  /**
+   * ProductionOrderSummary findFirstOrThrow
+   */
+  export type ProductionOrderSummaryFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductionOrderSummary
+     */
+    select?: ProductionOrderSummarySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProductionOrderSummary
+     */
+    omit?: ProductionOrderSummaryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductionOrderSummaryInclude<ExtArgs> | null
+    /**
+     * Filter, which ProductionOrderSummary to fetch.
+     */
+    where?: ProductionOrderSummaryWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProductionOrderSummaries to fetch.
+     */
+    orderBy?: ProductionOrderSummaryOrderByWithRelationInput | ProductionOrderSummaryOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for ProductionOrderSummaries.
+     */
+    cursor?: ProductionOrderSummaryWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProductionOrderSummaries from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProductionOrderSummaries.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ProductionOrderSummaries.
+     */
+    distinct?: ProductionOrderSummaryScalarFieldEnum | ProductionOrderSummaryScalarFieldEnum[]
+  }
+
+  /**
+   * ProductionOrderSummary findMany
+   */
+  export type ProductionOrderSummaryFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductionOrderSummary
+     */
+    select?: ProductionOrderSummarySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProductionOrderSummary
+     */
+    omit?: ProductionOrderSummaryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductionOrderSummaryInclude<ExtArgs> | null
+    /**
+     * Filter, which ProductionOrderSummaries to fetch.
+     */
+    where?: ProductionOrderSummaryWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of ProductionOrderSummaries to fetch.
+     */
+    orderBy?: ProductionOrderSummaryOrderByWithRelationInput | ProductionOrderSummaryOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing ProductionOrderSummaries.
+     */
+    cursor?: ProductionOrderSummaryWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` ProductionOrderSummaries from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` ProductionOrderSummaries.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of ProductionOrderSummaries.
+     */
+    distinct?: ProductionOrderSummaryScalarFieldEnum | ProductionOrderSummaryScalarFieldEnum[]
+  }
+
+  /**
+   * ProductionOrderSummary create
+   */
+  export type ProductionOrderSummaryCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductionOrderSummary
+     */
+    select?: ProductionOrderSummarySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProductionOrderSummary
+     */
+    omit?: ProductionOrderSummaryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductionOrderSummaryInclude<ExtArgs> | null
+    /**
+     * The data needed to create a ProductionOrderSummary.
+     */
+    data: XOR<ProductionOrderSummaryCreateInput, ProductionOrderSummaryUncheckedCreateInput>
+  }
+
+  /**
+   * ProductionOrderSummary createMany
+   */
+  export type ProductionOrderSummaryCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many ProductionOrderSummaries.
+     */
+    data: ProductionOrderSummaryCreateManyInput | ProductionOrderSummaryCreateManyInput[]
+  }
+
+  /**
+   * ProductionOrderSummary createManyAndReturn
+   */
+  export type ProductionOrderSummaryCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductionOrderSummary
+     */
+    select?: ProductionOrderSummarySelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProductionOrderSummary
+     */
+    omit?: ProductionOrderSummaryOmit<ExtArgs> | null
+    /**
+     * The data used to create many ProductionOrderSummaries.
+     */
+    data: ProductionOrderSummaryCreateManyInput | ProductionOrderSummaryCreateManyInput[]
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductionOrderSummaryIncludeCreateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ProductionOrderSummary update
+   */
+  export type ProductionOrderSummaryUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductionOrderSummary
+     */
+    select?: ProductionOrderSummarySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProductionOrderSummary
+     */
+    omit?: ProductionOrderSummaryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductionOrderSummaryInclude<ExtArgs> | null
+    /**
+     * The data needed to update a ProductionOrderSummary.
+     */
+    data: XOR<ProductionOrderSummaryUpdateInput, ProductionOrderSummaryUncheckedUpdateInput>
+    /**
+     * Choose, which ProductionOrderSummary to update.
+     */
+    where: ProductionOrderSummaryWhereUniqueInput
+  }
+
+  /**
+   * ProductionOrderSummary updateMany
+   */
+  export type ProductionOrderSummaryUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update ProductionOrderSummaries.
+     */
+    data: XOR<ProductionOrderSummaryUpdateManyMutationInput, ProductionOrderSummaryUncheckedUpdateManyInput>
+    /**
+     * Filter which ProductionOrderSummaries to update
+     */
+    where?: ProductionOrderSummaryWhereInput
+    /**
+     * Limit how many ProductionOrderSummaries to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * ProductionOrderSummary updateManyAndReturn
+   */
+  export type ProductionOrderSummaryUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductionOrderSummary
+     */
+    select?: ProductionOrderSummarySelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProductionOrderSummary
+     */
+    omit?: ProductionOrderSummaryOmit<ExtArgs> | null
+    /**
+     * The data used to update ProductionOrderSummaries.
+     */
+    data: XOR<ProductionOrderSummaryUpdateManyMutationInput, ProductionOrderSummaryUncheckedUpdateManyInput>
+    /**
+     * Filter which ProductionOrderSummaries to update
+     */
+    where?: ProductionOrderSummaryWhereInput
+    /**
+     * Limit how many ProductionOrderSummaries to update.
+     */
+    limit?: number
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductionOrderSummaryIncludeUpdateManyAndReturn<ExtArgs> | null
+  }
+
+  /**
+   * ProductionOrderSummary upsert
+   */
+  export type ProductionOrderSummaryUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductionOrderSummary
+     */
+    select?: ProductionOrderSummarySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProductionOrderSummary
+     */
+    omit?: ProductionOrderSummaryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductionOrderSummaryInclude<ExtArgs> | null
+    /**
+     * The filter to search for the ProductionOrderSummary to update in case it exists.
+     */
+    where: ProductionOrderSummaryWhereUniqueInput
+    /**
+     * In case the ProductionOrderSummary found by the `where` argument doesn't exist, create a new ProductionOrderSummary with this data.
+     */
+    create: XOR<ProductionOrderSummaryCreateInput, ProductionOrderSummaryUncheckedCreateInput>
+    /**
+     * In case the ProductionOrderSummary was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ProductionOrderSummaryUpdateInput, ProductionOrderSummaryUncheckedUpdateInput>
+  }
+
+  /**
+   * ProductionOrderSummary delete
+   */
+  export type ProductionOrderSummaryDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductionOrderSummary
+     */
+    select?: ProductionOrderSummarySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProductionOrderSummary
+     */
+    omit?: ProductionOrderSummaryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductionOrderSummaryInclude<ExtArgs> | null
+    /**
+     * Filter which ProductionOrderSummary to delete.
+     */
+    where: ProductionOrderSummaryWhereUniqueInput
+  }
+
+  /**
+   * ProductionOrderSummary deleteMany
+   */
+  export type ProductionOrderSummaryDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which ProductionOrderSummaries to delete
+     */
+    where?: ProductionOrderSummaryWhereInput
+    /**
+     * Limit how many ProductionOrderSummaries to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * ProductionOrderSummary without action
+   */
+  export type ProductionOrderSummaryDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the ProductionOrderSummary
+     */
+    select?: ProductionOrderSummarySelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the ProductionOrderSummary
+     */
+    omit?: ProductionOrderSummaryOmit<ExtArgs> | null
+    /**
+     * Choose, which related nodes to fetch as well
+     */
+    include?: ProductionOrderSummaryInclude<ExtArgs> | null
+  }
+
+
+  /**
+   * Model Report
+   */
+
+  export type AggregateReport = {
+    _count: ReportCountAggregateOutputType | null
+    _min: ReportMinAggregateOutputType | null
+    _max: ReportMaxAggregateOutputType | null
+  }
+
+  export type ReportMinAggregateOutputType = {
+    id: string | null
+    reportName: string | null
+    reportType: string | null
+    description: string | null
+    data: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type ReportMaxAggregateOutputType = {
+    id: string | null
+    reportName: string | null
+    reportType: string | null
+    description: string | null
+    data: string | null
+    createdAt: Date | null
+    updatedAt: Date | null
+  }
+
+  export type ReportCountAggregateOutputType = {
+    id: number
+    reportName: number
+    reportType: number
+    description: number
+    data: number
+    createdAt: number
+    updatedAt: number
+    _all: number
+  }
+
+
+  export type ReportMinAggregateInputType = {
+    id?: true
+    reportName?: true
+    reportType?: true
+    description?: true
+    data?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type ReportMaxAggregateInputType = {
+    id?: true
+    reportName?: true
+    reportType?: true
+    description?: true
+    data?: true
+    createdAt?: true
+    updatedAt?: true
+  }
+
+  export type ReportCountAggregateInputType = {
+    id?: true
+    reportName?: true
+    reportType?: true
+    description?: true
+    data?: true
+    createdAt?: true
+    updatedAt?: true
+    _all?: true
+  }
+
+  export type ReportAggregateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Report to aggregate.
+     */
+    where?: ReportWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Reports to fetch.
+     */
+    orderBy?: ReportOrderByWithRelationInput | ReportOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the start position
+     */
+    cursor?: ReportWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Reports from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Reports.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Count returned Reports
+    **/
+    _count?: true | ReportCountAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the minimum value
+    **/
+    _min?: ReportMinAggregateInputType
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
+     * 
+     * Select which fields to find the maximum value
+    **/
+    _max?: ReportMaxAggregateInputType
+  }
+
+  export type GetReportAggregateType<T extends ReportAggregateArgs> = {
+        [P in keyof T & keyof AggregateReport]: P extends '_count' | 'count'
+      ? T[P] extends true
+        ? number
+        : GetScalarType<T[P], AggregateReport[P]>
+      : GetScalarType<T[P], AggregateReport[P]>
+  }
+
+
+
+
+  export type ReportGroupByArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    where?: ReportWhereInput
+    orderBy?: ReportOrderByWithAggregationInput | ReportOrderByWithAggregationInput[]
+    by: ReportScalarFieldEnum[] | ReportScalarFieldEnum
+    having?: ReportScalarWhereWithAggregatesInput
+    take?: number
+    skip?: number
+    _count?: ReportCountAggregateInputType | true
+    _min?: ReportMinAggregateInputType
+    _max?: ReportMaxAggregateInputType
+  }
+
+  export type ReportGroupByOutputType = {
+    id: string
+    reportName: string
+    reportType: string | null
+    description: string | null
+    data: string | null
+    createdAt: Date
+    updatedAt: Date
+    _count: ReportCountAggregateOutputType | null
+    _min: ReportMinAggregateOutputType | null
+    _max: ReportMaxAggregateOutputType | null
+  }
+
+  type GetReportGroupByPayload<T extends ReportGroupByArgs> = Prisma.PrismaPromise<
+    Array<
+      PickEnumerable<ReportGroupByOutputType, T['by']> &
+        {
+          [P in ((keyof T) & (keyof ReportGroupByOutputType))]: P extends '_count'
+            ? T[P] extends boolean
+              ? number
+              : GetScalarType<T[P], ReportGroupByOutputType[P]>
+            : GetScalarType<T[P], ReportGroupByOutputType[P]>
+        }
+      >
+    >
+
+
+  export type ReportSelect<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    reportName?: boolean
+    reportType?: boolean
+    description?: boolean
+    data?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["report"]>
+
+  export type ReportSelectCreateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    reportName?: boolean
+    reportType?: boolean
+    description?: boolean
+    data?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["report"]>
+
+  export type ReportSelectUpdateManyAndReturn<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetSelect<{
+    id?: boolean
+    reportName?: boolean
+    reportType?: boolean
+    description?: boolean
+    data?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }, ExtArgs["result"]["report"]>
+
+  export type ReportSelectScalar = {
+    id?: boolean
+    reportName?: boolean
+    reportType?: boolean
+    description?: boolean
+    data?: boolean
+    createdAt?: boolean
+    updatedAt?: boolean
+  }
+
+  export type ReportOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "reportName" | "reportType" | "description" | "data" | "createdAt" | "updatedAt", ExtArgs["result"]["report"]>
+
+  export type $ReportPayload<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    name: "Report"
+    objects: {}
+    scalars: $Extensions.GetPayloadResult<{
+      id: string
+      reportName: string
+      reportType: string | null
+      description: string | null
+      data: string | null
+      createdAt: Date
+      updatedAt: Date
+    }, ExtArgs["result"]["report"]>
+    composites: {}
+  }
+
+  type ReportGetPayload<S extends boolean | null | undefined | ReportDefaultArgs> = $Result.GetResult<Prisma.$ReportPayload, S>
+
+  type ReportCountArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> =
+    Omit<ReportFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+      select?: ReportCountAggregateInputType | true
+    }
+
+  export interface ReportDelegate<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+    [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Report'], meta: { name: 'Report' } }
+    /**
+     * Find zero or one Report that matches the filter.
+     * @param {ReportFindUniqueArgs} args - Arguments to find a Report
+     * @example
+     * // Get one Report
+     * const report = await prisma.report.findUnique({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUnique<T extends ReportFindUniqueArgs>(args: SelectSubset<T, ReportFindUniqueArgs<ExtArgs>>): Prisma__ReportClient<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find one Report that matches the filter or throw an error with `error.code='P2025'`
+     * if no matches were found.
+     * @param {ReportFindUniqueOrThrowArgs} args - Arguments to find a Report
+     * @example
+     * // Get one Report
+     * const report = await prisma.report.findUniqueOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findUniqueOrThrow<T extends ReportFindUniqueOrThrowArgs>(args: SelectSubset<T, ReportFindUniqueOrThrowArgs<ExtArgs>>): Prisma__ReportClient<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Report that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ReportFindFirstArgs} args - Arguments to find a Report
+     * @example
+     * // Get one Report
+     * const report = await prisma.report.findFirst({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirst<T extends ReportFindFirstArgs>(args?: SelectSubset<T, ReportFindFirstArgs<ExtArgs>>): Prisma__ReportClient<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find the first Report that matches the filter or
+     * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ReportFindFirstOrThrowArgs} args - Arguments to find a Report
+     * @example
+     * // Get one Report
+     * const report = await prisma.report.findFirstOrThrow({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     */
+    findFirstOrThrow<T extends ReportFindFirstOrThrowArgs>(args?: SelectSubset<T, ReportFindFirstOrThrowArgs<ExtArgs>>): Prisma__ReportClient<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Find zero or more Reports that matches the filter.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ReportFindManyArgs} args - Arguments to filter and select certain fields only.
+     * @example
+     * // Get all Reports
+     * const reports = await prisma.report.findMany()
+     * 
+     * // Get first 10 Reports
+     * const reports = await prisma.report.findMany({ take: 10 })
+     * 
+     * // Only select the `id`
+     * const reportWithIdOnly = await prisma.report.findMany({ select: { id: true } })
+     * 
+     */
+    findMany<T extends ReportFindManyArgs>(args?: SelectSubset<T, ReportFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+
+    /**
+     * Create a Report.
+     * @param {ReportCreateArgs} args - Arguments to create a Report.
+     * @example
+     * // Create one Report
+     * const Report = await prisma.report.create({
+     *   data: {
+     *     // ... data to create a Report
+     *   }
+     * })
+     * 
+     */
+    create<T extends ReportCreateArgs>(args: SelectSubset<T, ReportCreateArgs<ExtArgs>>): Prisma__ReportClient<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Create many Reports.
+     * @param {ReportCreateManyArgs} args - Arguments to create many Reports.
+     * @example
+     * // Create many Reports
+     * const report = await prisma.report.createMany({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     *     
+     */
+    createMany<T extends ReportCreateManyArgs>(args?: SelectSubset<T, ReportCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Create many Reports and returns the data saved in the database.
+     * @param {ReportCreateManyAndReturnArgs} args - Arguments to create many Reports.
+     * @example
+     * // Create many Reports
+     * const report = await prisma.report.createManyAndReturn({
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Create many Reports and only return the `id`
+     * const reportWithIdOnly = await prisma.report.createManyAndReturn({
+     *   select: { id: true },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    createManyAndReturn<T extends ReportCreateManyAndReturnArgs>(args?: SelectSubset<T, ReportCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Delete a Report.
+     * @param {ReportDeleteArgs} args - Arguments to delete one Report.
+     * @example
+     * // Delete one Report
+     * const Report = await prisma.report.delete({
+     *   where: {
+     *     // ... filter to delete one Report
+     *   }
+     * })
+     * 
+     */
+    delete<T extends ReportDeleteArgs>(args: SelectSubset<T, ReportDeleteArgs<ExtArgs>>): Prisma__ReportClient<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Update one Report.
+     * @param {ReportUpdateArgs} args - Arguments to update one Report.
+     * @example
+     * // Update one Report
+     * const report = await prisma.report.update({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    update<T extends ReportUpdateArgs>(args: SelectSubset<T, ReportUpdateArgs<ExtArgs>>): Prisma__ReportClient<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+    /**
+     * Delete zero or more Reports.
+     * @param {ReportDeleteManyArgs} args - Arguments to filter Reports to delete.
+     * @example
+     * // Delete a few Reports
+     * const { count } = await prisma.report.deleteMany({
+     *   where: {
+     *     // ... provide filter here
+     *   }
+     * })
+     * 
+     */
+    deleteMany<T extends ReportDeleteManyArgs>(args?: SelectSubset<T, ReportDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Reports.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ReportUpdateManyArgs} args - Arguments to update one or more rows.
+     * @example
+     * // Update many Reports
+     * const report = await prisma.report.updateMany({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: {
+     *     // ... provide data here
+     *   }
+     * })
+     * 
+     */
+    updateMany<T extends ReportUpdateManyArgs>(args: SelectSubset<T, ReportUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<BatchPayload>
+
+    /**
+     * Update zero or more Reports and returns the data updated in the database.
+     * @param {ReportUpdateManyAndReturnArgs} args - Arguments to update many Reports.
+     * @example
+     * // Update many Reports
+     * const report = await prisma.report.updateManyAndReturn({
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * 
+     * // Update zero or more Reports and only return the `id`
+     * const reportWithIdOnly = await prisma.report.updateManyAndReturn({
+     *   select: { id: true },
+     *   where: {
+     *     // ... provide filter here
+     *   },
+     *   data: [
+     *     // ... provide data here
+     *   ]
+     * })
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * 
+     */
+    updateManyAndReturn<T extends ReportUpdateManyAndReturnArgs>(args: SelectSubset<T, ReportUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+
+    /**
+     * Create or update one Report.
+     * @param {ReportUpsertArgs} args - Arguments to update or create a Report.
+     * @example
+     * // Update or create a Report
+     * const report = await prisma.report.upsert({
+     *   create: {
+     *     // ... data to create a Report
+     *   },
+     *   update: {
+     *     // ... in case it already exists, update
+     *   },
+     *   where: {
+     *     // ... the filter for the Report we want to update
+     *   }
+     * })
+     */
+    upsert<T extends ReportUpsertArgs>(args: SelectSubset<T, ReportUpsertArgs<ExtArgs>>): Prisma__ReportClient<$Result.GetResult<Prisma.$ReportPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+
+
+    /**
+     * Count the number of Reports.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ReportCountArgs} args - Arguments to filter Reports to count.
+     * @example
+     * // Count the number of Reports
+     * const count = await prisma.report.count({
+     *   where: {
+     *     // ... the filter for the Reports we want to count
+     *   }
+     * })
+    **/
+    count<T extends ReportCountArgs>(
+      args?: Subset<T, ReportCountArgs>,
+    ): Prisma.PrismaPromise<
+      T extends $Utils.Record<'select', any>
+        ? T['select'] extends true
+          ? number
+          : GetScalarType<T['select'], ReportCountAggregateOutputType>
+        : number
+    >
+
+    /**
+     * Allows you to perform aggregations operations on a Report.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ReportAggregateArgs} args - Select which aggregations you would like to apply and on what fields.
+     * @example
+     * // Ordered by age ascending
+     * // Where email contains prisma.io
+     * // Limited to the 10 users
+     * const aggregations = await prisma.user.aggregate({
+     *   _avg: {
+     *     age: true,
+     *   },
+     *   where: {
+     *     email: {
+     *       contains: "prisma.io",
+     *     },
+     *   },
+     *   orderBy: {
+     *     age: "asc",
+     *   },
+     *   take: 10,
+     * })
+    **/
+    aggregate<T extends ReportAggregateArgs>(args: Subset<T, ReportAggregateArgs>): Prisma.PrismaPromise<GetReportAggregateType<T>>
+
+    /**
+     * Group by Report.
+     * Note, that providing `undefined` is treated as the value not being there.
+     * Read more here: https://pris.ly/d/null-undefined
+     * @param {ReportGroupByArgs} args - Group by arguments.
+     * @example
+     * // Group by city, order by createdAt, get count
+     * const result = await prisma.user.groupBy({
+     *   by: ['city', 'createdAt'],
+     *   orderBy: {
+     *     createdAt: true
+     *   },
+     *   _count: {
+     *     _all: true
+     *   },
+     * })
+     * 
+    **/
+    groupBy<
+      T extends ReportGroupByArgs,
+      HasSelectOrTake extends Or<
+        Extends<'skip', Keys<T>>,
+        Extends<'take', Keys<T>>
+      >,
+      OrderByArg extends True extends HasSelectOrTake
+        ? { orderBy: ReportGroupByArgs['orderBy'] }
+        : { orderBy?: ReportGroupByArgs['orderBy'] },
+      OrderFields extends ExcludeUnderscoreKeys<Keys<MaybeTupleToUnion<T['orderBy']>>>,
+      ByFields extends MaybeTupleToUnion<T['by']>,
+      ByValid extends Has<ByFields, OrderFields>,
+      HavingFields extends GetHavingFields<T['having']>,
+      HavingValid extends Has<ByFields, HavingFields>,
+      ByEmpty extends T['by'] extends never[] ? True : False,
+      InputErrors extends ByEmpty extends True
+      ? `Error: "by" must not be empty.`
+      : HavingValid extends False
+      ? {
+          [P in HavingFields]: P extends ByFields
+            ? never
+            : P extends string
+            ? `Error: Field "${P}" used in "having" needs to be provided in "by".`
+            : [
+                Error,
+                'Field ',
+                P,
+                ` in "having" needs to be provided in "by"`,
+              ]
+        }[HavingFields]
+      : 'take' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "take", you also need to provide "orderBy"'
+      : 'skip' extends Keys<T>
+      ? 'orderBy' extends Keys<T>
+        ? ByValid extends True
+          ? {}
+          : {
+              [P in OrderFields]: P extends ByFields
+                ? never
+                : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+            }[OrderFields]
+        : 'Error: If you provide "skip", you also need to provide "orderBy"'
+      : ByValid extends True
+      ? {}
+      : {
+          [P in OrderFields]: P extends ByFields
+            ? never
+            : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
+        }[OrderFields]
+    >(args: SubsetIntersection<T, ReportGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetReportGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  /**
+   * Fields of the Report model
+   */
+  readonly fields: ReportFieldRefs;
+  }
+
+  /**
+   * The delegate class that acts as a "Promise-like" for Report.
+   * Why is this prefixed with `Prisma__`?
+   * Because we want to prevent naming conflicts as mentioned in
+   * https://github.com/prisma/prisma-client-js/issues/707
+   */
+  export interface Prisma__ReportClient<T, Null = never, ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+    readonly [Symbol.toStringTag]: "PrismaPromise"
+    /**
+     * Attaches callbacks for the resolution and/or rejection of the Promise.
+     * @param onfulfilled The callback to execute when the Promise is resolved.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of which ever callback is executed.
+     */
+    then<TResult1 = T, TResult2 = never>(onfulfilled?: ((value: T) => TResult1 | PromiseLike<TResult1>) | undefined | null, onrejected?: ((reason: any) => TResult2 | PromiseLike<TResult2>) | undefined | null): $Utils.JsPromise<TResult1 | TResult2>
+    /**
+     * Attaches a callback for only the rejection of the Promise.
+     * @param onrejected The callback to execute when the Promise is rejected.
+     * @returns A Promise for the completion of the callback.
+     */
+    catch<TResult = never>(onrejected?: ((reason: any) => TResult | PromiseLike<TResult>) | undefined | null): $Utils.JsPromise<T | TResult>
+    /**
+     * Attaches a callback that is invoked when the Promise is settled (fulfilled or rejected). The
+     * resolved value cannot be modified from the callback.
+     * @param onfinally The callback to execute when the Promise is settled (fulfilled or rejected).
+     * @returns A Promise for the completion of the callback.
+     */
+    finally(onfinally?: (() => void) | undefined | null): $Utils.JsPromise<T>
+  }
+
+
+
+
+  /**
+   * Fields of the Report model
+   */
+  interface ReportFieldRefs {
+    readonly id: FieldRef<"Report", 'String'>
+    readonly reportName: FieldRef<"Report", 'String'>
+    readonly reportType: FieldRef<"Report", 'String'>
+    readonly description: FieldRef<"Report", 'String'>
+    readonly data: FieldRef<"Report", 'String'>
+    readonly createdAt: FieldRef<"Report", 'DateTime'>
+    readonly updatedAt: FieldRef<"Report", 'DateTime'>
+  }
+    
+
+  // Custom InputTypes
+  /**
+   * Report findUnique
+   */
+  export type ReportFindUniqueArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Report
+     */
+    select?: ReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Report
+     */
+    omit?: ReportOmit<ExtArgs> | null
+    /**
+     * Filter, which Report to fetch.
+     */
+    where: ReportWhereUniqueInput
+  }
+
+  /**
+   * Report findUniqueOrThrow
+   */
+  export type ReportFindUniqueOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Report
+     */
+    select?: ReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Report
+     */
+    omit?: ReportOmit<ExtArgs> | null
+    /**
+     * Filter, which Report to fetch.
+     */
+    where: ReportWhereUniqueInput
+  }
+
+  /**
+   * Report findFirst
+   */
+  export type ReportFindFirstArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Report
+     */
+    select?: ReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Report
+     */
+    omit?: ReportOmit<ExtArgs> | null
+    /**
+     * Filter, which Report to fetch.
+     */
+    where?: ReportWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Reports to fetch.
+     */
+    orderBy?: ReportOrderByWithRelationInput | ReportOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Reports.
+     */
+    cursor?: ReportWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Reports from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Reports.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Reports.
+     */
+    distinct?: ReportScalarFieldEnum | ReportScalarFieldEnum[]
+  }
+
+  /**
+   * Report findFirstOrThrow
+   */
+  export type ReportFindFirstOrThrowArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Report
+     */
+    select?: ReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Report
+     */
+    omit?: ReportOmit<ExtArgs> | null
+    /**
+     * Filter, which Report to fetch.
+     */
+    where?: ReportWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Reports to fetch.
+     */
+    orderBy?: ReportOrderByWithRelationInput | ReportOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for searching for Reports.
+     */
+    cursor?: ReportWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Reports from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Reports.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Reports.
+     */
+    distinct?: ReportScalarFieldEnum | ReportScalarFieldEnum[]
+  }
+
+  /**
+   * Report findMany
+   */
+  export type ReportFindManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Report
+     */
+    select?: ReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Report
+     */
+    omit?: ReportOmit<ExtArgs> | null
+    /**
+     * Filter, which Reports to fetch.
+     */
+    where?: ReportWhereInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
+     * 
+     * Determine the order of Reports to fetch.
+     */
+    orderBy?: ReportOrderByWithRelationInput | ReportOrderByWithRelationInput[]
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
+     * 
+     * Sets the position for listing Reports.
+     */
+    cursor?: ReportWhereUniqueInput
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Take `±n` Reports from the position of the cursor.
+     */
+    take?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
+     * 
+     * Skip the first `n` Reports.
+     */
+    skip?: number
+    /**
+     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
+     * 
+     * Filter by unique combinations of Reports.
+     */
+    distinct?: ReportScalarFieldEnum | ReportScalarFieldEnum[]
+  }
+
+  /**
+   * Report create
+   */
+  export type ReportCreateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Report
+     */
+    select?: ReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Report
+     */
+    omit?: ReportOmit<ExtArgs> | null
+    /**
+     * The data needed to create a Report.
+     */
+    data: XOR<ReportCreateInput, ReportUncheckedCreateInput>
+  }
+
+  /**
+   * Report createMany
+   */
+  export type ReportCreateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to create many Reports.
+     */
+    data: ReportCreateManyInput | ReportCreateManyInput[]
+  }
+
+  /**
+   * Report createManyAndReturn
+   */
+  export type ReportCreateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Report
+     */
+    select?: ReportSelectCreateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Report
+     */
+    omit?: ReportOmit<ExtArgs> | null
+    /**
+     * The data used to create many Reports.
+     */
+    data: ReportCreateManyInput | ReportCreateManyInput[]
+  }
+
+  /**
+   * Report update
+   */
+  export type ReportUpdateArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Report
+     */
+    select?: ReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Report
+     */
+    omit?: ReportOmit<ExtArgs> | null
+    /**
+     * The data needed to update a Report.
+     */
+    data: XOR<ReportUpdateInput, ReportUncheckedUpdateInput>
+    /**
+     * Choose, which Report to update.
+     */
+    where: ReportWhereUniqueInput
+  }
+
+  /**
+   * Report updateMany
+   */
+  export type ReportUpdateManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * The data used to update Reports.
+     */
+    data: XOR<ReportUpdateManyMutationInput, ReportUncheckedUpdateManyInput>
+    /**
+     * Filter which Reports to update
+     */
+    where?: ReportWhereInput
+    /**
+     * Limit how many Reports to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Report updateManyAndReturn
+   */
+  export type ReportUpdateManyAndReturnArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Report
+     */
+    select?: ReportSelectUpdateManyAndReturn<ExtArgs> | null
+    /**
+     * Omit specific fields from the Report
+     */
+    omit?: ReportOmit<ExtArgs> | null
+    /**
+     * The data used to update Reports.
+     */
+    data: XOR<ReportUpdateManyMutationInput, ReportUncheckedUpdateManyInput>
+    /**
+     * Filter which Reports to update
+     */
+    where?: ReportWhereInput
+    /**
+     * Limit how many Reports to update.
+     */
+    limit?: number
+  }
+
+  /**
+   * Report upsert
+   */
+  export type ReportUpsertArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Report
+     */
+    select?: ReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Report
+     */
+    omit?: ReportOmit<ExtArgs> | null
+    /**
+     * The filter to search for the Report to update in case it exists.
+     */
+    where: ReportWhereUniqueInput
+    /**
+     * In case the Report found by the `where` argument doesn't exist, create a new Report with this data.
+     */
+    create: XOR<ReportCreateInput, ReportUncheckedCreateInput>
+    /**
+     * In case the Report was found with the provided `where` argument, update it with this data.
+     */
+    update: XOR<ReportUpdateInput, ReportUncheckedUpdateInput>
+  }
+
+  /**
+   * Report delete
+   */
+  export type ReportDeleteArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Report
+     */
+    select?: ReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Report
+     */
+    omit?: ReportOmit<ExtArgs> | null
+    /**
+     * Filter which Report to delete.
+     */
+    where: ReportWhereUniqueInput
+  }
+
+  /**
+   * Report deleteMany
+   */
+  export type ReportDeleteManyArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Filter which Reports to delete
+     */
+    where?: ReportWhereInput
+    /**
+     * Limit how many Reports to delete.
+     */
+    limit?: number
+  }
+
+  /**
+   * Report without action
+   */
+  export type ReportDefaultArgs<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
+    /**
+     * Select specific fields to fetch from the Report
+     */
+    select?: ReportSelect<ExtArgs> | null
+    /**
+     * Omit specific fields from the Report
+     */
+    omit?: ReportOmit<ExtArgs> | null
+  }
+
 
   /**
    * Model Customer
@@ -7152,6 +14707,114 @@ export namespace Prisma {
   export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+  export const CustomerMasterFileScalarFieldEnum: {
+    id: 'id',
+    custId: 'custId',
+    custName: 'custName',
+    skuId: 'skuId',
+    skuName: 'skuName',
+    deliveryTimeDays: 'deliveryTimeDays',
+    skuType1: 'skuType1',
+    deliveryTime1Days: 'deliveryTime1Days',
+    skuType2: 'skuType2',
+    deliveryTime2Days: 'deliveryTime2Days',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type CustomerMasterFileScalarFieldEnum = (typeof CustomerMasterFileScalarFieldEnum)[keyof typeof CustomerMasterFileScalarFieldEnum]
+
+
+  export const ProcessMasterFileScalarFieldEnum: {
+    id: 'id',
+    custId: 'custId',
+    skuType: 'skuType',
+    processes: 'processes',
+    cycleTimes: 'cycleTimes',
+    totalCycleTime: 'totalCycleTime',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type ProcessMasterFileScalarFieldEnum = (typeof ProcessMasterFileScalarFieldEnum)[keyof typeof ProcessMasterFileScalarFieldEnum]
+
+
+  export const TransactionUploadBatchScalarFieldEnum: {
+    id: 'id',
+    fileName: 'fileName',
+    totalRows: 'totalRows',
+    validRows: 'validRows',
+    invalidRows: 'invalidRows',
+    status: 'status',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type TransactionUploadBatchScalarFieldEnum = (typeof TransactionUploadBatchScalarFieldEnum)[keyof typeof TransactionUploadBatchScalarFieldEnum]
+
+
+  export const TransactionMasterFileScalarFieldEnum: {
+    id: 'id',
+    uploadBatchId: 'uploadBatchId',
+    rawCustId: 'rawCustId',
+    rawProdOrderBatch: 'rawProdOrderBatch',
+    rawWorkCenter: 'rawWorkCenter',
+    rawSku: 'rawSku',
+    rawSkuType: 'rawSkuType',
+    rawEntryDate: 'rawEntryDate',
+    rawEntryTime: 'rawEntryTime',
+    rawExitDate: 'rawExitDate',
+    rawExitTime: 'rawExitTime',
+    prodOrder: 'prodOrder',
+    batch: 'batch',
+    entryTimestamp: 'entryTimestamp',
+    exitTimestamp: 'exitTimestamp',
+    actualProcessTime: 'actualProcessTime',
+    expectedCycleTime: 'expectedCycleTime',
+    delayHours: 'delayHours',
+    processStatus: 'processStatus',
+    isValid: 'isValid',
+    validationError: 'validationError',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type TransactionMasterFileScalarFieldEnum = (typeof TransactionMasterFileScalarFieldEnum)[keyof typeof TransactionMasterFileScalarFieldEnum]
+
+
+  export const ProductionOrderSummaryScalarFieldEnum: {
+    id: 'id',
+    uploadBatchId: 'uploadBatchId',
+    prodOrder: 'prodOrder',
+    custId: 'custId',
+    sku: 'sku',
+    skuType: 'skuType',
+    numberOfBatches: 'numberOfBatches',
+    batchesList: 'batchesList',
+    totalActualTime: 'totalActualTime',
+    configuredTotalCT: 'configuredTotalCT',
+    totalDelay: 'totalDelay',
+    poStatus: 'poStatus',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type ProductionOrderSummaryScalarFieldEnum = (typeof ProductionOrderSummaryScalarFieldEnum)[keyof typeof ProductionOrderSummaryScalarFieldEnum]
+
+
+  export const ReportScalarFieldEnum: {
+    id: 'id',
+    reportName: 'reportName',
+    reportType: 'reportType',
+    description: 'description',
+    data: 'data',
+    createdAt: 'createdAt',
+    updatedAt: 'updatedAt'
+  };
+
+  export type ReportScalarFieldEnum = (typeof ReportScalarFieldEnum)[keyof typeof ReportScalarFieldEnum]
+
+
   export const CustomerScalarFieldEnum: {
     id: 'id',
     customerId: 'customerId',
@@ -7253,9 +14916,9 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Boolean'
+   * Reference to a field of type 'Int'
    */
-  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
     
 
 
@@ -7267,21 +14930,566 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Int'
+   * Reference to a field of type 'Float'
    */
-  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+  export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
     
 
 
   /**
-   * Reference to a field of type 'Float'
+   * Reference to a field of type 'Boolean'
    */
-  export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
+  export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
   /**
    * Deep Input Types
    */
 
+
+  export type CustomerMasterFileWhereInput = {
+    AND?: CustomerMasterFileWhereInput | CustomerMasterFileWhereInput[]
+    OR?: CustomerMasterFileWhereInput[]
+    NOT?: CustomerMasterFileWhereInput | CustomerMasterFileWhereInput[]
+    id?: StringFilter<"CustomerMasterFile"> | string
+    custId?: StringFilter<"CustomerMasterFile"> | string
+    custName?: StringFilter<"CustomerMasterFile"> | string
+    skuId?: StringFilter<"CustomerMasterFile"> | string
+    skuName?: StringNullableFilter<"CustomerMasterFile"> | string | null
+    deliveryTimeDays?: IntNullableFilter<"CustomerMasterFile"> | number | null
+    skuType1?: StringNullableFilter<"CustomerMasterFile"> | string | null
+    deliveryTime1Days?: IntNullableFilter<"CustomerMasterFile"> | number | null
+    skuType2?: StringNullableFilter<"CustomerMasterFile"> | string | null
+    deliveryTime2Days?: IntNullableFilter<"CustomerMasterFile"> | number | null
+    createdAt?: DateTimeFilter<"CustomerMasterFile"> | Date | string
+    updatedAt?: DateTimeFilter<"CustomerMasterFile"> | Date | string
+  }
+
+  export type CustomerMasterFileOrderByWithRelationInput = {
+    id?: SortOrder
+    custId?: SortOrder
+    custName?: SortOrder
+    skuId?: SortOrder
+    skuName?: SortOrderInput | SortOrder
+    deliveryTimeDays?: SortOrderInput | SortOrder
+    skuType1?: SortOrderInput | SortOrder
+    deliveryTime1Days?: SortOrderInput | SortOrder
+    skuType2?: SortOrderInput | SortOrder
+    deliveryTime2Days?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CustomerMasterFileWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    custId?: string
+    AND?: CustomerMasterFileWhereInput | CustomerMasterFileWhereInput[]
+    OR?: CustomerMasterFileWhereInput[]
+    NOT?: CustomerMasterFileWhereInput | CustomerMasterFileWhereInput[]
+    custName?: StringFilter<"CustomerMasterFile"> | string
+    skuId?: StringFilter<"CustomerMasterFile"> | string
+    skuName?: StringNullableFilter<"CustomerMasterFile"> | string | null
+    deliveryTimeDays?: IntNullableFilter<"CustomerMasterFile"> | number | null
+    skuType1?: StringNullableFilter<"CustomerMasterFile"> | string | null
+    deliveryTime1Days?: IntNullableFilter<"CustomerMasterFile"> | number | null
+    skuType2?: StringNullableFilter<"CustomerMasterFile"> | string | null
+    deliveryTime2Days?: IntNullableFilter<"CustomerMasterFile"> | number | null
+    createdAt?: DateTimeFilter<"CustomerMasterFile"> | Date | string
+    updatedAt?: DateTimeFilter<"CustomerMasterFile"> | Date | string
+  }, "id" | "custId">
+
+  export type CustomerMasterFileOrderByWithAggregationInput = {
+    id?: SortOrder
+    custId?: SortOrder
+    custName?: SortOrder
+    skuId?: SortOrder
+    skuName?: SortOrderInput | SortOrder
+    deliveryTimeDays?: SortOrderInput | SortOrder
+    skuType1?: SortOrderInput | SortOrder
+    deliveryTime1Days?: SortOrderInput | SortOrder
+    skuType2?: SortOrderInput | SortOrder
+    deliveryTime2Days?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: CustomerMasterFileCountOrderByAggregateInput
+    _avg?: CustomerMasterFileAvgOrderByAggregateInput
+    _max?: CustomerMasterFileMaxOrderByAggregateInput
+    _min?: CustomerMasterFileMinOrderByAggregateInput
+    _sum?: CustomerMasterFileSumOrderByAggregateInput
+  }
+
+  export type CustomerMasterFileScalarWhereWithAggregatesInput = {
+    AND?: CustomerMasterFileScalarWhereWithAggregatesInput | CustomerMasterFileScalarWhereWithAggregatesInput[]
+    OR?: CustomerMasterFileScalarWhereWithAggregatesInput[]
+    NOT?: CustomerMasterFileScalarWhereWithAggregatesInput | CustomerMasterFileScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"CustomerMasterFile"> | string
+    custId?: StringWithAggregatesFilter<"CustomerMasterFile"> | string
+    custName?: StringWithAggregatesFilter<"CustomerMasterFile"> | string
+    skuId?: StringWithAggregatesFilter<"CustomerMasterFile"> | string
+    skuName?: StringNullableWithAggregatesFilter<"CustomerMasterFile"> | string | null
+    deliveryTimeDays?: IntNullableWithAggregatesFilter<"CustomerMasterFile"> | number | null
+    skuType1?: StringNullableWithAggregatesFilter<"CustomerMasterFile"> | string | null
+    deliveryTime1Days?: IntNullableWithAggregatesFilter<"CustomerMasterFile"> | number | null
+    skuType2?: StringNullableWithAggregatesFilter<"CustomerMasterFile"> | string | null
+    deliveryTime2Days?: IntNullableWithAggregatesFilter<"CustomerMasterFile"> | number | null
+    createdAt?: DateTimeWithAggregatesFilter<"CustomerMasterFile"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"CustomerMasterFile"> | Date | string
+  }
+
+  export type ProcessMasterFileWhereInput = {
+    AND?: ProcessMasterFileWhereInput | ProcessMasterFileWhereInput[]
+    OR?: ProcessMasterFileWhereInput[]
+    NOT?: ProcessMasterFileWhereInput | ProcessMasterFileWhereInput[]
+    id?: StringFilter<"ProcessMasterFile"> | string
+    custId?: StringFilter<"ProcessMasterFile"> | string
+    skuType?: StringFilter<"ProcessMasterFile"> | string
+    processes?: StringFilter<"ProcessMasterFile"> | string
+    cycleTimes?: StringFilter<"ProcessMasterFile"> | string
+    totalCycleTime?: FloatNullableFilter<"ProcessMasterFile"> | number | null
+    createdAt?: DateTimeFilter<"ProcessMasterFile"> | Date | string
+    updatedAt?: DateTimeFilter<"ProcessMasterFile"> | Date | string
+  }
+
+  export type ProcessMasterFileOrderByWithRelationInput = {
+    id?: SortOrder
+    custId?: SortOrder
+    skuType?: SortOrder
+    processes?: SortOrder
+    cycleTimes?: SortOrder
+    totalCycleTime?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ProcessMasterFileWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    custId_skuType?: ProcessMasterFileCustIdSkuTypeCompoundUniqueInput
+    AND?: ProcessMasterFileWhereInput | ProcessMasterFileWhereInput[]
+    OR?: ProcessMasterFileWhereInput[]
+    NOT?: ProcessMasterFileWhereInput | ProcessMasterFileWhereInput[]
+    custId?: StringFilter<"ProcessMasterFile"> | string
+    skuType?: StringFilter<"ProcessMasterFile"> | string
+    processes?: StringFilter<"ProcessMasterFile"> | string
+    cycleTimes?: StringFilter<"ProcessMasterFile"> | string
+    totalCycleTime?: FloatNullableFilter<"ProcessMasterFile"> | number | null
+    createdAt?: DateTimeFilter<"ProcessMasterFile"> | Date | string
+    updatedAt?: DateTimeFilter<"ProcessMasterFile"> | Date | string
+  }, "id" | "custId_skuType">
+
+  export type ProcessMasterFileOrderByWithAggregationInput = {
+    id?: SortOrder
+    custId?: SortOrder
+    skuType?: SortOrder
+    processes?: SortOrder
+    cycleTimes?: SortOrder
+    totalCycleTime?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: ProcessMasterFileCountOrderByAggregateInput
+    _avg?: ProcessMasterFileAvgOrderByAggregateInput
+    _max?: ProcessMasterFileMaxOrderByAggregateInput
+    _min?: ProcessMasterFileMinOrderByAggregateInput
+    _sum?: ProcessMasterFileSumOrderByAggregateInput
+  }
+
+  export type ProcessMasterFileScalarWhereWithAggregatesInput = {
+    AND?: ProcessMasterFileScalarWhereWithAggregatesInput | ProcessMasterFileScalarWhereWithAggregatesInput[]
+    OR?: ProcessMasterFileScalarWhereWithAggregatesInput[]
+    NOT?: ProcessMasterFileScalarWhereWithAggregatesInput | ProcessMasterFileScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"ProcessMasterFile"> | string
+    custId?: StringWithAggregatesFilter<"ProcessMasterFile"> | string
+    skuType?: StringWithAggregatesFilter<"ProcessMasterFile"> | string
+    processes?: StringWithAggregatesFilter<"ProcessMasterFile"> | string
+    cycleTimes?: StringWithAggregatesFilter<"ProcessMasterFile"> | string
+    totalCycleTime?: FloatNullableWithAggregatesFilter<"ProcessMasterFile"> | number | null
+    createdAt?: DateTimeWithAggregatesFilter<"ProcessMasterFile"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"ProcessMasterFile"> | Date | string
+  }
+
+  export type TransactionUploadBatchWhereInput = {
+    AND?: TransactionUploadBatchWhereInput | TransactionUploadBatchWhereInput[]
+    OR?: TransactionUploadBatchWhereInput[]
+    NOT?: TransactionUploadBatchWhereInput | TransactionUploadBatchWhereInput[]
+    id?: StringFilter<"TransactionUploadBatch"> | string
+    fileName?: StringFilter<"TransactionUploadBatch"> | string
+    totalRows?: IntFilter<"TransactionUploadBatch"> | number
+    validRows?: IntFilter<"TransactionUploadBatch"> | number
+    invalidRows?: IntFilter<"TransactionUploadBatch"> | number
+    status?: StringFilter<"TransactionUploadBatch"> | string
+    createdAt?: DateTimeFilter<"TransactionUploadBatch"> | Date | string
+    updatedAt?: DateTimeFilter<"TransactionUploadBatch"> | Date | string
+    transactions?: TransactionMasterFileListRelationFilter
+    poSummaries?: ProductionOrderSummaryListRelationFilter
+  }
+
+  export type TransactionUploadBatchOrderByWithRelationInput = {
+    id?: SortOrder
+    fileName?: SortOrder
+    totalRows?: SortOrder
+    validRows?: SortOrder
+    invalidRows?: SortOrder
+    status?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    transactions?: TransactionMasterFileOrderByRelationAggregateInput
+    poSummaries?: ProductionOrderSummaryOrderByRelationAggregateInput
+  }
+
+  export type TransactionUploadBatchWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: TransactionUploadBatchWhereInput | TransactionUploadBatchWhereInput[]
+    OR?: TransactionUploadBatchWhereInput[]
+    NOT?: TransactionUploadBatchWhereInput | TransactionUploadBatchWhereInput[]
+    fileName?: StringFilter<"TransactionUploadBatch"> | string
+    totalRows?: IntFilter<"TransactionUploadBatch"> | number
+    validRows?: IntFilter<"TransactionUploadBatch"> | number
+    invalidRows?: IntFilter<"TransactionUploadBatch"> | number
+    status?: StringFilter<"TransactionUploadBatch"> | string
+    createdAt?: DateTimeFilter<"TransactionUploadBatch"> | Date | string
+    updatedAt?: DateTimeFilter<"TransactionUploadBatch"> | Date | string
+    transactions?: TransactionMasterFileListRelationFilter
+    poSummaries?: ProductionOrderSummaryListRelationFilter
+  }, "id">
+
+  export type TransactionUploadBatchOrderByWithAggregationInput = {
+    id?: SortOrder
+    fileName?: SortOrder
+    totalRows?: SortOrder
+    validRows?: SortOrder
+    invalidRows?: SortOrder
+    status?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: TransactionUploadBatchCountOrderByAggregateInput
+    _avg?: TransactionUploadBatchAvgOrderByAggregateInput
+    _max?: TransactionUploadBatchMaxOrderByAggregateInput
+    _min?: TransactionUploadBatchMinOrderByAggregateInput
+    _sum?: TransactionUploadBatchSumOrderByAggregateInput
+  }
+
+  export type TransactionUploadBatchScalarWhereWithAggregatesInput = {
+    AND?: TransactionUploadBatchScalarWhereWithAggregatesInput | TransactionUploadBatchScalarWhereWithAggregatesInput[]
+    OR?: TransactionUploadBatchScalarWhereWithAggregatesInput[]
+    NOT?: TransactionUploadBatchScalarWhereWithAggregatesInput | TransactionUploadBatchScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"TransactionUploadBatch"> | string
+    fileName?: StringWithAggregatesFilter<"TransactionUploadBatch"> | string
+    totalRows?: IntWithAggregatesFilter<"TransactionUploadBatch"> | number
+    validRows?: IntWithAggregatesFilter<"TransactionUploadBatch"> | number
+    invalidRows?: IntWithAggregatesFilter<"TransactionUploadBatch"> | number
+    status?: StringWithAggregatesFilter<"TransactionUploadBatch"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"TransactionUploadBatch"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"TransactionUploadBatch"> | Date | string
+  }
+
+  export type TransactionMasterFileWhereInput = {
+    AND?: TransactionMasterFileWhereInput | TransactionMasterFileWhereInput[]
+    OR?: TransactionMasterFileWhereInput[]
+    NOT?: TransactionMasterFileWhereInput | TransactionMasterFileWhereInput[]
+    id?: StringFilter<"TransactionMasterFile"> | string
+    uploadBatchId?: StringFilter<"TransactionMasterFile"> | string
+    rawCustId?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawProdOrderBatch?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawWorkCenter?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawSku?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawSkuType?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawEntryDate?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawEntryTime?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawExitDate?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawExitTime?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    prodOrder?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    batch?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    entryTimestamp?: DateTimeNullableFilter<"TransactionMasterFile"> | Date | string | null
+    exitTimestamp?: DateTimeNullableFilter<"TransactionMasterFile"> | Date | string | null
+    actualProcessTime?: FloatNullableFilter<"TransactionMasterFile"> | number | null
+    expectedCycleTime?: FloatNullableFilter<"TransactionMasterFile"> | number | null
+    delayHours?: FloatNullableFilter<"TransactionMasterFile"> | number | null
+    processStatus?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    isValid?: BoolFilter<"TransactionMasterFile"> | boolean
+    validationError?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    createdAt?: DateTimeFilter<"TransactionMasterFile"> | Date | string
+    updatedAt?: DateTimeFilter<"TransactionMasterFile"> | Date | string
+    uploadBatch?: XOR<TransactionUploadBatchScalarRelationFilter, TransactionUploadBatchWhereInput>
+  }
+
+  export type TransactionMasterFileOrderByWithRelationInput = {
+    id?: SortOrder
+    uploadBatchId?: SortOrder
+    rawCustId?: SortOrderInput | SortOrder
+    rawProdOrderBatch?: SortOrderInput | SortOrder
+    rawWorkCenter?: SortOrderInput | SortOrder
+    rawSku?: SortOrderInput | SortOrder
+    rawSkuType?: SortOrderInput | SortOrder
+    rawEntryDate?: SortOrderInput | SortOrder
+    rawEntryTime?: SortOrderInput | SortOrder
+    rawExitDate?: SortOrderInput | SortOrder
+    rawExitTime?: SortOrderInput | SortOrder
+    prodOrder?: SortOrderInput | SortOrder
+    batch?: SortOrderInput | SortOrder
+    entryTimestamp?: SortOrderInput | SortOrder
+    exitTimestamp?: SortOrderInput | SortOrder
+    actualProcessTime?: SortOrderInput | SortOrder
+    expectedCycleTime?: SortOrderInput | SortOrder
+    delayHours?: SortOrderInput | SortOrder
+    processStatus?: SortOrderInput | SortOrder
+    isValid?: SortOrder
+    validationError?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    uploadBatch?: TransactionUploadBatchOrderByWithRelationInput
+  }
+
+  export type TransactionMasterFileWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: TransactionMasterFileWhereInput | TransactionMasterFileWhereInput[]
+    OR?: TransactionMasterFileWhereInput[]
+    NOT?: TransactionMasterFileWhereInput | TransactionMasterFileWhereInput[]
+    uploadBatchId?: StringFilter<"TransactionMasterFile"> | string
+    rawCustId?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawProdOrderBatch?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawWorkCenter?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawSku?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawSkuType?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawEntryDate?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawEntryTime?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawExitDate?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawExitTime?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    prodOrder?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    batch?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    entryTimestamp?: DateTimeNullableFilter<"TransactionMasterFile"> | Date | string | null
+    exitTimestamp?: DateTimeNullableFilter<"TransactionMasterFile"> | Date | string | null
+    actualProcessTime?: FloatNullableFilter<"TransactionMasterFile"> | number | null
+    expectedCycleTime?: FloatNullableFilter<"TransactionMasterFile"> | number | null
+    delayHours?: FloatNullableFilter<"TransactionMasterFile"> | number | null
+    processStatus?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    isValid?: BoolFilter<"TransactionMasterFile"> | boolean
+    validationError?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    createdAt?: DateTimeFilter<"TransactionMasterFile"> | Date | string
+    updatedAt?: DateTimeFilter<"TransactionMasterFile"> | Date | string
+    uploadBatch?: XOR<TransactionUploadBatchScalarRelationFilter, TransactionUploadBatchWhereInput>
+  }, "id">
+
+  export type TransactionMasterFileOrderByWithAggregationInput = {
+    id?: SortOrder
+    uploadBatchId?: SortOrder
+    rawCustId?: SortOrderInput | SortOrder
+    rawProdOrderBatch?: SortOrderInput | SortOrder
+    rawWorkCenter?: SortOrderInput | SortOrder
+    rawSku?: SortOrderInput | SortOrder
+    rawSkuType?: SortOrderInput | SortOrder
+    rawEntryDate?: SortOrderInput | SortOrder
+    rawEntryTime?: SortOrderInput | SortOrder
+    rawExitDate?: SortOrderInput | SortOrder
+    rawExitTime?: SortOrderInput | SortOrder
+    prodOrder?: SortOrderInput | SortOrder
+    batch?: SortOrderInput | SortOrder
+    entryTimestamp?: SortOrderInput | SortOrder
+    exitTimestamp?: SortOrderInput | SortOrder
+    actualProcessTime?: SortOrderInput | SortOrder
+    expectedCycleTime?: SortOrderInput | SortOrder
+    delayHours?: SortOrderInput | SortOrder
+    processStatus?: SortOrderInput | SortOrder
+    isValid?: SortOrder
+    validationError?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: TransactionMasterFileCountOrderByAggregateInput
+    _avg?: TransactionMasterFileAvgOrderByAggregateInput
+    _max?: TransactionMasterFileMaxOrderByAggregateInput
+    _min?: TransactionMasterFileMinOrderByAggregateInput
+    _sum?: TransactionMasterFileSumOrderByAggregateInput
+  }
+
+  export type TransactionMasterFileScalarWhereWithAggregatesInput = {
+    AND?: TransactionMasterFileScalarWhereWithAggregatesInput | TransactionMasterFileScalarWhereWithAggregatesInput[]
+    OR?: TransactionMasterFileScalarWhereWithAggregatesInput[]
+    NOT?: TransactionMasterFileScalarWhereWithAggregatesInput | TransactionMasterFileScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"TransactionMasterFile"> | string
+    uploadBatchId?: StringWithAggregatesFilter<"TransactionMasterFile"> | string
+    rawCustId?: StringNullableWithAggregatesFilter<"TransactionMasterFile"> | string | null
+    rawProdOrderBatch?: StringNullableWithAggregatesFilter<"TransactionMasterFile"> | string | null
+    rawWorkCenter?: StringNullableWithAggregatesFilter<"TransactionMasterFile"> | string | null
+    rawSku?: StringNullableWithAggregatesFilter<"TransactionMasterFile"> | string | null
+    rawSkuType?: StringNullableWithAggregatesFilter<"TransactionMasterFile"> | string | null
+    rawEntryDate?: StringNullableWithAggregatesFilter<"TransactionMasterFile"> | string | null
+    rawEntryTime?: StringNullableWithAggregatesFilter<"TransactionMasterFile"> | string | null
+    rawExitDate?: StringNullableWithAggregatesFilter<"TransactionMasterFile"> | string | null
+    rawExitTime?: StringNullableWithAggregatesFilter<"TransactionMasterFile"> | string | null
+    prodOrder?: StringNullableWithAggregatesFilter<"TransactionMasterFile"> | string | null
+    batch?: StringNullableWithAggregatesFilter<"TransactionMasterFile"> | string | null
+    entryTimestamp?: DateTimeNullableWithAggregatesFilter<"TransactionMasterFile"> | Date | string | null
+    exitTimestamp?: DateTimeNullableWithAggregatesFilter<"TransactionMasterFile"> | Date | string | null
+    actualProcessTime?: FloatNullableWithAggregatesFilter<"TransactionMasterFile"> | number | null
+    expectedCycleTime?: FloatNullableWithAggregatesFilter<"TransactionMasterFile"> | number | null
+    delayHours?: FloatNullableWithAggregatesFilter<"TransactionMasterFile"> | number | null
+    processStatus?: StringNullableWithAggregatesFilter<"TransactionMasterFile"> | string | null
+    isValid?: BoolWithAggregatesFilter<"TransactionMasterFile"> | boolean
+    validationError?: StringNullableWithAggregatesFilter<"TransactionMasterFile"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"TransactionMasterFile"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"TransactionMasterFile"> | Date | string
+  }
+
+  export type ProductionOrderSummaryWhereInput = {
+    AND?: ProductionOrderSummaryWhereInput | ProductionOrderSummaryWhereInput[]
+    OR?: ProductionOrderSummaryWhereInput[]
+    NOT?: ProductionOrderSummaryWhereInput | ProductionOrderSummaryWhereInput[]
+    id?: StringFilter<"ProductionOrderSummary"> | string
+    uploadBatchId?: StringFilter<"ProductionOrderSummary"> | string
+    prodOrder?: StringFilter<"ProductionOrderSummary"> | string
+    custId?: StringFilter<"ProductionOrderSummary"> | string
+    sku?: StringNullableFilter<"ProductionOrderSummary"> | string | null
+    skuType?: StringFilter<"ProductionOrderSummary"> | string
+    numberOfBatches?: IntFilter<"ProductionOrderSummary"> | number
+    batchesList?: StringNullableFilter<"ProductionOrderSummary"> | string | null
+    totalActualTime?: FloatFilter<"ProductionOrderSummary"> | number
+    configuredTotalCT?: FloatNullableFilter<"ProductionOrderSummary"> | number | null
+    totalDelay?: FloatFilter<"ProductionOrderSummary"> | number
+    poStatus?: StringFilter<"ProductionOrderSummary"> | string
+    createdAt?: DateTimeFilter<"ProductionOrderSummary"> | Date | string
+    updatedAt?: DateTimeFilter<"ProductionOrderSummary"> | Date | string
+    uploadBatch?: XOR<TransactionUploadBatchScalarRelationFilter, TransactionUploadBatchWhereInput>
+  }
+
+  export type ProductionOrderSummaryOrderByWithRelationInput = {
+    id?: SortOrder
+    uploadBatchId?: SortOrder
+    prodOrder?: SortOrder
+    custId?: SortOrder
+    sku?: SortOrderInput | SortOrder
+    skuType?: SortOrder
+    numberOfBatches?: SortOrder
+    batchesList?: SortOrderInput | SortOrder
+    totalActualTime?: SortOrder
+    configuredTotalCT?: SortOrderInput | SortOrder
+    totalDelay?: SortOrder
+    poStatus?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    uploadBatch?: TransactionUploadBatchOrderByWithRelationInput
+  }
+
+  export type ProductionOrderSummaryWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: ProductionOrderSummaryWhereInput | ProductionOrderSummaryWhereInput[]
+    OR?: ProductionOrderSummaryWhereInput[]
+    NOT?: ProductionOrderSummaryWhereInput | ProductionOrderSummaryWhereInput[]
+    uploadBatchId?: StringFilter<"ProductionOrderSummary"> | string
+    prodOrder?: StringFilter<"ProductionOrderSummary"> | string
+    custId?: StringFilter<"ProductionOrderSummary"> | string
+    sku?: StringNullableFilter<"ProductionOrderSummary"> | string | null
+    skuType?: StringFilter<"ProductionOrderSummary"> | string
+    numberOfBatches?: IntFilter<"ProductionOrderSummary"> | number
+    batchesList?: StringNullableFilter<"ProductionOrderSummary"> | string | null
+    totalActualTime?: FloatFilter<"ProductionOrderSummary"> | number
+    configuredTotalCT?: FloatNullableFilter<"ProductionOrderSummary"> | number | null
+    totalDelay?: FloatFilter<"ProductionOrderSummary"> | number
+    poStatus?: StringFilter<"ProductionOrderSummary"> | string
+    createdAt?: DateTimeFilter<"ProductionOrderSummary"> | Date | string
+    updatedAt?: DateTimeFilter<"ProductionOrderSummary"> | Date | string
+    uploadBatch?: XOR<TransactionUploadBatchScalarRelationFilter, TransactionUploadBatchWhereInput>
+  }, "id">
+
+  export type ProductionOrderSummaryOrderByWithAggregationInput = {
+    id?: SortOrder
+    uploadBatchId?: SortOrder
+    prodOrder?: SortOrder
+    custId?: SortOrder
+    sku?: SortOrderInput | SortOrder
+    skuType?: SortOrder
+    numberOfBatches?: SortOrder
+    batchesList?: SortOrderInput | SortOrder
+    totalActualTime?: SortOrder
+    configuredTotalCT?: SortOrderInput | SortOrder
+    totalDelay?: SortOrder
+    poStatus?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: ProductionOrderSummaryCountOrderByAggregateInput
+    _avg?: ProductionOrderSummaryAvgOrderByAggregateInput
+    _max?: ProductionOrderSummaryMaxOrderByAggregateInput
+    _min?: ProductionOrderSummaryMinOrderByAggregateInput
+    _sum?: ProductionOrderSummarySumOrderByAggregateInput
+  }
+
+  export type ProductionOrderSummaryScalarWhereWithAggregatesInput = {
+    AND?: ProductionOrderSummaryScalarWhereWithAggregatesInput | ProductionOrderSummaryScalarWhereWithAggregatesInput[]
+    OR?: ProductionOrderSummaryScalarWhereWithAggregatesInput[]
+    NOT?: ProductionOrderSummaryScalarWhereWithAggregatesInput | ProductionOrderSummaryScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"ProductionOrderSummary"> | string
+    uploadBatchId?: StringWithAggregatesFilter<"ProductionOrderSummary"> | string
+    prodOrder?: StringWithAggregatesFilter<"ProductionOrderSummary"> | string
+    custId?: StringWithAggregatesFilter<"ProductionOrderSummary"> | string
+    sku?: StringNullableWithAggregatesFilter<"ProductionOrderSummary"> | string | null
+    skuType?: StringWithAggregatesFilter<"ProductionOrderSummary"> | string
+    numberOfBatches?: IntWithAggregatesFilter<"ProductionOrderSummary"> | number
+    batchesList?: StringNullableWithAggregatesFilter<"ProductionOrderSummary"> | string | null
+    totalActualTime?: FloatWithAggregatesFilter<"ProductionOrderSummary"> | number
+    configuredTotalCT?: FloatNullableWithAggregatesFilter<"ProductionOrderSummary"> | number | null
+    totalDelay?: FloatWithAggregatesFilter<"ProductionOrderSummary"> | number
+    poStatus?: StringWithAggregatesFilter<"ProductionOrderSummary"> | string
+    createdAt?: DateTimeWithAggregatesFilter<"ProductionOrderSummary"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"ProductionOrderSummary"> | Date | string
+  }
+
+  export type ReportWhereInput = {
+    AND?: ReportWhereInput | ReportWhereInput[]
+    OR?: ReportWhereInput[]
+    NOT?: ReportWhereInput | ReportWhereInput[]
+    id?: StringFilter<"Report"> | string
+    reportName?: StringFilter<"Report"> | string
+    reportType?: StringNullableFilter<"Report"> | string | null
+    description?: StringNullableFilter<"Report"> | string | null
+    data?: StringNullableFilter<"Report"> | string | null
+    createdAt?: DateTimeFilter<"Report"> | Date | string
+    updatedAt?: DateTimeFilter<"Report"> | Date | string
+  }
+
+  export type ReportOrderByWithRelationInput = {
+    id?: SortOrder
+    reportName?: SortOrder
+    reportType?: SortOrderInput | SortOrder
+    description?: SortOrderInput | SortOrder
+    data?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ReportWhereUniqueInput = Prisma.AtLeast<{
+    id?: string
+    AND?: ReportWhereInput | ReportWhereInput[]
+    OR?: ReportWhereInput[]
+    NOT?: ReportWhereInput | ReportWhereInput[]
+    reportName?: StringFilter<"Report"> | string
+    reportType?: StringNullableFilter<"Report"> | string | null
+    description?: StringNullableFilter<"Report"> | string | null
+    data?: StringNullableFilter<"Report"> | string | null
+    createdAt?: DateTimeFilter<"Report"> | Date | string
+    updatedAt?: DateTimeFilter<"Report"> | Date | string
+  }, "id">
+
+  export type ReportOrderByWithAggregationInput = {
+    id?: SortOrder
+    reportName?: SortOrder
+    reportType?: SortOrderInput | SortOrder
+    description?: SortOrderInput | SortOrder
+    data?: SortOrderInput | SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+    _count?: ReportCountOrderByAggregateInput
+    _max?: ReportMaxOrderByAggregateInput
+    _min?: ReportMinOrderByAggregateInput
+  }
+
+  export type ReportScalarWhereWithAggregatesInput = {
+    AND?: ReportScalarWhereWithAggregatesInput | ReportScalarWhereWithAggregatesInput[]
+    OR?: ReportScalarWhereWithAggregatesInput[]
+    NOT?: ReportScalarWhereWithAggregatesInput | ReportScalarWhereWithAggregatesInput[]
+    id?: StringWithAggregatesFilter<"Report"> | string
+    reportName?: StringWithAggregatesFilter<"Report"> | string
+    reportType?: StringNullableWithAggregatesFilter<"Report"> | string | null
+    description?: StringNullableWithAggregatesFilter<"Report"> | string | null
+    data?: StringNullableWithAggregatesFilter<"Report"> | string | null
+    createdAt?: DateTimeWithAggregatesFilter<"Report"> | Date | string
+    updatedAt?: DateTimeWithAggregatesFilter<"Report"> | Date | string
+  }
 
   export type CustomerWhereInput = {
     AND?: CustomerWhereInput | CustomerWhereInput[]
@@ -7664,6 +15872,642 @@ export namespace Prisma {
     notes?: StringNullableWithAggregatesFilter<"Rejection"> | string | null
     createdAt?: DateTimeWithAggregatesFilter<"Rejection"> | Date | string
     updatedAt?: DateTimeWithAggregatesFilter<"Rejection"> | Date | string
+  }
+
+  export type CustomerMasterFileCreateInput = {
+    id: string
+    custId: string
+    custName: string
+    skuId: string
+    skuName?: string | null
+    deliveryTimeDays?: number | null
+    skuType1?: string | null
+    deliveryTime1Days?: number | null
+    skuType2?: string | null
+    deliveryTime2Days?: number | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type CustomerMasterFileUncheckedCreateInput = {
+    id: string
+    custId: string
+    custName: string
+    skuId: string
+    skuName?: string | null
+    deliveryTimeDays?: number | null
+    skuType1?: string | null
+    deliveryTime1Days?: number | null
+    skuType2?: string | null
+    deliveryTime2Days?: number | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type CustomerMasterFileUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    custId?: StringFieldUpdateOperationsInput | string
+    custName?: StringFieldUpdateOperationsInput | string
+    skuId?: StringFieldUpdateOperationsInput | string
+    skuName?: NullableStringFieldUpdateOperationsInput | string | null
+    deliveryTimeDays?: NullableIntFieldUpdateOperationsInput | number | null
+    skuType1?: NullableStringFieldUpdateOperationsInput | string | null
+    deliveryTime1Days?: NullableIntFieldUpdateOperationsInput | number | null
+    skuType2?: NullableStringFieldUpdateOperationsInput | string | null
+    deliveryTime2Days?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CustomerMasterFileUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    custId?: StringFieldUpdateOperationsInput | string
+    custName?: StringFieldUpdateOperationsInput | string
+    skuId?: StringFieldUpdateOperationsInput | string
+    skuName?: NullableStringFieldUpdateOperationsInput | string | null
+    deliveryTimeDays?: NullableIntFieldUpdateOperationsInput | number | null
+    skuType1?: NullableStringFieldUpdateOperationsInput | string | null
+    deliveryTime1Days?: NullableIntFieldUpdateOperationsInput | number | null
+    skuType2?: NullableStringFieldUpdateOperationsInput | string | null
+    deliveryTime2Days?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CustomerMasterFileCreateManyInput = {
+    id: string
+    custId: string
+    custName: string
+    skuId: string
+    skuName?: string | null
+    deliveryTimeDays?: number | null
+    skuType1?: string | null
+    deliveryTime1Days?: number | null
+    skuType2?: string | null
+    deliveryTime2Days?: number | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type CustomerMasterFileUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    custId?: StringFieldUpdateOperationsInput | string
+    custName?: StringFieldUpdateOperationsInput | string
+    skuId?: StringFieldUpdateOperationsInput | string
+    skuName?: NullableStringFieldUpdateOperationsInput | string | null
+    deliveryTimeDays?: NullableIntFieldUpdateOperationsInput | number | null
+    skuType1?: NullableStringFieldUpdateOperationsInput | string | null
+    deliveryTime1Days?: NullableIntFieldUpdateOperationsInput | number | null
+    skuType2?: NullableStringFieldUpdateOperationsInput | string | null
+    deliveryTime2Days?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type CustomerMasterFileUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    custId?: StringFieldUpdateOperationsInput | string
+    custName?: StringFieldUpdateOperationsInput | string
+    skuId?: StringFieldUpdateOperationsInput | string
+    skuName?: NullableStringFieldUpdateOperationsInput | string | null
+    deliveryTimeDays?: NullableIntFieldUpdateOperationsInput | number | null
+    skuType1?: NullableStringFieldUpdateOperationsInput | string | null
+    deliveryTime1Days?: NullableIntFieldUpdateOperationsInput | number | null
+    skuType2?: NullableStringFieldUpdateOperationsInput | string | null
+    deliveryTime2Days?: NullableIntFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProcessMasterFileCreateInput = {
+    id?: string
+    custId: string
+    skuType: string
+    processes: string
+    cycleTimes: string
+    totalCycleTime?: number | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ProcessMasterFileUncheckedCreateInput = {
+    id?: string
+    custId: string
+    skuType: string
+    processes: string
+    cycleTimes: string
+    totalCycleTime?: number | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ProcessMasterFileUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    custId?: StringFieldUpdateOperationsInput | string
+    skuType?: StringFieldUpdateOperationsInput | string
+    processes?: StringFieldUpdateOperationsInput | string
+    cycleTimes?: StringFieldUpdateOperationsInput | string
+    totalCycleTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProcessMasterFileUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    custId?: StringFieldUpdateOperationsInput | string
+    skuType?: StringFieldUpdateOperationsInput | string
+    processes?: StringFieldUpdateOperationsInput | string
+    cycleTimes?: StringFieldUpdateOperationsInput | string
+    totalCycleTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProcessMasterFileCreateManyInput = {
+    id?: string
+    custId: string
+    skuType: string
+    processes: string
+    cycleTimes: string
+    totalCycleTime?: number | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ProcessMasterFileUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    custId?: StringFieldUpdateOperationsInput | string
+    skuType?: StringFieldUpdateOperationsInput | string
+    processes?: StringFieldUpdateOperationsInput | string
+    cycleTimes?: StringFieldUpdateOperationsInput | string
+    totalCycleTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProcessMasterFileUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    custId?: StringFieldUpdateOperationsInput | string
+    skuType?: StringFieldUpdateOperationsInput | string
+    processes?: StringFieldUpdateOperationsInput | string
+    cycleTimes?: StringFieldUpdateOperationsInput | string
+    totalCycleTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TransactionUploadBatchCreateInput = {
+    id?: string
+    fileName: string
+    totalRows?: number
+    validRows?: number
+    invalidRows?: number
+    status?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    transactions?: TransactionMasterFileCreateNestedManyWithoutUploadBatchInput
+    poSummaries?: ProductionOrderSummaryCreateNestedManyWithoutUploadBatchInput
+  }
+
+  export type TransactionUploadBatchUncheckedCreateInput = {
+    id?: string
+    fileName: string
+    totalRows?: number
+    validRows?: number
+    invalidRows?: number
+    status?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    transactions?: TransactionMasterFileUncheckedCreateNestedManyWithoutUploadBatchInput
+    poSummaries?: ProductionOrderSummaryUncheckedCreateNestedManyWithoutUploadBatchInput
+  }
+
+  export type TransactionUploadBatchUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fileName?: StringFieldUpdateOperationsInput | string
+    totalRows?: IntFieldUpdateOperationsInput | number
+    validRows?: IntFieldUpdateOperationsInput | number
+    invalidRows?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    transactions?: TransactionMasterFileUpdateManyWithoutUploadBatchNestedInput
+    poSummaries?: ProductionOrderSummaryUpdateManyWithoutUploadBatchNestedInput
+  }
+
+  export type TransactionUploadBatchUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fileName?: StringFieldUpdateOperationsInput | string
+    totalRows?: IntFieldUpdateOperationsInput | number
+    validRows?: IntFieldUpdateOperationsInput | number
+    invalidRows?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    transactions?: TransactionMasterFileUncheckedUpdateManyWithoutUploadBatchNestedInput
+    poSummaries?: ProductionOrderSummaryUncheckedUpdateManyWithoutUploadBatchNestedInput
+  }
+
+  export type TransactionUploadBatchCreateManyInput = {
+    id?: string
+    fileName: string
+    totalRows?: number
+    validRows?: number
+    invalidRows?: number
+    status?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type TransactionUploadBatchUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fileName?: StringFieldUpdateOperationsInput | string
+    totalRows?: IntFieldUpdateOperationsInput | number
+    validRows?: IntFieldUpdateOperationsInput | number
+    invalidRows?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TransactionUploadBatchUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fileName?: StringFieldUpdateOperationsInput | string
+    totalRows?: IntFieldUpdateOperationsInput | number
+    validRows?: IntFieldUpdateOperationsInput | number
+    invalidRows?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TransactionMasterFileCreateInput = {
+    id?: string
+    rawCustId?: string | null
+    rawProdOrderBatch?: string | null
+    rawWorkCenter?: string | null
+    rawSku?: string | null
+    rawSkuType?: string | null
+    rawEntryDate?: string | null
+    rawEntryTime?: string | null
+    rawExitDate?: string | null
+    rawExitTime?: string | null
+    prodOrder?: string | null
+    batch?: string | null
+    entryTimestamp?: Date | string | null
+    exitTimestamp?: Date | string | null
+    actualProcessTime?: number | null
+    expectedCycleTime?: number | null
+    delayHours?: number | null
+    processStatus?: string | null
+    isValid?: boolean
+    validationError?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    uploadBatch: TransactionUploadBatchCreateNestedOneWithoutTransactionsInput
+  }
+
+  export type TransactionMasterFileUncheckedCreateInput = {
+    id?: string
+    uploadBatchId: string
+    rawCustId?: string | null
+    rawProdOrderBatch?: string | null
+    rawWorkCenter?: string | null
+    rawSku?: string | null
+    rawSkuType?: string | null
+    rawEntryDate?: string | null
+    rawEntryTime?: string | null
+    rawExitDate?: string | null
+    rawExitTime?: string | null
+    prodOrder?: string | null
+    batch?: string | null
+    entryTimestamp?: Date | string | null
+    exitTimestamp?: Date | string | null
+    actualProcessTime?: number | null
+    expectedCycleTime?: number | null
+    delayHours?: number | null
+    processStatus?: string | null
+    isValid?: boolean
+    validationError?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type TransactionMasterFileUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    rawCustId?: NullableStringFieldUpdateOperationsInput | string | null
+    rawProdOrderBatch?: NullableStringFieldUpdateOperationsInput | string | null
+    rawWorkCenter?: NullableStringFieldUpdateOperationsInput | string | null
+    rawSku?: NullableStringFieldUpdateOperationsInput | string | null
+    rawSkuType?: NullableStringFieldUpdateOperationsInput | string | null
+    rawEntryDate?: NullableStringFieldUpdateOperationsInput | string | null
+    rawEntryTime?: NullableStringFieldUpdateOperationsInput | string | null
+    rawExitDate?: NullableStringFieldUpdateOperationsInput | string | null
+    rawExitTime?: NullableStringFieldUpdateOperationsInput | string | null
+    prodOrder?: NullableStringFieldUpdateOperationsInput | string | null
+    batch?: NullableStringFieldUpdateOperationsInput | string | null
+    entryTimestamp?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    exitTimestamp?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualProcessTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    expectedCycleTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    delayHours?: NullableFloatFieldUpdateOperationsInput | number | null
+    processStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    isValid?: BoolFieldUpdateOperationsInput | boolean
+    validationError?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    uploadBatch?: TransactionUploadBatchUpdateOneRequiredWithoutTransactionsNestedInput
+  }
+
+  export type TransactionMasterFileUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    uploadBatchId?: StringFieldUpdateOperationsInput | string
+    rawCustId?: NullableStringFieldUpdateOperationsInput | string | null
+    rawProdOrderBatch?: NullableStringFieldUpdateOperationsInput | string | null
+    rawWorkCenter?: NullableStringFieldUpdateOperationsInput | string | null
+    rawSku?: NullableStringFieldUpdateOperationsInput | string | null
+    rawSkuType?: NullableStringFieldUpdateOperationsInput | string | null
+    rawEntryDate?: NullableStringFieldUpdateOperationsInput | string | null
+    rawEntryTime?: NullableStringFieldUpdateOperationsInput | string | null
+    rawExitDate?: NullableStringFieldUpdateOperationsInput | string | null
+    rawExitTime?: NullableStringFieldUpdateOperationsInput | string | null
+    prodOrder?: NullableStringFieldUpdateOperationsInput | string | null
+    batch?: NullableStringFieldUpdateOperationsInput | string | null
+    entryTimestamp?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    exitTimestamp?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualProcessTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    expectedCycleTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    delayHours?: NullableFloatFieldUpdateOperationsInput | number | null
+    processStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    isValid?: BoolFieldUpdateOperationsInput | boolean
+    validationError?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TransactionMasterFileCreateManyInput = {
+    id?: string
+    uploadBatchId: string
+    rawCustId?: string | null
+    rawProdOrderBatch?: string | null
+    rawWorkCenter?: string | null
+    rawSku?: string | null
+    rawSkuType?: string | null
+    rawEntryDate?: string | null
+    rawEntryTime?: string | null
+    rawExitDate?: string | null
+    rawExitTime?: string | null
+    prodOrder?: string | null
+    batch?: string | null
+    entryTimestamp?: Date | string | null
+    exitTimestamp?: Date | string | null
+    actualProcessTime?: number | null
+    expectedCycleTime?: number | null
+    delayHours?: number | null
+    processStatus?: string | null
+    isValid?: boolean
+    validationError?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type TransactionMasterFileUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    rawCustId?: NullableStringFieldUpdateOperationsInput | string | null
+    rawProdOrderBatch?: NullableStringFieldUpdateOperationsInput | string | null
+    rawWorkCenter?: NullableStringFieldUpdateOperationsInput | string | null
+    rawSku?: NullableStringFieldUpdateOperationsInput | string | null
+    rawSkuType?: NullableStringFieldUpdateOperationsInput | string | null
+    rawEntryDate?: NullableStringFieldUpdateOperationsInput | string | null
+    rawEntryTime?: NullableStringFieldUpdateOperationsInput | string | null
+    rawExitDate?: NullableStringFieldUpdateOperationsInput | string | null
+    rawExitTime?: NullableStringFieldUpdateOperationsInput | string | null
+    prodOrder?: NullableStringFieldUpdateOperationsInput | string | null
+    batch?: NullableStringFieldUpdateOperationsInput | string | null
+    entryTimestamp?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    exitTimestamp?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualProcessTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    expectedCycleTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    delayHours?: NullableFloatFieldUpdateOperationsInput | number | null
+    processStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    isValid?: BoolFieldUpdateOperationsInput | boolean
+    validationError?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TransactionMasterFileUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    uploadBatchId?: StringFieldUpdateOperationsInput | string
+    rawCustId?: NullableStringFieldUpdateOperationsInput | string | null
+    rawProdOrderBatch?: NullableStringFieldUpdateOperationsInput | string | null
+    rawWorkCenter?: NullableStringFieldUpdateOperationsInput | string | null
+    rawSku?: NullableStringFieldUpdateOperationsInput | string | null
+    rawSkuType?: NullableStringFieldUpdateOperationsInput | string | null
+    rawEntryDate?: NullableStringFieldUpdateOperationsInput | string | null
+    rawEntryTime?: NullableStringFieldUpdateOperationsInput | string | null
+    rawExitDate?: NullableStringFieldUpdateOperationsInput | string | null
+    rawExitTime?: NullableStringFieldUpdateOperationsInput | string | null
+    prodOrder?: NullableStringFieldUpdateOperationsInput | string | null
+    batch?: NullableStringFieldUpdateOperationsInput | string | null
+    entryTimestamp?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    exitTimestamp?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualProcessTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    expectedCycleTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    delayHours?: NullableFloatFieldUpdateOperationsInput | number | null
+    processStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    isValid?: BoolFieldUpdateOperationsInput | boolean
+    validationError?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProductionOrderSummaryCreateInput = {
+    id?: string
+    prodOrder: string
+    custId: string
+    sku?: string | null
+    skuType: string
+    numberOfBatches?: number
+    batchesList?: string | null
+    totalActualTime?: number
+    configuredTotalCT?: number | null
+    totalDelay?: number
+    poStatus?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    uploadBatch: TransactionUploadBatchCreateNestedOneWithoutPoSummariesInput
+  }
+
+  export type ProductionOrderSummaryUncheckedCreateInput = {
+    id?: string
+    uploadBatchId: string
+    prodOrder: string
+    custId: string
+    sku?: string | null
+    skuType: string
+    numberOfBatches?: number
+    batchesList?: string | null
+    totalActualTime?: number
+    configuredTotalCT?: number | null
+    totalDelay?: number
+    poStatus?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ProductionOrderSummaryUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    prodOrder?: StringFieldUpdateOperationsInput | string
+    custId?: StringFieldUpdateOperationsInput | string
+    sku?: NullableStringFieldUpdateOperationsInput | string | null
+    skuType?: StringFieldUpdateOperationsInput | string
+    numberOfBatches?: IntFieldUpdateOperationsInput | number
+    batchesList?: NullableStringFieldUpdateOperationsInput | string | null
+    totalActualTime?: FloatFieldUpdateOperationsInput | number
+    configuredTotalCT?: NullableFloatFieldUpdateOperationsInput | number | null
+    totalDelay?: FloatFieldUpdateOperationsInput | number
+    poStatus?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    uploadBatch?: TransactionUploadBatchUpdateOneRequiredWithoutPoSummariesNestedInput
+  }
+
+  export type ProductionOrderSummaryUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    uploadBatchId?: StringFieldUpdateOperationsInput | string
+    prodOrder?: StringFieldUpdateOperationsInput | string
+    custId?: StringFieldUpdateOperationsInput | string
+    sku?: NullableStringFieldUpdateOperationsInput | string | null
+    skuType?: StringFieldUpdateOperationsInput | string
+    numberOfBatches?: IntFieldUpdateOperationsInput | number
+    batchesList?: NullableStringFieldUpdateOperationsInput | string | null
+    totalActualTime?: FloatFieldUpdateOperationsInput | number
+    configuredTotalCT?: NullableFloatFieldUpdateOperationsInput | number | null
+    totalDelay?: FloatFieldUpdateOperationsInput | number
+    poStatus?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProductionOrderSummaryCreateManyInput = {
+    id?: string
+    uploadBatchId: string
+    prodOrder: string
+    custId: string
+    sku?: string | null
+    skuType: string
+    numberOfBatches?: number
+    batchesList?: string | null
+    totalActualTime?: number
+    configuredTotalCT?: number | null
+    totalDelay?: number
+    poStatus?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ProductionOrderSummaryUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    prodOrder?: StringFieldUpdateOperationsInput | string
+    custId?: StringFieldUpdateOperationsInput | string
+    sku?: NullableStringFieldUpdateOperationsInput | string | null
+    skuType?: StringFieldUpdateOperationsInput | string
+    numberOfBatches?: IntFieldUpdateOperationsInput | number
+    batchesList?: NullableStringFieldUpdateOperationsInput | string | null
+    totalActualTime?: FloatFieldUpdateOperationsInput | number
+    configuredTotalCT?: NullableFloatFieldUpdateOperationsInput | number | null
+    totalDelay?: FloatFieldUpdateOperationsInput | number
+    poStatus?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProductionOrderSummaryUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    uploadBatchId?: StringFieldUpdateOperationsInput | string
+    prodOrder?: StringFieldUpdateOperationsInput | string
+    custId?: StringFieldUpdateOperationsInput | string
+    sku?: NullableStringFieldUpdateOperationsInput | string | null
+    skuType?: StringFieldUpdateOperationsInput | string
+    numberOfBatches?: IntFieldUpdateOperationsInput | number
+    batchesList?: NullableStringFieldUpdateOperationsInput | string | null
+    totalActualTime?: FloatFieldUpdateOperationsInput | number
+    configuredTotalCT?: NullableFloatFieldUpdateOperationsInput | number | null
+    totalDelay?: FloatFieldUpdateOperationsInput | number
+    poStatus?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ReportCreateInput = {
+    id?: string
+    reportName: string
+    reportType?: string | null
+    description?: string | null
+    data?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ReportUncheckedCreateInput = {
+    id?: string
+    reportName: string
+    reportType?: string | null
+    description?: string | null
+    data?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ReportUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    reportName?: StringFieldUpdateOperationsInput | string
+    reportType?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    data?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ReportUncheckedUpdateInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    reportName?: StringFieldUpdateOperationsInput | string
+    reportType?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    data?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ReportCreateManyInput = {
+    id?: string
+    reportName: string
+    reportType?: string | null
+    description?: string | null
+    data?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ReportUpdateManyMutationInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    reportName?: StringFieldUpdateOperationsInput | string
+    reportType?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    data?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ReportUncheckedUpdateManyInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    reportName?: StringFieldUpdateOperationsInput | string
+    reportType?: NullableStringFieldUpdateOperationsInput | string | null
+    description?: NullableStringFieldUpdateOperationsInput | string | null
+    data?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type CustomerCreateInput = {
@@ -8108,9 +16952,15 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
-  export type BoolFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolFilter<$PrismaModel> | boolean
+  export type IntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type DateTimeFilter<$PrismaModel = never> = {
@@ -8124,6 +16974,552 @@ export namespace Prisma {
     not?: NestedDateTimeFilter<$PrismaModel> | Date | string
   }
 
+  export type SortOrderInput = {
+    sort: SortOrder
+    nulls?: NullsOrder
+  }
+
+  export type CustomerMasterFileCountOrderByAggregateInput = {
+    id?: SortOrder
+    custId?: SortOrder
+    custName?: SortOrder
+    skuId?: SortOrder
+    skuName?: SortOrder
+    deliveryTimeDays?: SortOrder
+    skuType1?: SortOrder
+    deliveryTime1Days?: SortOrder
+    skuType2?: SortOrder
+    deliveryTime2Days?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CustomerMasterFileAvgOrderByAggregateInput = {
+    deliveryTimeDays?: SortOrder
+    deliveryTime1Days?: SortOrder
+    deliveryTime2Days?: SortOrder
+  }
+
+  export type CustomerMasterFileMaxOrderByAggregateInput = {
+    id?: SortOrder
+    custId?: SortOrder
+    custName?: SortOrder
+    skuId?: SortOrder
+    skuName?: SortOrder
+    deliveryTimeDays?: SortOrder
+    skuType1?: SortOrder
+    deliveryTime1Days?: SortOrder
+    skuType2?: SortOrder
+    deliveryTime2Days?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CustomerMasterFileMinOrderByAggregateInput = {
+    id?: SortOrder
+    custId?: SortOrder
+    custName?: SortOrder
+    skuId?: SortOrder
+    skuName?: SortOrder
+    deliveryTimeDays?: SortOrder
+    skuType1?: SortOrder
+    deliveryTime1Days?: SortOrder
+    skuType2?: SortOrder
+    deliveryTime2Days?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type CustomerMasterFileSumOrderByAggregateInput = {
+    deliveryTimeDays?: SortOrder
+    deliveryTime1Days?: SortOrder
+    deliveryTime2Days?: SortOrder
+  }
+
+  export type StringWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel>
+    in?: string[]
+    notIn?: string[]
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedStringFilter<$PrismaModel>
+    _max?: NestedStringFilter<$PrismaModel>
+  }
+
+  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: string | StringFieldRefInput<$PrismaModel> | null
+    in?: string[] | null
+    notIn?: string[] | null
+    lt?: string | StringFieldRefInput<$PrismaModel>
+    lte?: string | StringFieldRefInput<$PrismaModel>
+    gt?: string | StringFieldRefInput<$PrismaModel>
+    gte?: string | StringFieldRefInput<$PrismaModel>
+    contains?: string | StringFieldRefInput<$PrismaModel>
+    startsWith?: string | StringFieldRefInput<$PrismaModel>
+    endsWith?: string | StringFieldRefInput<$PrismaModel>
+    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedStringNullableFilter<$PrismaModel>
+    _max?: NestedStringNullableFilter<$PrismaModel>
+  }
+
+  export type IntNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
+  }
+
+  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    in?: Date[] | string[]
+    notIn?: Date[] | string[]
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedDateTimeFilter<$PrismaModel>
+    _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
+  export type FloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
+  }
+
+  export type ProcessMasterFileCustIdSkuTypeCompoundUniqueInput = {
+    custId: string
+    skuType: string
+  }
+
+  export type ProcessMasterFileCountOrderByAggregateInput = {
+    id?: SortOrder
+    custId?: SortOrder
+    skuType?: SortOrder
+    processes?: SortOrder
+    cycleTimes?: SortOrder
+    totalCycleTime?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ProcessMasterFileAvgOrderByAggregateInput = {
+    totalCycleTime?: SortOrder
+  }
+
+  export type ProcessMasterFileMaxOrderByAggregateInput = {
+    id?: SortOrder
+    custId?: SortOrder
+    skuType?: SortOrder
+    processes?: SortOrder
+    cycleTimes?: SortOrder
+    totalCycleTime?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ProcessMasterFileMinOrderByAggregateInput = {
+    id?: SortOrder
+    custId?: SortOrder
+    skuType?: SortOrder
+    processes?: SortOrder
+    cycleTimes?: SortOrder
+    totalCycleTime?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ProcessMasterFileSumOrderByAggregateInput = {
+    totalCycleTime?: SortOrder
+  }
+
+  export type FloatNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedFloatNullableFilter<$PrismaModel>
+    _min?: NestedFloatNullableFilter<$PrismaModel>
+    _max?: NestedFloatNullableFilter<$PrismaModel>
+  }
+
+  export type IntFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntFilter<$PrismaModel> | number
+  }
+
+  export type TransactionMasterFileListRelationFilter = {
+    every?: TransactionMasterFileWhereInput
+    some?: TransactionMasterFileWhereInput
+    none?: TransactionMasterFileWhereInput
+  }
+
+  export type ProductionOrderSummaryListRelationFilter = {
+    every?: ProductionOrderSummaryWhereInput
+    some?: ProductionOrderSummaryWhereInput
+    none?: ProductionOrderSummaryWhereInput
+  }
+
+  export type TransactionMasterFileOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type ProductionOrderSummaryOrderByRelationAggregateInput = {
+    _count?: SortOrder
+  }
+
+  export type TransactionUploadBatchCountOrderByAggregateInput = {
+    id?: SortOrder
+    fileName?: SortOrder
+    totalRows?: SortOrder
+    validRows?: SortOrder
+    invalidRows?: SortOrder
+    status?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type TransactionUploadBatchAvgOrderByAggregateInput = {
+    totalRows?: SortOrder
+    validRows?: SortOrder
+    invalidRows?: SortOrder
+  }
+
+  export type TransactionUploadBatchMaxOrderByAggregateInput = {
+    id?: SortOrder
+    fileName?: SortOrder
+    totalRows?: SortOrder
+    validRows?: SortOrder
+    invalidRows?: SortOrder
+    status?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type TransactionUploadBatchMinOrderByAggregateInput = {
+    id?: SortOrder
+    fileName?: SortOrder
+    totalRows?: SortOrder
+    validRows?: SortOrder
+    invalidRows?: SortOrder
+    status?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type TransactionUploadBatchSumOrderByAggregateInput = {
+    totalRows?: SortOrder
+    validRows?: SortOrder
+    invalidRows?: SortOrder
+  }
+
+  export type IntWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedIntFilter<$PrismaModel>
+    _min?: NestedIntFilter<$PrismaModel>
+    _max?: NestedIntFilter<$PrismaModel>
+  }
+
+  export type DateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
+  export type BoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type TransactionUploadBatchScalarRelationFilter = {
+    is?: TransactionUploadBatchWhereInput
+    isNot?: TransactionUploadBatchWhereInput
+  }
+
+  export type TransactionMasterFileCountOrderByAggregateInput = {
+    id?: SortOrder
+    uploadBatchId?: SortOrder
+    rawCustId?: SortOrder
+    rawProdOrderBatch?: SortOrder
+    rawWorkCenter?: SortOrder
+    rawSku?: SortOrder
+    rawSkuType?: SortOrder
+    rawEntryDate?: SortOrder
+    rawEntryTime?: SortOrder
+    rawExitDate?: SortOrder
+    rawExitTime?: SortOrder
+    prodOrder?: SortOrder
+    batch?: SortOrder
+    entryTimestamp?: SortOrder
+    exitTimestamp?: SortOrder
+    actualProcessTime?: SortOrder
+    expectedCycleTime?: SortOrder
+    delayHours?: SortOrder
+    processStatus?: SortOrder
+    isValid?: SortOrder
+    validationError?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type TransactionMasterFileAvgOrderByAggregateInput = {
+    actualProcessTime?: SortOrder
+    expectedCycleTime?: SortOrder
+    delayHours?: SortOrder
+  }
+
+  export type TransactionMasterFileMaxOrderByAggregateInput = {
+    id?: SortOrder
+    uploadBatchId?: SortOrder
+    rawCustId?: SortOrder
+    rawProdOrderBatch?: SortOrder
+    rawWorkCenter?: SortOrder
+    rawSku?: SortOrder
+    rawSkuType?: SortOrder
+    rawEntryDate?: SortOrder
+    rawEntryTime?: SortOrder
+    rawExitDate?: SortOrder
+    rawExitTime?: SortOrder
+    prodOrder?: SortOrder
+    batch?: SortOrder
+    entryTimestamp?: SortOrder
+    exitTimestamp?: SortOrder
+    actualProcessTime?: SortOrder
+    expectedCycleTime?: SortOrder
+    delayHours?: SortOrder
+    processStatus?: SortOrder
+    isValid?: SortOrder
+    validationError?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type TransactionMasterFileMinOrderByAggregateInput = {
+    id?: SortOrder
+    uploadBatchId?: SortOrder
+    rawCustId?: SortOrder
+    rawProdOrderBatch?: SortOrder
+    rawWorkCenter?: SortOrder
+    rawSku?: SortOrder
+    rawSkuType?: SortOrder
+    rawEntryDate?: SortOrder
+    rawEntryTime?: SortOrder
+    rawExitDate?: SortOrder
+    rawExitTime?: SortOrder
+    prodOrder?: SortOrder
+    batch?: SortOrder
+    entryTimestamp?: SortOrder
+    exitTimestamp?: SortOrder
+    actualProcessTime?: SortOrder
+    expectedCycleTime?: SortOrder
+    delayHours?: SortOrder
+    processStatus?: SortOrder
+    isValid?: SortOrder
+    validationError?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type TransactionMasterFileSumOrderByAggregateInput = {
+    actualProcessTime?: SortOrder
+    expectedCycleTime?: SortOrder
+    delayHours?: SortOrder
+  }
+
+  export type DateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
+  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
+  export type FloatFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
+  export type ProductionOrderSummaryCountOrderByAggregateInput = {
+    id?: SortOrder
+    uploadBatchId?: SortOrder
+    prodOrder?: SortOrder
+    custId?: SortOrder
+    sku?: SortOrder
+    skuType?: SortOrder
+    numberOfBatches?: SortOrder
+    batchesList?: SortOrder
+    totalActualTime?: SortOrder
+    configuredTotalCT?: SortOrder
+    totalDelay?: SortOrder
+    poStatus?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ProductionOrderSummaryAvgOrderByAggregateInput = {
+    numberOfBatches?: SortOrder
+    totalActualTime?: SortOrder
+    configuredTotalCT?: SortOrder
+    totalDelay?: SortOrder
+  }
+
+  export type ProductionOrderSummaryMaxOrderByAggregateInput = {
+    id?: SortOrder
+    uploadBatchId?: SortOrder
+    prodOrder?: SortOrder
+    custId?: SortOrder
+    sku?: SortOrder
+    skuType?: SortOrder
+    numberOfBatches?: SortOrder
+    batchesList?: SortOrder
+    totalActualTime?: SortOrder
+    configuredTotalCT?: SortOrder
+    totalDelay?: SortOrder
+    poStatus?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ProductionOrderSummaryMinOrderByAggregateInput = {
+    id?: SortOrder
+    uploadBatchId?: SortOrder
+    prodOrder?: SortOrder
+    custId?: SortOrder
+    sku?: SortOrder
+    skuType?: SortOrder
+    numberOfBatches?: SortOrder
+    batchesList?: SortOrder
+    totalActualTime?: SortOrder
+    configuredTotalCT?: SortOrder
+    totalDelay?: SortOrder
+    poStatus?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ProductionOrderSummarySumOrderByAggregateInput = {
+    numberOfBatches?: SortOrder
+    totalActualTime?: SortOrder
+    configuredTotalCT?: SortOrder
+    totalDelay?: SortOrder
+  }
+
+  export type FloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
+  }
+
+  export type ReportCountOrderByAggregateInput = {
+    id?: SortOrder
+    reportName?: SortOrder
+    reportType?: SortOrder
+    description?: SortOrder
+    data?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ReportMaxOrderByAggregateInput = {
+    id?: SortOrder
+    reportName?: SortOrder
+    reportType?: SortOrder
+    description?: SortOrder
+    data?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
+  export type ReportMinOrderByAggregateInput = {
+    id?: SortOrder
+    reportName?: SortOrder
+    reportType?: SortOrder
+    description?: SortOrder
+    data?: SortOrder
+    createdAt?: SortOrder
+    updatedAt?: SortOrder
+  }
+
   export type SkuListRelationFilter = {
     every?: SkuWhereInput
     some?: SkuWhereInput
@@ -8134,11 +17530,6 @@ export namespace Prisma {
     every?: RejectionWhereInput
     some?: RejectionWhereInput
     none?: RejectionWhereInput
-  }
-
-  export type SortOrderInput = {
-    sort: SortOrder
-    nulls?: NullsOrder
   }
 
   export type SkuOrderByRelationAggregateInput = {
@@ -8177,62 +17568,6 @@ export namespace Prisma {
     isActive?: SortOrder
     createdAt?: SortOrder
     updatedAt?: SortOrder
-  }
-
-  export type StringWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel>
-    in?: string[]
-    notIn?: string[]
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringWithAggregatesFilter<$PrismaModel> | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedStringFilter<$PrismaModel>
-    _max?: NestedStringFilter<$PrismaModel>
-  }
-
-  export type StringNullableWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: string | StringFieldRefInput<$PrismaModel> | null
-    in?: string[] | null
-    notIn?: string[] | null
-    lt?: string | StringFieldRefInput<$PrismaModel>
-    lte?: string | StringFieldRefInput<$PrismaModel>
-    gt?: string | StringFieldRefInput<$PrismaModel>
-    gte?: string | StringFieldRefInput<$PrismaModel>
-    contains?: string | StringFieldRefInput<$PrismaModel>
-    startsWith?: string | StringFieldRefInput<$PrismaModel>
-    endsWith?: string | StringFieldRefInput<$PrismaModel>
-    not?: NestedStringNullableWithAggregatesFilter<$PrismaModel> | string | null
-    _count?: NestedIntNullableFilter<$PrismaModel>
-    _min?: NestedStringNullableFilter<$PrismaModel>
-    _max?: NestedStringNullableFilter<$PrismaModel>
-  }
-
-  export type BoolWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedBoolFilter<$PrismaModel>
-    _max?: NestedBoolFilter<$PrismaModel>
-  }
-
-  export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    in?: Date[] | string[]
-    notIn?: Date[] | string[]
-    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
-    not?: NestedDateTimeWithAggregatesFilter<$PrismaModel> | Date | string
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedDateTimeFilter<$PrismaModel>
-    _max?: NestedDateTimeFilter<$PrismaModel>
   }
 
   export type CustomerScalarRelationFilter = {
@@ -8286,17 +17621,6 @@ export namespace Prisma {
     updatedAt?: SortOrder
   }
 
-  export type IntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
-  }
-
   export type ProcessCountOrderByAggregateInput = {
     id?: SortOrder
     processCode?: SortOrder
@@ -8339,22 +17663,6 @@ export namespace Prisma {
 
   export type ProcessSumOrderByAggregateInput = {
     defaultSequence?: SortOrder
-  }
-
-  export type IntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[]
-    notIn?: number[]
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
   }
 
   export type SkuScalarRelationFilter = {
@@ -8467,6 +17775,170 @@ export namespace Prisma {
     rejectionCount?: SortOrder
   }
 
+  export type StringFieldUpdateOperationsInput = {
+    set?: string
+  }
+
+  export type NullableStringFieldUpdateOperationsInput = {
+    set?: string | null
+  }
+
+  export type NullableIntFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type DateTimeFieldUpdateOperationsInput = {
+    set?: Date | string
+  }
+
+  export type NullableFloatFieldUpdateOperationsInput = {
+    set?: number | null
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type TransactionMasterFileCreateNestedManyWithoutUploadBatchInput = {
+    create?: XOR<TransactionMasterFileCreateWithoutUploadBatchInput, TransactionMasterFileUncheckedCreateWithoutUploadBatchInput> | TransactionMasterFileCreateWithoutUploadBatchInput[] | TransactionMasterFileUncheckedCreateWithoutUploadBatchInput[]
+    connectOrCreate?: TransactionMasterFileCreateOrConnectWithoutUploadBatchInput | TransactionMasterFileCreateOrConnectWithoutUploadBatchInput[]
+    createMany?: TransactionMasterFileCreateManyUploadBatchInputEnvelope
+    connect?: TransactionMasterFileWhereUniqueInput | TransactionMasterFileWhereUniqueInput[]
+  }
+
+  export type ProductionOrderSummaryCreateNestedManyWithoutUploadBatchInput = {
+    create?: XOR<ProductionOrderSummaryCreateWithoutUploadBatchInput, ProductionOrderSummaryUncheckedCreateWithoutUploadBatchInput> | ProductionOrderSummaryCreateWithoutUploadBatchInput[] | ProductionOrderSummaryUncheckedCreateWithoutUploadBatchInput[]
+    connectOrCreate?: ProductionOrderSummaryCreateOrConnectWithoutUploadBatchInput | ProductionOrderSummaryCreateOrConnectWithoutUploadBatchInput[]
+    createMany?: ProductionOrderSummaryCreateManyUploadBatchInputEnvelope
+    connect?: ProductionOrderSummaryWhereUniqueInput | ProductionOrderSummaryWhereUniqueInput[]
+  }
+
+  export type TransactionMasterFileUncheckedCreateNestedManyWithoutUploadBatchInput = {
+    create?: XOR<TransactionMasterFileCreateWithoutUploadBatchInput, TransactionMasterFileUncheckedCreateWithoutUploadBatchInput> | TransactionMasterFileCreateWithoutUploadBatchInput[] | TransactionMasterFileUncheckedCreateWithoutUploadBatchInput[]
+    connectOrCreate?: TransactionMasterFileCreateOrConnectWithoutUploadBatchInput | TransactionMasterFileCreateOrConnectWithoutUploadBatchInput[]
+    createMany?: TransactionMasterFileCreateManyUploadBatchInputEnvelope
+    connect?: TransactionMasterFileWhereUniqueInput | TransactionMasterFileWhereUniqueInput[]
+  }
+
+  export type ProductionOrderSummaryUncheckedCreateNestedManyWithoutUploadBatchInput = {
+    create?: XOR<ProductionOrderSummaryCreateWithoutUploadBatchInput, ProductionOrderSummaryUncheckedCreateWithoutUploadBatchInput> | ProductionOrderSummaryCreateWithoutUploadBatchInput[] | ProductionOrderSummaryUncheckedCreateWithoutUploadBatchInput[]
+    connectOrCreate?: ProductionOrderSummaryCreateOrConnectWithoutUploadBatchInput | ProductionOrderSummaryCreateOrConnectWithoutUploadBatchInput[]
+    createMany?: ProductionOrderSummaryCreateManyUploadBatchInputEnvelope
+    connect?: ProductionOrderSummaryWhereUniqueInput | ProductionOrderSummaryWhereUniqueInput[]
+  }
+
+  export type IntFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type TransactionMasterFileUpdateManyWithoutUploadBatchNestedInput = {
+    create?: XOR<TransactionMasterFileCreateWithoutUploadBatchInput, TransactionMasterFileUncheckedCreateWithoutUploadBatchInput> | TransactionMasterFileCreateWithoutUploadBatchInput[] | TransactionMasterFileUncheckedCreateWithoutUploadBatchInput[]
+    connectOrCreate?: TransactionMasterFileCreateOrConnectWithoutUploadBatchInput | TransactionMasterFileCreateOrConnectWithoutUploadBatchInput[]
+    upsert?: TransactionMasterFileUpsertWithWhereUniqueWithoutUploadBatchInput | TransactionMasterFileUpsertWithWhereUniqueWithoutUploadBatchInput[]
+    createMany?: TransactionMasterFileCreateManyUploadBatchInputEnvelope
+    set?: TransactionMasterFileWhereUniqueInput | TransactionMasterFileWhereUniqueInput[]
+    disconnect?: TransactionMasterFileWhereUniqueInput | TransactionMasterFileWhereUniqueInput[]
+    delete?: TransactionMasterFileWhereUniqueInput | TransactionMasterFileWhereUniqueInput[]
+    connect?: TransactionMasterFileWhereUniqueInput | TransactionMasterFileWhereUniqueInput[]
+    update?: TransactionMasterFileUpdateWithWhereUniqueWithoutUploadBatchInput | TransactionMasterFileUpdateWithWhereUniqueWithoutUploadBatchInput[]
+    updateMany?: TransactionMasterFileUpdateManyWithWhereWithoutUploadBatchInput | TransactionMasterFileUpdateManyWithWhereWithoutUploadBatchInput[]
+    deleteMany?: TransactionMasterFileScalarWhereInput | TransactionMasterFileScalarWhereInput[]
+  }
+
+  export type ProductionOrderSummaryUpdateManyWithoutUploadBatchNestedInput = {
+    create?: XOR<ProductionOrderSummaryCreateWithoutUploadBatchInput, ProductionOrderSummaryUncheckedCreateWithoutUploadBatchInput> | ProductionOrderSummaryCreateWithoutUploadBatchInput[] | ProductionOrderSummaryUncheckedCreateWithoutUploadBatchInput[]
+    connectOrCreate?: ProductionOrderSummaryCreateOrConnectWithoutUploadBatchInput | ProductionOrderSummaryCreateOrConnectWithoutUploadBatchInput[]
+    upsert?: ProductionOrderSummaryUpsertWithWhereUniqueWithoutUploadBatchInput | ProductionOrderSummaryUpsertWithWhereUniqueWithoutUploadBatchInput[]
+    createMany?: ProductionOrderSummaryCreateManyUploadBatchInputEnvelope
+    set?: ProductionOrderSummaryWhereUniqueInput | ProductionOrderSummaryWhereUniqueInput[]
+    disconnect?: ProductionOrderSummaryWhereUniqueInput | ProductionOrderSummaryWhereUniqueInput[]
+    delete?: ProductionOrderSummaryWhereUniqueInput | ProductionOrderSummaryWhereUniqueInput[]
+    connect?: ProductionOrderSummaryWhereUniqueInput | ProductionOrderSummaryWhereUniqueInput[]
+    update?: ProductionOrderSummaryUpdateWithWhereUniqueWithoutUploadBatchInput | ProductionOrderSummaryUpdateWithWhereUniqueWithoutUploadBatchInput[]
+    updateMany?: ProductionOrderSummaryUpdateManyWithWhereWithoutUploadBatchInput | ProductionOrderSummaryUpdateManyWithWhereWithoutUploadBatchInput[]
+    deleteMany?: ProductionOrderSummaryScalarWhereInput | ProductionOrderSummaryScalarWhereInput[]
+  }
+
+  export type TransactionMasterFileUncheckedUpdateManyWithoutUploadBatchNestedInput = {
+    create?: XOR<TransactionMasterFileCreateWithoutUploadBatchInput, TransactionMasterFileUncheckedCreateWithoutUploadBatchInput> | TransactionMasterFileCreateWithoutUploadBatchInput[] | TransactionMasterFileUncheckedCreateWithoutUploadBatchInput[]
+    connectOrCreate?: TransactionMasterFileCreateOrConnectWithoutUploadBatchInput | TransactionMasterFileCreateOrConnectWithoutUploadBatchInput[]
+    upsert?: TransactionMasterFileUpsertWithWhereUniqueWithoutUploadBatchInput | TransactionMasterFileUpsertWithWhereUniqueWithoutUploadBatchInput[]
+    createMany?: TransactionMasterFileCreateManyUploadBatchInputEnvelope
+    set?: TransactionMasterFileWhereUniqueInput | TransactionMasterFileWhereUniqueInput[]
+    disconnect?: TransactionMasterFileWhereUniqueInput | TransactionMasterFileWhereUniqueInput[]
+    delete?: TransactionMasterFileWhereUniqueInput | TransactionMasterFileWhereUniqueInput[]
+    connect?: TransactionMasterFileWhereUniqueInput | TransactionMasterFileWhereUniqueInput[]
+    update?: TransactionMasterFileUpdateWithWhereUniqueWithoutUploadBatchInput | TransactionMasterFileUpdateWithWhereUniqueWithoutUploadBatchInput[]
+    updateMany?: TransactionMasterFileUpdateManyWithWhereWithoutUploadBatchInput | TransactionMasterFileUpdateManyWithWhereWithoutUploadBatchInput[]
+    deleteMany?: TransactionMasterFileScalarWhereInput | TransactionMasterFileScalarWhereInput[]
+  }
+
+  export type ProductionOrderSummaryUncheckedUpdateManyWithoutUploadBatchNestedInput = {
+    create?: XOR<ProductionOrderSummaryCreateWithoutUploadBatchInput, ProductionOrderSummaryUncheckedCreateWithoutUploadBatchInput> | ProductionOrderSummaryCreateWithoutUploadBatchInput[] | ProductionOrderSummaryUncheckedCreateWithoutUploadBatchInput[]
+    connectOrCreate?: ProductionOrderSummaryCreateOrConnectWithoutUploadBatchInput | ProductionOrderSummaryCreateOrConnectWithoutUploadBatchInput[]
+    upsert?: ProductionOrderSummaryUpsertWithWhereUniqueWithoutUploadBatchInput | ProductionOrderSummaryUpsertWithWhereUniqueWithoutUploadBatchInput[]
+    createMany?: ProductionOrderSummaryCreateManyUploadBatchInputEnvelope
+    set?: ProductionOrderSummaryWhereUniqueInput | ProductionOrderSummaryWhereUniqueInput[]
+    disconnect?: ProductionOrderSummaryWhereUniqueInput | ProductionOrderSummaryWhereUniqueInput[]
+    delete?: ProductionOrderSummaryWhereUniqueInput | ProductionOrderSummaryWhereUniqueInput[]
+    connect?: ProductionOrderSummaryWhereUniqueInput | ProductionOrderSummaryWhereUniqueInput[]
+    update?: ProductionOrderSummaryUpdateWithWhereUniqueWithoutUploadBatchInput | ProductionOrderSummaryUpdateWithWhereUniqueWithoutUploadBatchInput[]
+    updateMany?: ProductionOrderSummaryUpdateManyWithWhereWithoutUploadBatchInput | ProductionOrderSummaryUpdateManyWithWhereWithoutUploadBatchInput[]
+    deleteMany?: ProductionOrderSummaryScalarWhereInput | ProductionOrderSummaryScalarWhereInput[]
+  }
+
+  export type TransactionUploadBatchCreateNestedOneWithoutTransactionsInput = {
+    create?: XOR<TransactionUploadBatchCreateWithoutTransactionsInput, TransactionUploadBatchUncheckedCreateWithoutTransactionsInput>
+    connectOrCreate?: TransactionUploadBatchCreateOrConnectWithoutTransactionsInput
+    connect?: TransactionUploadBatchWhereUniqueInput
+  }
+
+  export type NullableDateTimeFieldUpdateOperationsInput = {
+    set?: Date | string | null
+  }
+
+  export type BoolFieldUpdateOperationsInput = {
+    set?: boolean
+  }
+
+  export type TransactionUploadBatchUpdateOneRequiredWithoutTransactionsNestedInput = {
+    create?: XOR<TransactionUploadBatchCreateWithoutTransactionsInput, TransactionUploadBatchUncheckedCreateWithoutTransactionsInput>
+    connectOrCreate?: TransactionUploadBatchCreateOrConnectWithoutTransactionsInput
+    upsert?: TransactionUploadBatchUpsertWithoutTransactionsInput
+    connect?: TransactionUploadBatchWhereUniqueInput
+    update?: XOR<XOR<TransactionUploadBatchUpdateToOneWithWhereWithoutTransactionsInput, TransactionUploadBatchUpdateWithoutTransactionsInput>, TransactionUploadBatchUncheckedUpdateWithoutTransactionsInput>
+  }
+
+  export type TransactionUploadBatchCreateNestedOneWithoutPoSummariesInput = {
+    create?: XOR<TransactionUploadBatchCreateWithoutPoSummariesInput, TransactionUploadBatchUncheckedCreateWithoutPoSummariesInput>
+    connectOrCreate?: TransactionUploadBatchCreateOrConnectWithoutPoSummariesInput
+    connect?: TransactionUploadBatchWhereUniqueInput
+  }
+
+  export type FloatFieldUpdateOperationsInput = {
+    set?: number
+    increment?: number
+    decrement?: number
+    multiply?: number
+    divide?: number
+  }
+
+  export type TransactionUploadBatchUpdateOneRequiredWithoutPoSummariesNestedInput = {
+    create?: XOR<TransactionUploadBatchCreateWithoutPoSummariesInput, TransactionUploadBatchUncheckedCreateWithoutPoSummariesInput>
+    connectOrCreate?: TransactionUploadBatchCreateOrConnectWithoutPoSummariesInput
+    upsert?: TransactionUploadBatchUpsertWithoutPoSummariesInput
+    connect?: TransactionUploadBatchWhereUniqueInput
+    update?: XOR<XOR<TransactionUploadBatchUpdateToOneWithWhereWithoutPoSummariesInput, TransactionUploadBatchUpdateWithoutPoSummariesInput>, TransactionUploadBatchUncheckedUpdateWithoutPoSummariesInput>
+  }
+
   export type SkuCreateNestedManyWithoutCustomerInput = {
     create?: XOR<SkuCreateWithoutCustomerInput, SkuUncheckedCreateWithoutCustomerInput> | SkuCreateWithoutCustomerInput[] | SkuUncheckedCreateWithoutCustomerInput[]
     connectOrCreate?: SkuCreateOrConnectWithoutCustomerInput | SkuCreateOrConnectWithoutCustomerInput[]
@@ -8493,22 +17965,6 @@ export namespace Prisma {
     connectOrCreate?: RejectionCreateOrConnectWithoutCustomerInput | RejectionCreateOrConnectWithoutCustomerInput[]
     createMany?: RejectionCreateManyCustomerInputEnvelope
     connect?: RejectionWhereUniqueInput | RejectionWhereUniqueInput[]
-  }
-
-  export type StringFieldUpdateOperationsInput = {
-    set?: string
-  }
-
-  export type NullableStringFieldUpdateOperationsInput = {
-    set?: string | null
-  }
-
-  export type BoolFieldUpdateOperationsInput = {
-    set?: boolean
-  }
-
-  export type DateTimeFieldUpdateOperationsInput = {
-    set?: Date | string
   }
 
   export type SkuUpdateManyWithoutCustomerNestedInput = {
@@ -8679,14 +18135,6 @@ export namespace Prisma {
     connect?: SkuProcessWhereUniqueInput | SkuProcessWhereUniqueInput[]
   }
 
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
   export type SkuProcessUpdateManyWithoutProcessNestedInput = {
     create?: XOR<SkuProcessCreateWithoutProcessInput, SkuProcessUncheckedCreateWithoutProcessInput> | SkuProcessCreateWithoutProcessInput[] | SkuProcessUncheckedCreateWithoutProcessInput[]
     connectOrCreate?: SkuProcessCreateOrConnectWithoutProcessInput | SkuProcessCreateOrConnectWithoutProcessInput[]
@@ -8801,9 +18249,15 @@ export namespace Prisma {
     not?: NestedStringNullableFilter<$PrismaModel> | string | null
   }
 
-  export type NestedBoolFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolFilter<$PrismaModel> | boolean
+  export type NestedIntNullableFilter<$PrismaModel = never> = {
+    equals?: number | IntFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | IntFieldRefInput<$PrismaModel>
+    lte?: number | IntFieldRefInput<$PrismaModel>
+    gt?: number | IntFieldRefInput<$PrismaModel>
+    gte?: number | IntFieldRefInput<$PrismaModel>
+    not?: NestedIntNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedDateTimeFilter<$PrismaModel = never> = {
@@ -8862,7 +18316,7 @@ export namespace Prisma {
     _max?: NestedStringNullableFilter<$PrismaModel>
   }
 
-  export type NestedIntNullableFilter<$PrismaModel = never> = {
+  export type NestedIntNullableWithAggregatesFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel> | null
     in?: number[] | null
     notIn?: number[] | null
@@ -8870,15 +18324,23 @@ export namespace Prisma {
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntNullableFilter<$PrismaModel> | number | null
+    not?: NestedIntNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedIntNullableFilter<$PrismaModel>
+    _max?: NestedIntNullableFilter<$PrismaModel>
   }
 
-  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
-    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
-    _count?: NestedIntFilter<$PrismaModel>
-    _min?: NestedBoolFilter<$PrismaModel>
-    _max?: NestedBoolFilter<$PrismaModel>
+  export type NestedFloatNullableFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableFilter<$PrismaModel> | number | null
   }
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -8893,6 +18355,22 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedDateTimeFilter<$PrismaModel>
     _max?: NestedDateTimeFilter<$PrismaModel>
+  }
+
+  export type NestedFloatNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel> | null
+    in?: number[] | null
+    notIn?: number[] | null
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatNullableWithAggregatesFilter<$PrismaModel> | number | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _avg?: NestedFloatNullableFilter<$PrismaModel>
+    _sum?: NestedFloatNullableFilter<$PrismaModel>
+    _min?: NestedFloatNullableFilter<$PrismaModel>
+    _max?: NestedFloatNullableFilter<$PrismaModel>
   }
 
   export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
@@ -8920,6 +18398,369 @@ export namespace Prisma {
     gt?: number | FloatFieldRefInput<$PrismaModel>
     gte?: number | FloatFieldRefInput<$PrismaModel>
     not?: NestedFloatFilter<$PrismaModel> | number
+  }
+
+  export type NestedDateTimeNullableFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableFilter<$PrismaModel> | Date | string | null
+  }
+
+  export type NestedBoolFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolFilter<$PrismaModel> | boolean
+  }
+
+  export type NestedDateTimeNullableWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: Date | string | DateTimeFieldRefInput<$PrismaModel> | null
+    in?: Date[] | string[] | null
+    notIn?: Date[] | string[] | null
+    lt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    lte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gt?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    gte?: Date | string | DateTimeFieldRefInput<$PrismaModel>
+    not?: NestedDateTimeNullableWithAggregatesFilter<$PrismaModel> | Date | string | null
+    _count?: NestedIntNullableFilter<$PrismaModel>
+    _min?: NestedDateTimeNullableFilter<$PrismaModel>
+    _max?: NestedDateTimeNullableFilter<$PrismaModel>
+  }
+
+  export type NestedBoolWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: boolean | BooleanFieldRefInput<$PrismaModel>
+    not?: NestedBoolWithAggregatesFilter<$PrismaModel> | boolean
+    _count?: NestedIntFilter<$PrismaModel>
+    _min?: NestedBoolFilter<$PrismaModel>
+    _max?: NestedBoolFilter<$PrismaModel>
+  }
+
+  export type NestedFloatWithAggregatesFilter<$PrismaModel = never> = {
+    equals?: number | FloatFieldRefInput<$PrismaModel>
+    in?: number[]
+    notIn?: number[]
+    lt?: number | FloatFieldRefInput<$PrismaModel>
+    lte?: number | FloatFieldRefInput<$PrismaModel>
+    gt?: number | FloatFieldRefInput<$PrismaModel>
+    gte?: number | FloatFieldRefInput<$PrismaModel>
+    not?: NestedFloatWithAggregatesFilter<$PrismaModel> | number
+    _count?: NestedIntFilter<$PrismaModel>
+    _avg?: NestedFloatFilter<$PrismaModel>
+    _sum?: NestedFloatFilter<$PrismaModel>
+    _min?: NestedFloatFilter<$PrismaModel>
+    _max?: NestedFloatFilter<$PrismaModel>
+  }
+
+  export type TransactionMasterFileCreateWithoutUploadBatchInput = {
+    id?: string
+    rawCustId?: string | null
+    rawProdOrderBatch?: string | null
+    rawWorkCenter?: string | null
+    rawSku?: string | null
+    rawSkuType?: string | null
+    rawEntryDate?: string | null
+    rawEntryTime?: string | null
+    rawExitDate?: string | null
+    rawExitTime?: string | null
+    prodOrder?: string | null
+    batch?: string | null
+    entryTimestamp?: Date | string | null
+    exitTimestamp?: Date | string | null
+    actualProcessTime?: number | null
+    expectedCycleTime?: number | null
+    delayHours?: number | null
+    processStatus?: string | null
+    isValid?: boolean
+    validationError?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type TransactionMasterFileUncheckedCreateWithoutUploadBatchInput = {
+    id?: string
+    rawCustId?: string | null
+    rawProdOrderBatch?: string | null
+    rawWorkCenter?: string | null
+    rawSku?: string | null
+    rawSkuType?: string | null
+    rawEntryDate?: string | null
+    rawEntryTime?: string | null
+    rawExitDate?: string | null
+    rawExitTime?: string | null
+    prodOrder?: string | null
+    batch?: string | null
+    entryTimestamp?: Date | string | null
+    exitTimestamp?: Date | string | null
+    actualProcessTime?: number | null
+    expectedCycleTime?: number | null
+    delayHours?: number | null
+    processStatus?: string | null
+    isValid?: boolean
+    validationError?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type TransactionMasterFileCreateOrConnectWithoutUploadBatchInput = {
+    where: TransactionMasterFileWhereUniqueInput
+    create: XOR<TransactionMasterFileCreateWithoutUploadBatchInput, TransactionMasterFileUncheckedCreateWithoutUploadBatchInput>
+  }
+
+  export type TransactionMasterFileCreateManyUploadBatchInputEnvelope = {
+    data: TransactionMasterFileCreateManyUploadBatchInput | TransactionMasterFileCreateManyUploadBatchInput[]
+  }
+
+  export type ProductionOrderSummaryCreateWithoutUploadBatchInput = {
+    id?: string
+    prodOrder: string
+    custId: string
+    sku?: string | null
+    skuType: string
+    numberOfBatches?: number
+    batchesList?: string | null
+    totalActualTime?: number
+    configuredTotalCT?: number | null
+    totalDelay?: number
+    poStatus?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ProductionOrderSummaryUncheckedCreateWithoutUploadBatchInput = {
+    id?: string
+    prodOrder: string
+    custId: string
+    sku?: string | null
+    skuType: string
+    numberOfBatches?: number
+    batchesList?: string | null
+    totalActualTime?: number
+    configuredTotalCT?: number | null
+    totalDelay?: number
+    poStatus?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ProductionOrderSummaryCreateOrConnectWithoutUploadBatchInput = {
+    where: ProductionOrderSummaryWhereUniqueInput
+    create: XOR<ProductionOrderSummaryCreateWithoutUploadBatchInput, ProductionOrderSummaryUncheckedCreateWithoutUploadBatchInput>
+  }
+
+  export type ProductionOrderSummaryCreateManyUploadBatchInputEnvelope = {
+    data: ProductionOrderSummaryCreateManyUploadBatchInput | ProductionOrderSummaryCreateManyUploadBatchInput[]
+  }
+
+  export type TransactionMasterFileUpsertWithWhereUniqueWithoutUploadBatchInput = {
+    where: TransactionMasterFileWhereUniqueInput
+    update: XOR<TransactionMasterFileUpdateWithoutUploadBatchInput, TransactionMasterFileUncheckedUpdateWithoutUploadBatchInput>
+    create: XOR<TransactionMasterFileCreateWithoutUploadBatchInput, TransactionMasterFileUncheckedCreateWithoutUploadBatchInput>
+  }
+
+  export type TransactionMasterFileUpdateWithWhereUniqueWithoutUploadBatchInput = {
+    where: TransactionMasterFileWhereUniqueInput
+    data: XOR<TransactionMasterFileUpdateWithoutUploadBatchInput, TransactionMasterFileUncheckedUpdateWithoutUploadBatchInput>
+  }
+
+  export type TransactionMasterFileUpdateManyWithWhereWithoutUploadBatchInput = {
+    where: TransactionMasterFileScalarWhereInput
+    data: XOR<TransactionMasterFileUpdateManyMutationInput, TransactionMasterFileUncheckedUpdateManyWithoutUploadBatchInput>
+  }
+
+  export type TransactionMasterFileScalarWhereInput = {
+    AND?: TransactionMasterFileScalarWhereInput | TransactionMasterFileScalarWhereInput[]
+    OR?: TransactionMasterFileScalarWhereInput[]
+    NOT?: TransactionMasterFileScalarWhereInput | TransactionMasterFileScalarWhereInput[]
+    id?: StringFilter<"TransactionMasterFile"> | string
+    uploadBatchId?: StringFilter<"TransactionMasterFile"> | string
+    rawCustId?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawProdOrderBatch?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawWorkCenter?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawSku?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawSkuType?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawEntryDate?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawEntryTime?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawExitDate?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    rawExitTime?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    prodOrder?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    batch?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    entryTimestamp?: DateTimeNullableFilter<"TransactionMasterFile"> | Date | string | null
+    exitTimestamp?: DateTimeNullableFilter<"TransactionMasterFile"> | Date | string | null
+    actualProcessTime?: FloatNullableFilter<"TransactionMasterFile"> | number | null
+    expectedCycleTime?: FloatNullableFilter<"TransactionMasterFile"> | number | null
+    delayHours?: FloatNullableFilter<"TransactionMasterFile"> | number | null
+    processStatus?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    isValid?: BoolFilter<"TransactionMasterFile"> | boolean
+    validationError?: StringNullableFilter<"TransactionMasterFile"> | string | null
+    createdAt?: DateTimeFilter<"TransactionMasterFile"> | Date | string
+    updatedAt?: DateTimeFilter<"TransactionMasterFile"> | Date | string
+  }
+
+  export type ProductionOrderSummaryUpsertWithWhereUniqueWithoutUploadBatchInput = {
+    where: ProductionOrderSummaryWhereUniqueInput
+    update: XOR<ProductionOrderSummaryUpdateWithoutUploadBatchInput, ProductionOrderSummaryUncheckedUpdateWithoutUploadBatchInput>
+    create: XOR<ProductionOrderSummaryCreateWithoutUploadBatchInput, ProductionOrderSummaryUncheckedCreateWithoutUploadBatchInput>
+  }
+
+  export type ProductionOrderSummaryUpdateWithWhereUniqueWithoutUploadBatchInput = {
+    where: ProductionOrderSummaryWhereUniqueInput
+    data: XOR<ProductionOrderSummaryUpdateWithoutUploadBatchInput, ProductionOrderSummaryUncheckedUpdateWithoutUploadBatchInput>
+  }
+
+  export type ProductionOrderSummaryUpdateManyWithWhereWithoutUploadBatchInput = {
+    where: ProductionOrderSummaryScalarWhereInput
+    data: XOR<ProductionOrderSummaryUpdateManyMutationInput, ProductionOrderSummaryUncheckedUpdateManyWithoutUploadBatchInput>
+  }
+
+  export type ProductionOrderSummaryScalarWhereInput = {
+    AND?: ProductionOrderSummaryScalarWhereInput | ProductionOrderSummaryScalarWhereInput[]
+    OR?: ProductionOrderSummaryScalarWhereInput[]
+    NOT?: ProductionOrderSummaryScalarWhereInput | ProductionOrderSummaryScalarWhereInput[]
+    id?: StringFilter<"ProductionOrderSummary"> | string
+    uploadBatchId?: StringFilter<"ProductionOrderSummary"> | string
+    prodOrder?: StringFilter<"ProductionOrderSummary"> | string
+    custId?: StringFilter<"ProductionOrderSummary"> | string
+    sku?: StringNullableFilter<"ProductionOrderSummary"> | string | null
+    skuType?: StringFilter<"ProductionOrderSummary"> | string
+    numberOfBatches?: IntFilter<"ProductionOrderSummary"> | number
+    batchesList?: StringNullableFilter<"ProductionOrderSummary"> | string | null
+    totalActualTime?: FloatFilter<"ProductionOrderSummary"> | number
+    configuredTotalCT?: FloatNullableFilter<"ProductionOrderSummary"> | number | null
+    totalDelay?: FloatFilter<"ProductionOrderSummary"> | number
+    poStatus?: StringFilter<"ProductionOrderSummary"> | string
+    createdAt?: DateTimeFilter<"ProductionOrderSummary"> | Date | string
+    updatedAt?: DateTimeFilter<"ProductionOrderSummary"> | Date | string
+  }
+
+  export type TransactionUploadBatchCreateWithoutTransactionsInput = {
+    id?: string
+    fileName: string
+    totalRows?: number
+    validRows?: number
+    invalidRows?: number
+    status?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    poSummaries?: ProductionOrderSummaryCreateNestedManyWithoutUploadBatchInput
+  }
+
+  export type TransactionUploadBatchUncheckedCreateWithoutTransactionsInput = {
+    id?: string
+    fileName: string
+    totalRows?: number
+    validRows?: number
+    invalidRows?: number
+    status?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    poSummaries?: ProductionOrderSummaryUncheckedCreateNestedManyWithoutUploadBatchInput
+  }
+
+  export type TransactionUploadBatchCreateOrConnectWithoutTransactionsInput = {
+    where: TransactionUploadBatchWhereUniqueInput
+    create: XOR<TransactionUploadBatchCreateWithoutTransactionsInput, TransactionUploadBatchUncheckedCreateWithoutTransactionsInput>
+  }
+
+  export type TransactionUploadBatchUpsertWithoutTransactionsInput = {
+    update: XOR<TransactionUploadBatchUpdateWithoutTransactionsInput, TransactionUploadBatchUncheckedUpdateWithoutTransactionsInput>
+    create: XOR<TransactionUploadBatchCreateWithoutTransactionsInput, TransactionUploadBatchUncheckedCreateWithoutTransactionsInput>
+    where?: TransactionUploadBatchWhereInput
+  }
+
+  export type TransactionUploadBatchUpdateToOneWithWhereWithoutTransactionsInput = {
+    where?: TransactionUploadBatchWhereInput
+    data: XOR<TransactionUploadBatchUpdateWithoutTransactionsInput, TransactionUploadBatchUncheckedUpdateWithoutTransactionsInput>
+  }
+
+  export type TransactionUploadBatchUpdateWithoutTransactionsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fileName?: StringFieldUpdateOperationsInput | string
+    totalRows?: IntFieldUpdateOperationsInput | number
+    validRows?: IntFieldUpdateOperationsInput | number
+    invalidRows?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    poSummaries?: ProductionOrderSummaryUpdateManyWithoutUploadBatchNestedInput
+  }
+
+  export type TransactionUploadBatchUncheckedUpdateWithoutTransactionsInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fileName?: StringFieldUpdateOperationsInput | string
+    totalRows?: IntFieldUpdateOperationsInput | number
+    validRows?: IntFieldUpdateOperationsInput | number
+    invalidRows?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    poSummaries?: ProductionOrderSummaryUncheckedUpdateManyWithoutUploadBatchNestedInput
+  }
+
+  export type TransactionUploadBatchCreateWithoutPoSummariesInput = {
+    id?: string
+    fileName: string
+    totalRows?: number
+    validRows?: number
+    invalidRows?: number
+    status?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    transactions?: TransactionMasterFileCreateNestedManyWithoutUploadBatchInput
+  }
+
+  export type TransactionUploadBatchUncheckedCreateWithoutPoSummariesInput = {
+    id?: string
+    fileName: string
+    totalRows?: number
+    validRows?: number
+    invalidRows?: number
+    status?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+    transactions?: TransactionMasterFileUncheckedCreateNestedManyWithoutUploadBatchInput
+  }
+
+  export type TransactionUploadBatchCreateOrConnectWithoutPoSummariesInput = {
+    where: TransactionUploadBatchWhereUniqueInput
+    create: XOR<TransactionUploadBatchCreateWithoutPoSummariesInput, TransactionUploadBatchUncheckedCreateWithoutPoSummariesInput>
+  }
+
+  export type TransactionUploadBatchUpsertWithoutPoSummariesInput = {
+    update: XOR<TransactionUploadBatchUpdateWithoutPoSummariesInput, TransactionUploadBatchUncheckedUpdateWithoutPoSummariesInput>
+    create: XOR<TransactionUploadBatchCreateWithoutPoSummariesInput, TransactionUploadBatchUncheckedCreateWithoutPoSummariesInput>
+    where?: TransactionUploadBatchWhereInput
+  }
+
+  export type TransactionUploadBatchUpdateToOneWithWhereWithoutPoSummariesInput = {
+    where?: TransactionUploadBatchWhereInput
+    data: XOR<TransactionUploadBatchUpdateWithoutPoSummariesInput, TransactionUploadBatchUncheckedUpdateWithoutPoSummariesInput>
+  }
+
+  export type TransactionUploadBatchUpdateWithoutPoSummariesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fileName?: StringFieldUpdateOperationsInput | string
+    totalRows?: IntFieldUpdateOperationsInput | number
+    validRows?: IntFieldUpdateOperationsInput | number
+    invalidRows?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    transactions?: TransactionMasterFileUpdateManyWithoutUploadBatchNestedInput
+  }
+
+  export type TransactionUploadBatchUncheckedUpdateWithoutPoSummariesInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    fileName?: StringFieldUpdateOperationsInput | string
+    totalRows?: IntFieldUpdateOperationsInput | number
+    validRows?: IntFieldUpdateOperationsInput | number
+    invalidRows?: IntFieldUpdateOperationsInput | number
+    status?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    transactions?: TransactionMasterFileUncheckedUpdateManyWithoutUploadBatchNestedInput
   }
 
   export type SkuCreateWithoutCustomerInput = {
@@ -9519,6 +19360,170 @@ export namespace Prisma {
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     processes?: SkuProcessUncheckedUpdateManyWithoutSkuNestedInput
+  }
+
+  export type TransactionMasterFileCreateManyUploadBatchInput = {
+    id?: string
+    rawCustId?: string | null
+    rawProdOrderBatch?: string | null
+    rawWorkCenter?: string | null
+    rawSku?: string | null
+    rawSkuType?: string | null
+    rawEntryDate?: string | null
+    rawEntryTime?: string | null
+    rawExitDate?: string | null
+    rawExitTime?: string | null
+    prodOrder?: string | null
+    batch?: string | null
+    entryTimestamp?: Date | string | null
+    exitTimestamp?: Date | string | null
+    actualProcessTime?: number | null
+    expectedCycleTime?: number | null
+    delayHours?: number | null
+    processStatus?: string | null
+    isValid?: boolean
+    validationError?: string | null
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type ProductionOrderSummaryCreateManyUploadBatchInput = {
+    id?: string
+    prodOrder: string
+    custId: string
+    sku?: string | null
+    skuType: string
+    numberOfBatches?: number
+    batchesList?: string | null
+    totalActualTime?: number
+    configuredTotalCT?: number | null
+    totalDelay?: number
+    poStatus?: string
+    createdAt?: Date | string
+    updatedAt?: Date | string
+  }
+
+  export type TransactionMasterFileUpdateWithoutUploadBatchInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    rawCustId?: NullableStringFieldUpdateOperationsInput | string | null
+    rawProdOrderBatch?: NullableStringFieldUpdateOperationsInput | string | null
+    rawWorkCenter?: NullableStringFieldUpdateOperationsInput | string | null
+    rawSku?: NullableStringFieldUpdateOperationsInput | string | null
+    rawSkuType?: NullableStringFieldUpdateOperationsInput | string | null
+    rawEntryDate?: NullableStringFieldUpdateOperationsInput | string | null
+    rawEntryTime?: NullableStringFieldUpdateOperationsInput | string | null
+    rawExitDate?: NullableStringFieldUpdateOperationsInput | string | null
+    rawExitTime?: NullableStringFieldUpdateOperationsInput | string | null
+    prodOrder?: NullableStringFieldUpdateOperationsInput | string | null
+    batch?: NullableStringFieldUpdateOperationsInput | string | null
+    entryTimestamp?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    exitTimestamp?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualProcessTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    expectedCycleTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    delayHours?: NullableFloatFieldUpdateOperationsInput | number | null
+    processStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    isValid?: BoolFieldUpdateOperationsInput | boolean
+    validationError?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TransactionMasterFileUncheckedUpdateWithoutUploadBatchInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    rawCustId?: NullableStringFieldUpdateOperationsInput | string | null
+    rawProdOrderBatch?: NullableStringFieldUpdateOperationsInput | string | null
+    rawWorkCenter?: NullableStringFieldUpdateOperationsInput | string | null
+    rawSku?: NullableStringFieldUpdateOperationsInput | string | null
+    rawSkuType?: NullableStringFieldUpdateOperationsInput | string | null
+    rawEntryDate?: NullableStringFieldUpdateOperationsInput | string | null
+    rawEntryTime?: NullableStringFieldUpdateOperationsInput | string | null
+    rawExitDate?: NullableStringFieldUpdateOperationsInput | string | null
+    rawExitTime?: NullableStringFieldUpdateOperationsInput | string | null
+    prodOrder?: NullableStringFieldUpdateOperationsInput | string | null
+    batch?: NullableStringFieldUpdateOperationsInput | string | null
+    entryTimestamp?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    exitTimestamp?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualProcessTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    expectedCycleTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    delayHours?: NullableFloatFieldUpdateOperationsInput | number | null
+    processStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    isValid?: BoolFieldUpdateOperationsInput | boolean
+    validationError?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type TransactionMasterFileUncheckedUpdateManyWithoutUploadBatchInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    rawCustId?: NullableStringFieldUpdateOperationsInput | string | null
+    rawProdOrderBatch?: NullableStringFieldUpdateOperationsInput | string | null
+    rawWorkCenter?: NullableStringFieldUpdateOperationsInput | string | null
+    rawSku?: NullableStringFieldUpdateOperationsInput | string | null
+    rawSkuType?: NullableStringFieldUpdateOperationsInput | string | null
+    rawEntryDate?: NullableStringFieldUpdateOperationsInput | string | null
+    rawEntryTime?: NullableStringFieldUpdateOperationsInput | string | null
+    rawExitDate?: NullableStringFieldUpdateOperationsInput | string | null
+    rawExitTime?: NullableStringFieldUpdateOperationsInput | string | null
+    prodOrder?: NullableStringFieldUpdateOperationsInput | string | null
+    batch?: NullableStringFieldUpdateOperationsInput | string | null
+    entryTimestamp?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    exitTimestamp?: NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+    actualProcessTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    expectedCycleTime?: NullableFloatFieldUpdateOperationsInput | number | null
+    delayHours?: NullableFloatFieldUpdateOperationsInput | number | null
+    processStatus?: NullableStringFieldUpdateOperationsInput | string | null
+    isValid?: BoolFieldUpdateOperationsInput | boolean
+    validationError?: NullableStringFieldUpdateOperationsInput | string | null
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProductionOrderSummaryUpdateWithoutUploadBatchInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    prodOrder?: StringFieldUpdateOperationsInput | string
+    custId?: StringFieldUpdateOperationsInput | string
+    sku?: NullableStringFieldUpdateOperationsInput | string | null
+    skuType?: StringFieldUpdateOperationsInput | string
+    numberOfBatches?: IntFieldUpdateOperationsInput | number
+    batchesList?: NullableStringFieldUpdateOperationsInput | string | null
+    totalActualTime?: FloatFieldUpdateOperationsInput | number
+    configuredTotalCT?: NullableFloatFieldUpdateOperationsInput | number | null
+    totalDelay?: FloatFieldUpdateOperationsInput | number
+    poStatus?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProductionOrderSummaryUncheckedUpdateWithoutUploadBatchInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    prodOrder?: StringFieldUpdateOperationsInput | string
+    custId?: StringFieldUpdateOperationsInput | string
+    sku?: NullableStringFieldUpdateOperationsInput | string | null
+    skuType?: StringFieldUpdateOperationsInput | string
+    numberOfBatches?: IntFieldUpdateOperationsInput | number
+    batchesList?: NullableStringFieldUpdateOperationsInput | string | null
+    totalActualTime?: FloatFieldUpdateOperationsInput | number
+    configuredTotalCT?: NullableFloatFieldUpdateOperationsInput | number | null
+    totalDelay?: FloatFieldUpdateOperationsInput | number
+    poStatus?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
+  }
+
+  export type ProductionOrderSummaryUncheckedUpdateManyWithoutUploadBatchInput = {
+    id?: StringFieldUpdateOperationsInput | string
+    prodOrder?: StringFieldUpdateOperationsInput | string
+    custId?: StringFieldUpdateOperationsInput | string
+    sku?: NullableStringFieldUpdateOperationsInput | string | null
+    skuType?: StringFieldUpdateOperationsInput | string
+    numberOfBatches?: IntFieldUpdateOperationsInput | number
+    batchesList?: NullableStringFieldUpdateOperationsInput | string | null
+    totalActualTime?: FloatFieldUpdateOperationsInput | number
+    configuredTotalCT?: NullableFloatFieldUpdateOperationsInput | number | null
+    totalDelay?: FloatFieldUpdateOperationsInput | number
+    poStatus?: StringFieldUpdateOperationsInput | string
+    createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
+    updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
   }
 
   export type SkuCreateManyCustomerInput = {

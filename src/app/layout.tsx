@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { Sidebar } from '@/components/layout/Sidebar';
+import { AppShell } from '@/components/layout/AppShell';
 import { ToastProvider } from '@/components/ui/Toast';
 
 export const metadata: Metadata = {
@@ -17,14 +17,9 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <ToastProvider>
-          <div className="app-layout">
-            <Sidebar />
-            <main className="app-main">
-              <div className="app-content">
-                {children}
-              </div>
-            </main>
-          </div>
+          <AppShell>
+            {children}
+          </AppShell>
         </ToastProvider>
       </body>
     </html>
